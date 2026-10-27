@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — Bolea Labs</title>
+  <meta name="description" content="Privacy Policy for Bolea Labs, bolealabs.site, and associated publishing tools including A Day Back Then Automation.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b0c10;
+      --card-bg: rgba(22, 24, 30, 0.85);
+      --border: rgba(255, 255, 255, 0.08);
+      --text: #f0f2f5;
+      --text-muted: #9ba3af;
+      --accent-gold: #f5b324;
+      --accent-gold-glow: rgba(245, 179, 36, 0.15);
+      --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-display: 'Space Grotesk', sans-serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      line-height: 1.7;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    header {
+      background: rgba(11, 12, 16, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      padding: 16px 24px;
+    }
+    .header-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .brand {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text);
+      text-decoration: none;
+      letter-spacing: 0.5px;
+    }
+    .brand span { color: var(--accent-gold); }
+    nav a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      margin-left: 18px;
+      transition: color 0.2s;
+    }
+    nav a:hover, nav a.active { color: var(--accent-gold); }
+    main {
+      flex: 1;
+      max-width: 860px;
+      width: 100%;
+      margin: 40px auto;
+      padding: 0 24px;
+    }
+    .content-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 40px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+    h1 {
+      font-family: var(--font-display);
+      font-size: 2.2rem;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+    .meta {
+      color: var(--text-muted);
+      font-size: 0.88rem;
+      margin-bottom: 28px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 16px;
+    }
+    h2 {
+      font-family: var(--font-display);
+      color: var(--accent-gold);
+      font-size: 1.35rem;
+      margin: 32px 0 12px;
+    }
+    p { margin-bottom: 16px; color: #d1d5db; font-size: 0.98rem; }
+    ul { margin: 0 0 20px 24px; }
+    li { margin-bottom: 8px; color: #d1d5db; }
+    strong { color: #fff; }
+    a { color: var(--accent-gold); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 28px 24px;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.88rem;
+      background: #08090b;
+    }
+    footer a { color: var(--text-muted); margin: 0 10px; }
+    footer a:hover { color: var(--accent-gold); }
+    @media (max-width: 640px) {
+      .content-card { padding: 24px 20px; }
+      h1 { font-size: 1.8rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <a href="index.html" class="brand">BOLEA <span>LABS</span></a>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="adaybackthen.html">Creator Tool</a>
+        <a href="privacy.html" class="active">Privacy Policy</a>
+        <a href="terms.html">Terms</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="content-card">
+      <h1>Privacy Policy</h1>
+      <p class="meta">Last Updated: October 27, 2026 &bull; Operator: Bolea Labs (Christian Louis Bolea)</p>
+
+      <p>This Privacy Policy explains how Bolea Labs ("we", "our", "the Studio") collects, uses, and safeguards information when you browse <strong>bolealabs.site</strong>, use any Bolea Labs web application, or connect your social media or creator accounts (including TikTok, YouTube, Facebook, and Instagram) to our publishing and automation software.</p>
+
+      <h2>1. Information We Collect</h2>
+      <ul>
+        <li><strong>Website Visitors:</strong> Our portfolio and informational pages are static and do not use invasive tracking cookies, third-party analytics trackers, or require account registration for viewing.</li>
+        <li><strong>Connected Creator Accounts (OAuth):</strong> When an authorized creator connects social media accounts via official platform OAuth flows (such as TikTok Login Kit, TikTok Content Posting API, Google / YouTube Data API, or Meta Graph API), we receive an OAuth access token, refresh token, and basic public identifiers (such as username, account ID, and display name) strictly as authorized by you during the consent prompt.</li>
+        <li><strong>Creator Publishing Assets:</strong> Video files, captions, tags, and scheduling parameters you upload or designate for publication through our dashboard.</li>
+      </ul>
+
+      <h2>2. How We Use Information</h2>
+      <p>We process information exclusively to provide the services you direct:</p>
+      <ul>
+        <li>To upload and publish your videos, captions, and thumbnails to authorized platforms via their official developer APIs.</li>
+        <li>To check publication status and return post verification links and performance metrics within your operations dashboard.</li>
+        <li>To manage active authentication sessions securely and refresh expired tokens when authorized.</li>
+        <li>To reply to direct contact inquiries submitted to <strong>contact@bolealabs.site</strong>.</li>
+      </ul>
+      <p><strong>We do not sell, rent, or monetize your personal information or media assets.</strong> We never access private direct messages, personal contacts, financial details, or unrelated account information.</p>
+
+      <h2>3. Data Storage, Security &amp; Token Handling</h2>
+      <p>All platform API tokens and credentials are stored securely on hardened environments with encrypted storage and restricted administrative access. Tokens are never exposed in public repositories or client-facing responses. You may revoke access at any time through your connected platform's settings (for example, TikTok Security Settings &rarr; Manage App Permissions), which immediately renders stored tokens invalid.</p>
+
+      <h2>4. Third-Party Platform Integrations</h2>
+      <p>Our publishing software interacts with external platforms strictly via official APIs:</p>
+      <ul>
+        <li><strong>TikTok:</strong> Governed by TikTok Developer Terms and <a href="https://www.tiktok.com/legal/page/row/privacy-policy/en" target="_blank" rel="noopener">TikTok Privacy Policy</a>.</li>
+        <li><strong>YouTube:</strong> Governed by Google APIs Terms and <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a>.</li>
+        <li><strong>Meta (Facebook &amp; Instagram):</strong> Governed by Meta Platform Terms and <a href="https://www.facebook.com/privacy/policy/" target="_blank" rel="noopener">Meta Privacy Policy</a>.</li>
+      </ul>
+
+      <h2>5. Your Rights &amp; Data Deletion</h2>
+      <p>You have the right to request access to, correction of, or deletion of any stored data associated with your account at any time. Upon receiving a written request, all associated access tokens and publishing records will be purged within 48 hours.</p>
+
+      <h2>6. Policy Updates</h2>
+      <p>We may periodically update this policy to reflect platform API compliance changes or new features. Any modifications will be posted directly on this page with an updated revision date.</p>
+
+      <h2>7. Contact Information</h2>
+      <p>For privacy inquiries, token revocation requests, or data deletion questions, please contact:</p>
+      <p><strong>Bolea Labs</strong><br>
+      Attn: Christian Louis Bolea<br>
+      Email: <a href="mailto:contact@bolealabs.site">contact@bolealabs.site</a><br>
+      Academic: <a href="mailto:A21-32404@student.mseuf.edu.ph">A21-32404@student.mseuf.edu.ph</a><br>
+      Website: <a href="https://bolealabs.site">https://bolealabs.site</a></p>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Bolea Labs &bull; Christian Louis Bolea. All rights reserved.</p>
+    <p style="margin-top: 8px;">
+      <a href="index.html">Portfolio</a>
+      <a href="adaybackthen.html">Creator Tool</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Service</a>
+    </p>
+  </footer>
+</body>
+</html>

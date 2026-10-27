@@ -1,0 +1,1273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Christian Louis Bolea — Software Developer &amp; Bolea Labs</title>
+  <meta name="description" content="Portfolio of Christian Louis Bolea, BSIT student developer at MSEUF and founder of Bolea Labs. Mobile developer (Flutter), backend engineer (Django), and creator of the NiyoSense AI capstone & media automation systems.">
+  
+  <!-- Modern Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --bg: #090a0f;
+      --bg-card: rgba(18, 20, 27, 0.75);
+      --bg-card-hover: rgba(25, 28, 38, 0.95);
+      --border: rgba(255, 255, 255, 0.08);
+      --border-focus: rgba(245, 179, 36, 0.5);
+      --gold: #f5b324;
+      --gold-light: #fcd34d;
+      --gold-glow: rgba(245, 179, 36, 0.16);
+      --emerald: #10b981;
+      --emerald-glow: rgba(16, 185, 129, 0.18);
+      --cyan: #38bdf8;
+      --text: #f3f4f6;
+      --text-muted: #9ca3af;
+      --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-heading: 'Space Grotesk', sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      line-height: 1.65;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Ambient background glow */
+    .ambient-glow {
+      position: fixed;
+      top: -150px;
+      right: -100px;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(245, 179, 36, 0.08) 0%, rgba(9, 10, 15, 0) 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Navigation */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(9, 10, 15, 0.88);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+      padding: 14px 24px;
+    }
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo {
+      font-family: var(--font-heading);
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #fff;
+      text-decoration: none;
+      letter-spacing: 0.5px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .logo span { color: var(--gold); }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+    }
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.92rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--gold); }
+    .btn-nav-resume {
+      background: var(--gold);
+      color: #090a0f !important;
+      font-weight: 700 !important;
+      padding: 8px 18px;
+      border-radius: 8px;
+      cursor: pointer;
+      border: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .btn-nav-resume:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(245, 179, 36, 0.35);
+    }
+
+    /* Mobile Menu Toggle */
+    .mobile-menu-btn {
+      display: none;
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--text);
+      font-size: 1.25rem;
+      padding: 6px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    /* Container */
+    main {
+      position: relative;
+      z-index: 1;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px 80px;
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 60px 0 40px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 40px;
+      align-items: center;
+    }
+    .hero-text {
+      max-width: 720px;
+    }
+    .badge-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--emerald-glow);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      color: var(--emerald);
+      padding: 6px 14px;
+      border-radius: 9999px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      margin-bottom: 20px;
+    }
+    .status-pulse {
+      width: 8px;
+      height: 8px;
+      background: var(--emerald);
+      border-radius: 50%;
+      box-shadow: 0 0 10px var(--emerald);
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(1.2); }
+    }
+    h1.hero-title {
+      font-family: var(--font-heading);
+      font-size: clamp(2.4rem, 5vw, 3.8rem);
+      font-weight: 700;
+      line-height: 1.1;
+      color: #fff;
+      margin-bottom: 14px;
+      letter-spacing: -0.8px;
+    }
+    h1.hero-title span {
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero-subtitle {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--gold);
+      margin-bottom: 14px;
+    }
+    .hero-desc {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      line-height: 1.7;
+      margin-bottom: 28px;
+    }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      align-items: center;
+    }
+    .btn-primary {
+      background: var(--gold);
+      color: #090a0f;
+      font-weight: 700;
+      padding: 12px 24px;
+      border-radius: 10px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      border: none;
+      font-size: 0.95rem;
+      transition: all 0.2s;
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(245, 179, 36, 0.4);
+    }
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border);
+      color: #fff;
+      font-weight: 600;
+      padding: 12px 22px;
+      border-radius: 10px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.95rem;
+      transition: all 0.2s;
+    }
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 255, 255, 0.2);
+      transform: translateY(-2px);
+    }
+
+    /* Hero Avatar */
+    .hero-avatar-wrapper {
+      position: relative;
+      display: flex;
+      justify-content: center;
+    }
+    .avatar-glow {
+      position: absolute;
+      inset: -10px;
+      border-radius: 28px;
+      background: linear-gradient(135deg, var(--gold), rgba(56, 189, 248, 0.4));
+      opacity: 0.25;
+      filter: blur(14px);
+      z-index: 1;
+    }
+    .avatar-frame {
+      position: relative;
+      z-index: 2;
+      width: 240px;
+      height: 240px;
+      border-radius: 24px;
+      border: 2px solid var(--border-focus);
+      overflow: hidden;
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.6);
+      background: #111;
+    }
+    .avatar-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+    }
+
+    /* Stats Strip */
+    .stats-strip {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      margin: 30px 0 60px;
+    }
+    .stat-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.2s;
+    }
+    .stat-card:hover { transform: translateY(-3px); border-color: rgba(245, 179, 36, 0.3); }
+    .stat-val {
+      font-family: var(--font-heading);
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--gold);
+      margin-bottom: 4px;
+    }
+    .stat-label {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    /* Section Headers */
+    .section-header {
+      margin: 60px 0 24px;
+    }
+    .section-title {
+      font-family: var(--font-heading);
+      font-size: 2rem;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .section-title span { color: var(--gold); }
+    .section-subtitle {
+      color: var(--text-muted);
+      font-size: 1rem;
+      margin-top: 6px;
+    }
+
+    /* Featured Projects Grid */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 24px;
+    }
+    .project-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.25s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .project-card:hover {
+      background: var(--bg-card-hover);
+      border-color: rgba(245, 179, 36, 0.35);
+      transform: translateY(-4px);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.4);
+    }
+    .project-card.featured {
+      grid-column: 1 / -1;
+      background: linear-gradient(145deg, rgba(22, 25, 34, 0.95), rgba(16, 18, 24, 0.95));
+      border: 1px solid rgba(245, 179, 36, 0.4);
+      box-shadow: 0 10px 30px rgba(245, 179, 36, 0.08);
+    }
+    .project-tag {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      padding: 3px 10px;
+      border-radius: 6px;
+      background: var(--gold);
+      color: #090a0f;
+      margin-bottom: 14px;
+    }
+    .project-tag.alt {
+      background: rgba(56, 189, 248, 0.15);
+      color: var(--cyan);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+    }
+    .project-title {
+      font-family: var(--font-heading);
+      font-size: 1.4rem;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+    .project-subtitle {
+      font-size: 0.92rem;
+      color: var(--gold);
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+    .project-desc {
+      color: #d1d5db;
+      font-size: 0.95rem;
+      line-height: 1.65;
+      margin-bottom: 18px;
+    }
+    .project-metrics {
+      background: rgba(0, 0, 0, 0.35);
+      border-radius: 10px;
+      padding: 12px 16px;
+      margin-bottom: 18px;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .metric-item {
+      font-size: 0.88rem;
+      color: #e5e7eb;
+    }
+    .metric-item strong {
+      color: var(--gold);
+    }
+    .tech-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+    .tech-pill {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 4px 10px;
+      font-size: 0.78rem;
+      color: #e5e7eb;
+      font-weight: 500;
+    }
+    .project-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: auto;
+    }
+    .btn-link {
+      color: var(--gold);
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 6px 12px;
+      background: rgba(245, 179, 36, 0.08);
+      border-radius: 6px;
+      border: 1px solid rgba(245, 179, 36, 0.2);
+      transition: all 0.2s;
+    }
+    .btn-link:hover {
+      background: rgba(245, 179, 36, 0.16);
+      border-color: var(--gold);
+      transform: translateY(-1px);
+    }
+
+    /* Certifications Grid */
+    .certs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 20px;
+    }
+    .cert-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.2s;
+    }
+    .cert-card:hover {
+      border-color: rgba(245, 179, 36, 0.35);
+      transform: translateY(-3px);
+    }
+    .cert-issuer {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: var(--gold);
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+    .cert-name {
+      font-family: var(--font-heading);
+      font-size: 1.15rem;
+      color: #fff;
+      margin-bottom: 8px;
+      line-height: 1.35;
+    }
+    .cert-date {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 14px;
+    }
+    .cert-verify {
+      color: var(--cyan);
+      text-decoration: none;
+      font-size: 0.84rem;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      margin-top: auto;
+    }
+    .cert-verify:hover { text-decoration: underline; }
+
+    /* Skills Grid */
+    .skills-section {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+    .skill-category {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 22px;
+    }
+    .skill-cat-title {
+      font-family: var(--font-heading);
+      font-size: 1.05rem;
+      color: var(--gold);
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .skill-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .skill-chip {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 6px 14px;
+      font-size: 0.86rem;
+      color: #e5e7eb;
+    }
+
+    /* Education & Contact Card */
+    .info-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 30px;
+      margin-top: 24px;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 36px 24px;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      background: #06070a;
+      position: relative;
+      z-index: 10;
+    }
+    footer a { color: var(--text-muted); margin: 0 10px; text-decoration: none; }
+    footer a:hover { color: var(--gold); }
+
+    /* PIN Modal */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.75);
+      backdrop-filter: blur(8px);
+      z-index: 2000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .modal-overlay.active {
+      display: flex;
+    }
+    .modal-box {
+      background: #141720;
+      border: 1px solid var(--border-focus);
+      border-radius: 20px;
+      max-width: 420px;
+      width: 100%;
+      padding: 32px 28px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
+      text-align: center;
+      position: relative;
+      animation: modalSlide 0.25s ease-out;
+    }
+    @keyframes modalSlide {
+      from { opacity: 0; transform: translateY(20px) scale(0.95); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    .modal-close {
+      position: absolute;
+      top: 16px;
+      right: 18px;
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      font-size: 1.4rem;
+      cursor: pointer;
+    }
+    .modal-close:hover { color: #fff; }
+    .modal-icon {
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      background: var(--gold-glow);
+      color: var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin: 0 auto 16px;
+      border: 1px solid var(--border-focus);
+    }
+    .modal-title {
+      font-family: var(--font-heading);
+      font-size: 1.35rem;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+    .modal-desc {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      margin-bottom: 22px;
+      line-height: 1.5;
+    }
+    .pin-input-group {
+      margin-bottom: 18px;
+    }
+    .pin-input {
+      width: 100%;
+      max-width: 240px;
+      padding: 12px 16px;
+      font-size: 1.4rem;
+      letter-spacing: 8px;
+      text-align: center;
+      background: rgba(0, 0, 0, 0.4);
+      border: 2px solid var(--border);
+      border-radius: 12px;
+      color: #fff;
+      outline: none;
+      transition: all 0.2s;
+    }
+    .pin-input:focus {
+      border-color: var(--gold);
+      box-shadow: 0 0 15px rgba(245, 179, 36, 0.3);
+    }
+    .pin-input.error {
+      border-color: #ef4444;
+      animation: shake 0.3s;
+    }
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      20%, 60% { transform: translateX(-6px); }
+      40%, 80% { transform: translateX(6px); }
+    }
+    .pin-error-msg {
+      color: #f87171;
+      font-size: 0.85rem;
+      margin-top: 8px;
+      display: none;
+    }
+    .pin-hint {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-top: 14px;
+    }
+    .pin-hint strong { color: var(--gold); }
+
+    /* Responsive */
+    @media (max-width: 860px) {
+      .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding-top: 30px;
+      }
+      .hero-text { margin: 0 auto; }
+      .hero-actions { justify-content: center; }
+      .avatar-frame { width: 190px; height: 190px; }
+      .nav-links { display: none; }
+      .nav-links.open {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #0e1017;
+        padding: 20px;
+        border-bottom: 1px solid var(--border);
+        box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+      }
+      .mobile-menu-btn { display: block; }
+      .projects-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="ambient-glow"></div>
+
+  <!-- Header -->
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="logo">BOLEA <span>LABS</span></a>
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation">☰</button>
+      <nav class="nav-links" id="navLinks">
+        <a href="#projects">Projects</a>
+        <a href="#certifications">Certifications</a>
+        <a href="#skills">Skills</a>
+        <a href="#education">Education</a>
+        <a href="adaybackthen.html">Creator Tool</a>
+        <a href="privacy.html">Privacy</a>
+        <button class="btn-nav-resume" onclick="openPinModal()">Download Resume</button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-text">
+        <div class="badge-status">
+          <span class="status-pulse"></span>
+          Available for OJT / Internship Placement (2026–2027)
+        </div>
+        <h1 class="hero-title">Christian Louis <span>Bolea</span></h1>
+        <p class="hero-subtitle">Student Software Developer &amp; Automation Engineer &bull; Founder, Bolea Labs</p>
+        <p class="hero-desc">
+          BS Information Technology student at <strong>Manuel S. Enverga University Foundation (MSEUF)</strong>, specializing in Web &amp; Mobile Application Development. Creator of the <strong>NiyoSense</strong> dual-model AI coconut grading system and the <strong>A Day Back Then</strong> automated media pipeline. Passionate about building robust, offline-first mobile apps, scalable backend APIs, and production automation workflows.
+        </p>
+        <div class="hero-actions">
+          <a href="#projects" class="btn-primary">Explore Projects &darr;</a>
+          <button class="btn-secondary" onclick="openPinModal()">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 15V3m0 12l-4-4m4 4l4-4M2 17l.621 2.485A2 2 0 004.561 21h14.878a2 2 0 001.94-1.515L22 17"></path></svg>
+            Download Resume (PIN Protected)
+          </button>
+          <a href="https://www.linkedin.com/in/christian-bolea-264670252/" target="_blank" rel="noopener" class="btn-secondary">LinkedIn &nearr;</a>
+          <a href="https://github.com/Cbolea23" target="_blank" rel="noopener" class="btn-secondary">GitHub &nearr;</a>
+        </div>
+      </div>
+
+      <div class="hero-avatar-wrapper">
+        <div class="avatar-glow"></div>
+        <div class="avatar-frame">
+          <img src="profile.jpg" alt="Christian Louis Bolea" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Strip -->
+    <section class="stats-strip">
+      <div class="stat-card">
+        <div class="stat-val">92.8%</div>
+        <div class="stat-label">Fused AI Model Accuracy (NiyoSense)</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val">4.84 / 5.0</div>
+        <div class="stat-label">ISO/IEC 25010 Quality Rating</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val">58+</div>
+        <div class="stat-label">Automated Episodes Published</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val">6</div>
+        <div class="stat-label">Verified Industry Certifications</div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+      <div class="section-header">
+        <h2 class="section-title">Featured <span>Engineering Projects</span></h2>
+        <p class="section-subtitle">Real-world full-stack platforms, edge machine learning applications, and automated media infrastructure.</p>
+      </div>
+
+      <div class="projects-grid">
+        <!-- Flagship Capstone: NiyoSense -->
+        <div class="project-card featured">
+          <div>
+            <span class="project-tag">CCMS Capstone &bull; Flagship Production</span>
+            <h3 class="project-title">🥥 NiyoSense: Dual-Model Audio-Visual Coconut Grading System</h3>
+            <p class="project-subtitle">Manuel S. Enverga University Foundation (MSEUF) &bull; Lead Mobile &amp; Full-Stack Developer</p>
+            <p class="project-desc">
+              An intelligent, dual-model edge AI system built to eliminate subjective manual coconut tapping and grading at rural plantation stations. Combines a 100% on-device offline Android application with a centralized cloud analytics web portal. Utilizes two independent convolutional neural networks with an in-memory pure-Dart 128-band Mel-spectrogram DSP engine.
+            </p>
+            <div class="project-metrics">
+              <div class="metric-item"><strong>92.8%</strong> Fused Accuracy</div>
+              <div class="metric-item"><strong>70/30</strong> Audio-Dominant Late Fusion</div>
+              <div class="metric-item"><strong>3-Gate</strong> Out-of-Distribution Rejection</div>
+              <div class="metric-item"><strong>4.84 / 5.00</strong> ISO/IEC 25010 Evaluation</div>
+            </div>
+            <div class="tech-stack">
+              <span class="tech-pill">Flutter 3.x (Dart)</span>
+              <span class="tech-pill">Django 6.1 (Python)</span>
+              <span class="tech-pill">TensorFlow Lite (YOLOv8-cls)</span>
+              <span class="tech-pill">PostgreSQL</span>
+              <span class="tech-pill">SQLite Offline-First</span>
+              <span class="tech-pill">Mel DSP Processing</span>
+              <span class="tech-pill">Cloudflare Edge &amp; Render</span>
+            </div>
+          </div>
+          <div class="project-links">
+            <a href="https://niyosense.me" target="_blank" rel="noopener" class="btn-link">Live Web Portal &nearr;</a>
+            <a href="https://github.com/Cbolea23/niyosense-capstone/releases/tag/v1.5.2" target="_blank" rel="noopener" class="btn-link">Download v1.5.2 APK &nearr;</a>
+            <a href="https://github.com/Cbolea23/niyosense-capstone" target="_blank" rel="noopener" class="btn-link">GitHub Repository &nearr;</a>
+          </div>
+        </div>
+
+        <!-- Project 2: A Day Back Then Pipeline & Creator Tool -->
+        <div class="project-card">
+          <div>
+            <span class="project-tag alt">Automation &bull; Creator Platform</span>
+            <h3 class="project-title">A Day Back Then &bull; Media Factory &amp; Creator Tool</h3>
+            <p class="project-subtitle">Bolea Labs Flagship Channel &amp; Publishing Software</p>
+            <p class="project-desc">
+              End-to-end programmatic video factory: Remotion/Node.js pipeline turning topics into fully produced videos with AI scriptwriting, original illustrated backgrounds, AI voiceover with lip-sync, and dynamic captions. Paired with a multi-platform creator publishing suite supporting TikTok Content Posting API, YouTube Data API, and Meta Graph API.
+            </p>
+            <div class="tech-stack">
+              <span class="tech-pill">Node.js</span>
+              <span class="tech-pill">TypeScript</span>
+              <span class="tech-pill">Remotion</span>
+              <span class="tech-pill">Gemini API</span>
+              <span class="tech-pill">FFmpeg</span>
+              <span class="tech-pill">TikTok / YouTube OAuth</span>
+            </div>
+          </div>
+          <div class="project-links">
+            <a href="adaybackthen.html" class="btn-link">Project Details &amp; Creator Tool &rarr;</a>
+            <a href="https://github.com/Cbolea23/a-day-back-then-automation" target="_blank" rel="noopener" class="btn-link">GitHub &nearr;</a>
+          </div>
+        </div>
+
+        <!-- Project 3: Content Operations Dashboard -->
+        <div class="project-card">
+          <div>
+            <span class="project-tag">Full-Stack &bull; Mobile PWA</span>
+            <h3 class="project-title">Content Operations Dashboard</h3>
+            <p class="project-subtitle">Next.js Web Application &amp; Mobile Control Center</p>
+            <p class="project-desc">
+              Centralized operations dashboard that operates the entire media production floor from a phone or desktop. Features an automated video vault with metadata probing, topic and script queue management, persistent render workers, and one-click review-gated publishing.
+            </p>
+            <div class="tech-stack">
+              <span class="tech-pill">Next.js</span>
+              <span class="tech-pill">React</span>
+              <span class="tech-pill">PWA</span>
+              <span class="tech-pill">REST APIs</span>
+              <span class="tech-pill">Job Persistence</span>
+            </div>
+          </div>
+          <div class="project-links">
+            <span class="btn-link" style="opacity: 0.8; cursor: default;">Bolea Labs Operations Suite</span>
+          </div>
+        </div>
+
+        <!-- Project 4: 24/7 Livestream System -->
+        <div class="project-card">
+          <div>
+            <span class="project-tag">DevOps &bull; Infrastructure</span>
+            <h3 class="project-title">24/7 Continuous YouTube Livestream</h3>
+            <p class="project-subtitle">Always-On Automated Broadcast System</p>
+            <p class="project-desc">
+              Continuous live broadcasting infrastructure built on FFmpeg and RTMP relays. Runs longform episodic content in an infinite supervised loop with an automated watchdog daemon that recovers stream health within seconds of any network dropout or hardware reboot.
+            </p>
+            <div class="tech-stack">
+              <span class="tech-pill">FFmpeg</span>
+              <span class="tech-pill">RTMP Streaming</span>
+              <span class="tech-pill">Shell Supervision</span>
+              <span class="tech-pill">Watchdog Automation</span>
+            </div>
+          </div>
+          <div class="project-links">
+            <span class="btn-link" style="opacity: 0.8; cursor: default;">Self-Healing Broadcast Loop</span>
+          </div>
+        </div>
+
+        <!-- Project 5: Agensi AI Skills -->
+        <div class="project-card">
+          <div>
+            <span class="project-tag alt">Commercial AI Products</span>
+            <h3 class="project-title">Agensi Marketplace AI Workflow Skills</h3>
+            <p class="project-subtitle">Productized AI Engineering &amp; Automation Skills</p>
+            <p class="project-desc">
+              Six packaged AI workflow products published on the Agensi marketplace: hook retention engineering, programmatic Remotion video creation, emotional voiceover direction, and multi-agent coordination systems.
+            </p>
+            <div class="tech-stack">
+              <span class="tech-pill">AI Workflows</span>
+              <span class="tech-pill">Prompt Engineering</span>
+              <span class="tech-pill">Agensi SDK</span>
+              <span class="tech-pill">Technical Documentation</span>
+            </div>
+          </div>
+          <div class="project-links">
+            <span class="btn-link" style="opacity: 0.8; cursor: default;">6 Marketplace Skills</span>
+          </div>
+        </div>
+
+        <!-- Project 6: Trivia Arena (Kotlin/Compose) -->
+        <div class="project-card">
+          <div>
+            <span class="project-tag">Android &bull; Mobile Game</span>
+            <h3 class="project-title">Trivia Arena: Retro RPG Edition</h3>
+            <p class="project-subtitle">Native Android Trivia Game with MVVM Architecture</p>
+            <p class="project-desc">
+              A gamified educational mobile app blending RPG mechanics (Warrior, Mage, Rogue classes) with dynamic timed trivia challenges. Features clean MVVM architecture, Kotlin coroutines, and atomic Firebase Firestore transactions for real-time global leaderboards.
+            </p>
+            <div class="tech-stack">
+              <span class="tech-pill">Kotlin</span>
+              <span class="tech-pill">Jetpack Compose</span>
+              <span class="tech-pill">Firebase Auth &amp; Firestore</span>
+              <span class="tech-pill">Coroutines</span>
+              <span class="tech-pill">MVVM Pattern</span>
+            </div>
+          </div>
+          <div class="project-links">
+            <span class="btn-link" style="opacity: 0.8; cursor: default;">MSEUF Android Project</span>
+          </div>
+        </div>
+
+        <!-- Project 7: Online Banking & REST APIs -->
+        <div class="project-card">
+          <div>
+            <span class="project-tag">Backend &bull; Security</span>
+            <h3 class="project-title">Online Banking &amp; Enrollment REST APIs</h3>
+            <p class="project-subtitle">Enterprise RESTful Backend Implementations</p>
+            <p class="project-desc">
+              Full-stack transactional banking system and student enrollment APIs built with Django and Django REST Framework. Incorporates JWT token authentication, generic API views, relational database normalization, and robust input validation.
+            </p>
+            <div class="tech-stack">
+              <span class="tech-pill">Python</span>
+              <span class="tech-pill">Django &amp; DRF</span>
+              <span class="tech-pill">PostgreSQL / MySQL</span>
+              <span class="tech-pill">JWT Auth</span>
+              <span class="tech-pill">Postman API Testing</span>
+            </div>
+          </div>
+          <div class="project-links">
+            <span class="btn-link" style="opacity: 0.8; cursor: default;">Full-Stack Academic Solutions</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications">
+      <div class="section-header">
+        <h2 class="section-title">Verified <span>Certifications</span></h2>
+        <p class="section-subtitle">Official industry credentials in full-stack web, mobile app engineering, databases, and cybersecurity.</p>
+      </div>
+
+      <div class="certs-grid">
+        <!-- Cert 1 -->
+        <div class="cert-card">
+          <div>
+            <div class="cert-issuer">Packt Publishing &bull; Coursera</div>
+            <h3 class="cert-name">Backend Development and API Creation</h3>
+            <div class="cert-date">Completed: April 7, 2026 &bull; Credential ID: 13BPR5I0J77P</div>
+          </div>
+          <a href="https://coursera.org/verify/13BPR5I0J77P" target="_blank" rel="noopener" class="cert-verify">
+            Verify Official Credential &nearr;
+          </a>
+        </div>
+
+        <!-- Cert 2 -->
+        <div class="cert-card">
+          <div>
+            <div class="cert-issuer">Meta &bull; Coursera</div>
+            <h3 class="cert-name">Database Structures and Management with MySQL</h3>
+            <div class="cert-date">Completed: October 20, 2025 &bull; Credential ID: ASZT80EG1ATO</div>
+          </div>
+          <a href="https://coursera.org/verify/ASZT80EG1ATO" target="_blank" rel="noopener" class="cert-verify">
+            Verify Official Credential &nearr;
+          </a>
+        </div>
+
+        <!-- Cert 3 -->
+        <div class="cert-card">
+          <div>
+            <div class="cert-issuer">Meta &bull; Coursera</div>
+            <h3 class="cert-name">Introduction to Front-End Development</h3>
+            <div class="cert-date">Completed: October 17, 2025 &bull; Credential ID: PH3F7R5EW865</div>
+          </div>
+          <a href="https://coursera.org/verify/PH3F7R5EW865" target="_blank" rel="noopener" class="cert-verify">
+            Verify Official Credential &nearr;
+          </a>
+        </div>
+
+        <!-- Cert 4 -->
+        <div class="cert-card">
+          <div>
+            <div class="cert-issuer">Google &bull; Coursera</div>
+            <h3 class="cert-name">Foundations of Cybersecurity</h3>
+            <div class="cert-date">Completed: October 8, 2025 &bull; Credential ID: G4S3PIR857ID</div>
+          </div>
+          <a href="https://coursera.org/verify/G4S3PIR857ID" target="_blank" rel="noopener" class="cert-verify">
+            Verify Official Credential &nearr;
+          </a>
+        </div>
+
+        <!-- Cert 5 -->
+        <div class="cert-card">
+          <div>
+            <div class="cert-issuer">IBM &bull; Coursera</div>
+            <h3 class="cert-name">Flutter and Dart: Developing iOS, Android, and Mobile Apps</h3>
+            <div class="cert-date">Completed: May 6, 2025 &bull; Credential ID: RU6NWZOOYURW</div>
+          </div>
+          <a href="https://coursera.org/verify/RU6NWZOOYURW" target="_blank" rel="noopener" class="cert-verify">
+            Verify Official Credential &nearr;
+          </a>
+        </div>
+
+        <!-- Cert 6 -->
+        <div class="cert-card">
+          <div>
+            <div class="cert-issuer">Packt Publishing &bull; Coursera</div>
+            <h3 class="cert-name">Frontend Development with React</h3>
+            <div class="cert-date">Completed: May 3, 2026 &bull; Credential ID: L7GDU9MZ94WN</div>
+          </div>
+          <a href="https://coursera.org/verify/L7GDU9MZ94WN" target="_blank" rel="noopener" class="cert-verify">
+            Verify Official Credential &nearr;
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Technical Skills Section -->
+    <section id="skills">
+      <div class="section-header">
+        <h2 class="section-title">Technical <span>Skills &amp; Tooling</span></h2>
+        <p class="section-subtitle">Proficiencies applied across mobile application development, full-stack systems, and automation engineering.</p>
+      </div>
+
+      <div class="skills-section">
+        <div class="skill-category">
+          <h3 class="skill-cat-title">Mobile &amp; Frontend</h3>
+          <div class="skill-chips">
+            <span class="skill-chip">Flutter (Dart)</span>
+            <span class="tech-pill">Kotlin (Jetpack Compose)</span>
+            <span class="skill-chip">React.js</span>
+            <span class="skill-chip">Next.js</span>
+            <span class="skill-chip">HTML5 &amp; CSS3</span>
+            <span class="skill-chip">Remotion Video</span>
+            <span class="skill-chip">Responsive UI/UX</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <h3 class="skill-cat-title">Backend &amp; APIs</h3>
+          <div class="skill-chips">
+            <span class="skill-chip">Django (Python)</span>
+            <span class="skill-chip">Django REST Framework</span>
+            <span class="skill-chip">Node.js (TypeScript/JS)</span>
+            <span class="skill-chip">RESTful API Design</span>
+            <span class="skill-chip">JWT Authentication</span>
+            <span class="skill-chip">PHP</span>
+            <span class="skill-chip">Java</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <h3 class="skill-cat-title">Databases &amp; Cloud</h3>
+          <div class="skill-chips">
+            <span class="skill-chip">PostgreSQL (Neon)</span>
+            <span class="skill-chip">SQLite (Offline Cache)</span>
+            <span class="skill-chip">MySQL</span>
+            <span class="skill-chip">Firebase Firestore</span>
+            <span class="skill-chip">Supabase</span>
+            <span class="skill-chip">Render Cloud</span>
+            <span class="skill-chip">Cloudflare Edge &amp; DNS</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <h3 class="skill-cat-title">Media &amp; DevOps</h3>
+          <div class="skill-chips">
+            <span class="skill-chip">FFmpeg Media Automation</span>
+            <span class="skill-chip">RTMP Livestream Relays</span>
+            <span class="skill-chip">Edge AI (TensorFlow Lite)</span>
+            <span class="skill-chip">Audio Mel-Spectrogram DSP</span>
+            <span class="skill-chip">Git &amp; GitHub Workflows</span>
+            <span class="skill-chip">Postman API Testing</span>
+            <span class="skill-chip">Figma UI Prototyping</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education">
+      <div class="section-header">
+        <h2 class="section-title">Academic <span>Background</span></h2>
+      </div>
+
+      <div class="info-card">
+        <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 10px; margin-bottom: 8px;">
+          <div>
+            <h3 style="font-family: var(--font-heading); font-size: 1.3rem; color: #fff;">Bachelor of Science in Information Technology</h3>
+            <p style="color: var(--gold); font-weight: 600;">Manuel S. Enverga University Foundation (MSEUF) &bull; Lucena City, Quezon</p>
+          </div>
+          <div style="font-weight: 700; color: #fff; background: rgba(255, 255, 255, 0.05); padding: 4px 12px; border-radius: 8px; border: 1px solid var(--border);">
+            Expected Graduation: 2027
+          </div>
+        </div>
+        <p style="color: var(--text-muted); font-size: 0.95rem; margin-top: 10px;">
+          <strong>Major:</strong> Web and Mobile Application Development<br>
+          <strong>Relevant Coursework:</strong> Mobile Applications Development, Database Management Systems, Web Systems and Technologies, Systems Analysis and Design, Application Development and Emerging Technologies, English for Occupational Purposes.
+        </p>
+      </div>
+    </section>
+
+    <!-- Contact & Studio Section -->
+    <section id="contact" style="margin-top: 60px;">
+      <div class="info-card" style="text-align: center; max-width: 800px; margin: 0 auto; background: linear-gradient(145deg, rgba(22, 24, 32, 0.95), rgba(14, 16, 22, 0.95)); border-color: rgba(245, 179, 36, 0.35);">
+        <h2 style="font-family: var(--font-heading); font-size: 2rem; color: #fff; margin-bottom: 8px;">Get in <span>Touch</span></h2>
+        <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto 24px; font-size: 1.05rem;">
+          I am actively preparing for my upcoming <strong>On-the-Job Training (OJT)</strong> placement in software engineering, mobile development, or full-stack web roles. Feel free to reach out directly:
+        </p>
+        <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 14px; margin-bottom: 24px;">
+          <a href="mailto:contact@bolealabs.site" class="btn-primary">contact@bolealabs.site</a>
+          <a href="mailto:A21-32404@student.mseuf.edu.ph" class="btn-secondary">Student Email</a>
+          <a href="https://www.linkedin.com/in/christian-bolea-264670252/" target="_blank" rel="noopener" class="btn-secondary">LinkedIn Profile &nearr;</a>
+          <a href="https://github.com/Cbolea23" target="_blank" rel="noopener" class="btn-secondary">GitHub Profile &nearr;</a>
+        </div>
+        <p style="font-size: 0.88rem; color: var(--text-muted);">
+          Bolea Labs Studio &bull; Lucena City, Quezon, Philippines &bull; +63 976 253 9052
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div style="max-width: 1200px; margin: 0 auto;">
+      <p>&copy; 2026 Bolea Labs &bull; Christian Louis Bolea. All rights reserved.</p>
+      <p style="margin-top: 10px;">
+        <a href="index.html">Portfolio Home</a>
+        <a href="adaybackthen.html">Creator Tool &amp; Shows</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+        <a href="mailto:contact@bolealabs.site">contact@bolealabs.site</a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- PIN-Protected Resume Modal -->
+  <div class="modal-overlay" id="pinModal" onclick="handleBackdropClick(event)">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closePinModal()" aria-label="Close modal">&times;</button>
+      <div class="modal-icon">
+        <svg width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+      </div>
+      <h3 class="modal-title">Unlock Resume Download</h3>
+      <p class="modal-desc">Please enter the 4-digit access PIN provided to recruiters or authorized partners.</p>
+      
+      <div class="pin-input-group">
+        <input type="password" id="pinInput" class="pin-input" maxlength="4" placeholder="••••" autocomplete="off" onkeyup="handlePinKeyUp(event)">
+        <div id="pinError" class="pin-error-msg">Incorrect PIN. Please try again or request access.</div>
+      </div>
+
+      <button class="btn-primary" style="width: 100%; justify-content: center;" onclick="verifyAndDownload()">
+        Verify PIN &amp; Download PDF
+      </button>
+
+      <div class="pin-hint">
+        Recruiter or Partner? <strong>PIN: 2026</strong><br>
+        Need a key? Email <a href="mailto:contact@bolealabs.site?subject=Resume%20Access%20PIN%20Request" style="color: var(--gold); text-decoration: underline;">contact@bolealabs.site</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Client-side Interactive Logic -->
+  <script>
+    // Mobile navigation toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const navLinks = document.getElementById('navLinks');
+    if (mobileMenuBtn && navLinks) {
+      mobileMenuBtn.addEventListener('click', () => {
+        navLinks.classList.toggle('open');
+      });
+      // Close menu when clicking any nav link
+      navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => navLinks.classList.remove('open'));
+      });
+    }
+
+    // PIN Protection Logic (SHA-256 validation of PIN "2026")
+    const PIN_HASH = "158a323a7ba44870f23d96f1516dd70aa48e9a72db4ebb026b0a89e212a208ab";
+
+    function openPinModal() {
+      const modal = document.getElementById('pinModal');
+      const input = document.getElementById('pinInput');
+      const error = document.getElementById('pinError');
+      if (modal && input) {
+        modal.classList.add('active');
+        input.value = '';
+        input.classList.remove('error');
+        if (error) error.style.display = 'none';
+        setTimeout(() => input.focus(), 100);
+      }
+    }
+
+    function closePinModal() {
+      const modal = document.getElementById('pinModal');
+      if (modal) modal.classList.remove('active');
+    }
+
+    function handleBackdropClick(e) {
+      if (e.target.id === 'pinModal') {
+        closePinModal();
+      }
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closePinModal();
+    });
+
+    function handlePinKeyUp(e) {
+      if (e.key === 'Enter') {
+        verifyAndDownload();
+      }
+    }
+
+    async function sha256(message) {
+      const msgBuffer = new TextEncoder().encode(message);
+      const hashBuffer = await crypto.subtle.digest('SHA-256', msgBuffer);
+      const hashArray = Array.from(new Uint8Array(hashBuffer));
+      return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+    }
+
+    async function verifyAndDownload() {
+      const input = document.getElementById('pinInput');
+      const error = document.getElementById('pinError');
+      if (!input) return;
+
+      const enteredPin = input.value.trim();
+      const hashedEntered = await sha256(enteredPin);
+
+      if (hashedEntered === PIN_HASH) {
+        // Trigger download
+        const link = document.createElement('a');
+        link.href = 'resume.pdf';
+        link.download = 'Christian_Louis_Bolea_Resume.pdf';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+
+        // Feedback
+        input.classList.remove('error');
+        if (error) {
+          error.style.display = 'block';
+          error.style.color = '#10b981';
+          error.textContent = '✓ Access granted! Downloading resume...';
+        }
+
+        setTimeout(() => {
+          closePinModal();
+        }, 1200);
+      } else {
+        // Error feedback
+        input.classList.add('error');
+        if (error) {
+          error.style.display = 'block';
+          error.style.color = '#f87171';
+          error.textContent = 'Incorrect PIN. Please try again.';
+        }
+        input.select();
+      }
+    }
+  </script>
+</body>
+</html>

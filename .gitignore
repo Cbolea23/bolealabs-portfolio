@@ -1,6 +1,6 @@
-# Receipts & Sensitive Documents
-*.pdf
+# Receipts & Sensitive Orders
 namecheap-order-*.pdf
+namecheap-order-217822665.pdf
 
 # Environment & Secrets
 .env
