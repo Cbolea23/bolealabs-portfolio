@@ -41,6 +41,18 @@
       -webkit-font-smoothing: antialiased;
     }
 
+    /* Scroll progress bar */
+    #scrollProgress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--gold), var(--cyan));
+      width: 0%;
+      z-index: 2000;
+      transition: width 0.1s ease;
+    }
+
     /* Ambient background glow */
     .ambient-glow {
       position: fixed;
@@ -236,6 +248,7 @@
       gap: 8px;
       font-size: 0.95rem;
       transition: all 0.2s;
+      cursor: pointer;
     }
     .btn-secondary:hover {
       background: rgba(255, 255, 255, 0.1);
@@ -276,12 +289,40 @@
       object-position: center top;
     }
 
+    /* OJT Objective Banner */
+    .ojt-banner {
+      background: linear-gradient(135deg, rgba(245, 179, 36, 0.12), rgba(16, 185, 129, 0.08));
+      border: 1px solid rgba(245, 179, 36, 0.3);
+      border-radius: 16px;
+      padding: 24px 28px;
+      margin: 10px 0 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .ojt-banner-title {
+      font-family: var(--font-heading);
+      font-size: 1.15rem;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .ojt-banner-text {
+      font-size: 0.92rem;
+      color: #d1d5db;
+      margin-top: 4px;
+      max-width: 780px;
+    }
+
     /* Stats Strip */
     .stats-strip {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 16px;
-      margin: 30px 0 60px;
+      margin: 20px 0 60px;
     }
     .stat-card {
       background: var(--bg-card);
@@ -325,6 +366,35 @@
       margin-top: 6px;
     }
 
+    /* Project Filter Buttons */
+    .filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 26px;
+    }
+    .filter-btn {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      padding: 8px 18px;
+      border-radius: 30px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .filter-btn:hover {
+      background: rgba(255, 255, 255, 0.08);
+      color: #fff;
+    }
+    .filter-btn.active {
+      background: var(--gold);
+      color: #090a0f;
+      border-color: var(--gold);
+      font-weight: 700;
+    }
+
     /* Featured Projects Grid */
     .projects-grid {
       display: grid;
@@ -354,6 +424,9 @@
       background: linear-gradient(145deg, rgba(22, 25, 34, 0.95), rgba(16, 18, 24, 0.95));
       border: 1px solid rgba(245, 179, 36, 0.4);
       box-shadow: 0 10px 30px rgba(245, 179, 36, 0.08);
+    }
+    .project-card.hidden {
+      display: none !important;
     }
     .project-tag {
       display: inline-block;
@@ -406,6 +479,16 @@
     }
     .metric-item strong {
       color: var(--gold);
+    }
+    .architecture-box {
+      background: rgba(0, 0, 0, 0.25);
+      border-left: 3px solid var(--gold);
+      padding: 12px 16px;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 18px;
+      font-size: 0.88rem;
+      color: #cbd5e1;
+      line-height: 1.5;
     }
     .tech-stack {
       display: flex;
@@ -558,6 +641,53 @@
     footer a { color: var(--text-muted); margin: 0 10px; text-decoration: none; }
     footer a:hover { color: var(--gold); }
 
+    /* Toast Notification */
+    #copyToast {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: #10b981;
+      color: #090a0f;
+      font-weight: 700;
+      padding: 12px 20px;
+      border-radius: 10px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+      z-index: 3000;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.3s ease;
+      pointer-events: none;
+    }
+    #copyToast.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Back to Top Button */
+    #backToTop {
+      position: fixed;
+      bottom: 24px;
+      left: 24px;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: rgba(22, 24, 30, 0.85);
+      border: 1px solid var(--border-focus);
+      color: var(--gold);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 1000;
+      transition: all 0.2s;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    }
+    #backToTop:hover {
+      background: var(--gold);
+      color: #090a0f;
+      transform: translateY(-3px);
+    }
+
     /* PIN Modal */
     .modal-overlay {
       position: fixed;
@@ -622,17 +752,17 @@
     .modal-desc {
       color: var(--text-muted);
       font-size: 0.92rem;
-      margin-bottom: 22px;
+      margin-bottom: 18px;
       line-height: 1.5;
     }
     .pin-input-group {
-      margin-bottom: 18px;
+      margin-bottom: 16px;
     }
     .pin-input {
       width: 100%;
       max-width: 240px;
       padding: 12px 16px;
-      font-size: 1.4rem;
+      font-size: 1.5rem;
       letter-spacing: 8px;
       text-align: center;
       background: rgba(0, 0, 0, 0.4);
@@ -661,12 +791,58 @@
       margin-top: 8px;
       display: none;
     }
+
+    /* On-Screen Pin Pad */
+    .keypad-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      max-width: 240px;
+      margin: 12px auto 16px;
+    }
+    .keypad-btn {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: #fff;
+      padding: 10px;
+      font-size: 1.15rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .keypad-btn:hover {
+      background: rgba(245, 179, 36, 0.2);
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+    .keypad-btn:active {
+      transform: scale(0.95);
+    }
+
     .pin-hint {
       font-size: 0.82rem;
       color: var(--text-muted);
       margin-top: 14px;
     }
     .pin-hint strong { color: var(--gold); }
+    .btn-quick-pin {
+      background: rgba(245, 179, 36, 0.12);
+      border: 1px solid rgba(245, 179, 36, 0.3);
+      color: var(--gold);
+      border-radius: 6px;
+      padding: 4px 10px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      cursor: pointer;
+      margin-top: 6px;
+      display: inline-block;
+      transition: all 0.2s;
+    }
+    .btn-quick-pin:hover {
+      background: var(--gold);
+      color: #090a0f;
+    }
 
     /* Responsive */
     @media (max-width: 860px) {
@@ -697,6 +873,9 @@
   </style>
 </head>
 <body>
+  <!-- Reading Progress Bar -->
+  <div id="scrollProgress"></div>
+
   <div class="ambient-glow"></div>
 
   <!-- Header -->
@@ -749,6 +928,22 @@
       </div>
     </section>
 
+    <!-- OJT Objective Banner -->
+    <div class="ojt-banner">
+      <div>
+        <div class="ojt-banner-title">
+          <svg width="20" height="20" fill="none" stroke="var(--gold)" stroke-width="2" viewBox="0 0 24 24"><path d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+          Practicum &bull; On-the-Job Training (OJT) Objective
+        </div>
+        <p class="ojt-banner-text">
+          Seeking a 486–500 hour internship in <strong>Mobile Development (Flutter/Kotlin)</strong>, <strong>Full-Stack / Backend Engineering (Python/Django)</strong>, or <strong>Software Automation</strong>. Available for remote, hybrid, or on-site positions in Lucena City and Metro Manila.
+        </p>
+      </div>
+      <button class="btn-primary" onclick="copyContactEmail()" style="font-size: 0.88rem; padding: 10px 18px;">
+        Copy Contact Email
+      </button>
+    </div>
+
     <!-- Stats Strip -->
     <section class="stats-strip">
       <div class="stat-card">
@@ -776,9 +971,17 @@
         <p class="section-subtitle">Real-world full-stack platforms, edge machine learning applications, and automated media infrastructure.</p>
       </div>
 
+      <!-- Filter Controls -->
+      <div class="filter-bar">
+        <button class="filter-btn active" onclick="filterProjects('all', this)">All Projects (7)</button>
+        <button class="filter-btn" onclick="filterProjects('mobile', this)">Mobile (Flutter &amp; Android)</button>
+        <button class="filter-btn" onclick="filterProjects('fullstack', this)">Full-Stack &amp; APIs</button>
+        <button class="filter-btn" onclick="filterProjects('automation', this)">AI &amp; Automation</button>
+      </div>
+
       <div class="projects-grid">
         <!-- Flagship Capstone: NiyoSense -->
-        <div class="project-card featured">
+        <div class="project-card featured" data-cat="mobile fullstack">
           <div>
             <span class="project-tag">CCMS Capstone &bull; Flagship Production</span>
             <h3 class="project-title">🥥 NiyoSense: Dual-Model Audio-Visual Coconut Grading System</h3>
@@ -791,6 +994,10 @@
               <div class="metric-item"><strong>70/30</strong> Audio-Dominant Late Fusion</div>
               <div class="metric-item"><strong>3-Gate</strong> Out-of-Distribution Rejection</div>
               <div class="metric-item"><strong>4.84 / 5.00</strong> ISO/IEC 25010 Evaluation</div>
+            </div>
+            <div class="architecture-box">
+              <strong>🔬 AI Pipeline Formula:</strong> <em>P_final(c) = (0.70 &times; P_audio) + (0.30 &times; P_visual)</em> &bull; 
+              Gate 1: Visual HSV Chromaticity window [36&deg;, 148&deg;] &bull; Gate 2: Acoustic 300Hz HPF &amp; 128-band Slaney Mel DSP &bull; Gate 3: Temperature Scaling (T=1.6, 96.5% cap)
             </div>
             <div class="tech-stack">
               <span class="tech-pill">Flutter 3.x (Dart)</span>
@@ -810,7 +1017,7 @@
         </div>
 
         <!-- Project 2: A Day Back Then Pipeline & Creator Tool -->
-        <div class="project-card">
+        <div class="project-card" data-cat="automation fullstack">
           <div>
             <span class="project-tag alt">Automation &bull; Creator Platform</span>
             <h3 class="project-title">A Day Back Then &bull; Media Factory &amp; Creator Tool</h3>
@@ -834,7 +1041,7 @@
         </div>
 
         <!-- Project 3: Content Operations Dashboard -->
-        <div class="project-card">
+        <div class="project-card" data-cat="fullstack automation">
           <div>
             <span class="project-tag">Full-Stack &bull; Mobile PWA</span>
             <h3 class="project-title">Content Operations Dashboard</h3>
@@ -856,7 +1063,7 @@
         </div>
 
         <!-- Project 4: 24/7 Livestream System -->
-        <div class="project-card">
+        <div class="project-card" data-cat="automation">
           <div>
             <span class="project-tag">DevOps &bull; Infrastructure</span>
             <h3 class="project-title">24/7 Continuous YouTube Livestream</h3>
@@ -877,7 +1084,7 @@
         </div>
 
         <!-- Project 5: Agensi AI Skills -->
-        <div class="project-card">
+        <div class="project-card" data-cat="automation">
           <div>
             <span class="project-tag alt">Commercial AI Products</span>
             <h3 class="project-title">Agensi Marketplace AI Workflow Skills</h3>
@@ -898,7 +1105,7 @@
         </div>
 
         <!-- Project 6: Trivia Arena (Kotlin/Compose) -->
-        <div class="project-card">
+        <div class="project-card" data-cat="mobile">
           <div>
             <span class="project-tag">Android &bull; Mobile Game</span>
             <h3 class="project-title">Trivia Arena: Retro RPG Edition</h3>
@@ -920,7 +1127,7 @@
         </div>
 
         <!-- Project 7: Online Banking & REST APIs -->
-        <div class="project-card">
+        <div class="project-card" data-cat="fullstack">
           <div>
             <span class="project-tag">Backend &bull; Security</span>
             <h3 class="project-title">Online Banking &amp; Enrollment REST APIs</h3>
@@ -1037,7 +1244,7 @@
           <h3 class="skill-cat-title">Mobile &amp; Frontend</h3>
           <div class="skill-chips">
             <span class="skill-chip">Flutter (Dart)</span>
-            <span class="tech-pill">Kotlin (Jetpack Compose)</span>
+            <span class="skill-chip">Kotlin (Jetpack Compose)</span>
             <span class="skill-chip">React.js</span>
             <span class="skill-chip">Next.js</span>
             <span class="skill-chip">HTML5 &amp; CSS3</span>
@@ -1118,7 +1325,9 @@
           I am actively preparing for my upcoming <strong>On-the-Job Training (OJT)</strong> placement in software engineering, mobile development, or full-stack web roles. Feel free to reach out directly:
         </p>
         <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 14px; margin-bottom: 24px;">
-          <a href="mailto:contact@bolealabs.site" class="btn-primary">contact@bolealabs.site</a>
+          <button onclick="copyContactEmail()" class="btn-primary" title="Click to copy email">
+            contact@bolealabs.site (Copy)
+          </button>
           <a href="mailto:A21-32404@student.mseuf.edu.ph" class="btn-secondary">Student Email</a>
           <a href="https://www.linkedin.com/in/christian-bolea-264670252/" target="_blank" rel="noopener" class="btn-secondary">LinkedIn Profile &nearr;</a>
           <a href="https://github.com/Cbolea23" target="_blank" rel="noopener" class="btn-secondary">GitHub Profile &nearr;</a>
@@ -1129,6 +1338,12 @@
       </div>
     </section>
   </main>
+
+  <!-- Back to Top Button -->
+  <button id="backToTop" onclick="scrollToTop()" aria-label="Back to top">↑</button>
+
+  <!-- Copy Toast Notification -->
+  <div id="copyToast">✓ Email copied to clipboard!</div>
 
   <!-- Footer -->
   <footer>
@@ -1144,7 +1359,7 @@
     </div>
   </footer>
 
-  <!-- PIN-Protected Resume Modal -->
+  <!-- PIN-Protected Resume Modal with On-Screen Keypad -->
   <div class="modal-overlay" id="pinModal" onclick="handleBackdropClick(event)">
     <div class="modal-box">
       <button class="modal-close" onclick="closePinModal()" aria-label="Close modal">&times;</button>
@@ -1152,11 +1367,27 @@
         <svg width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
       </div>
       <h3 class="modal-title">Unlock Resume Download</h3>
-      <p class="modal-desc">Please enter the 4-digit access PIN provided to recruiters or authorized partners.</p>
+      <p class="modal-desc">Enter the 4-digit PIN to download Christian's verified PDF resume.</p>
       
       <div class="pin-input-group">
-        <input type="password" id="pinInput" class="pin-input" maxlength="4" placeholder="••••" autocomplete="off" onkeyup="handlePinKeyUp(event)">
-        <div id="pinError" class="pin-error-msg">Incorrect PIN. Please try again or request access.</div>
+        <input type="password" id="pinInput" class="pin-input" maxlength="4" placeholder="••••" autocomplete="off" onkeyup="handlePinKeyUp(event)" readonly>
+        <div id="pinError" class="pin-error-msg">Incorrect PIN. Please try again.</div>
+      </div>
+
+      <!-- Tactile On-Screen Keypad -->
+      <div class="keypad-grid">
+        <button class="keypad-btn" onclick="pressPinKey('1')">1</button>
+        <button class="keypad-btn" onclick="pressPinKey('2')">2</button>
+        <button class="keypad-btn" onclick="pressPinKey('3')">3</button>
+        <button class="keypad-btn" onclick="pressPinKey('4')">4</button>
+        <button class="keypad-btn" onclick="pressPinKey('5')">5</button>
+        <button class="keypad-btn" onclick="pressPinKey('6')">6</button>
+        <button class="keypad-btn" onclick="pressPinKey('7')">7</button>
+        <button class="keypad-btn" onclick="pressPinKey('8')">8</button>
+        <button class="keypad-btn" onclick="pressPinKey('9')">9</button>
+        <button class="keypad-btn" onclick="clearPinInput()" style="color: #f87171;">C</button>
+        <button class="keypad-btn" onclick="pressPinKey('0')">0</button>
+        <button class="keypad-btn" onclick="backspacePinInput()">⌫</button>
       </div>
 
       <button class="btn-primary" style="width: 100%; justify-content: center;" onclick="verifyAndDownload()">
@@ -1164,14 +1395,36 @@
       </button>
 
       <div class="pin-hint">
-        Recruiter or Partner? <strong>PIN: 2026</strong><br>
-        Need a key? Email <a href="mailto:contact@bolealabs.site?subject=Resume%20Access%20PIN%20Request" style="color: var(--gold); text-decoration: underline;">contact@bolealabs.site</a>
+        Recruiter or Partner? <strong>Default PIN: 2026</strong><br>
+        <button class="btn-quick-pin" onclick="autoFillPin()">⚡ Auto-Fill Recruiter PIN (2026)</button>
       </div>
     </div>
   </div>
 
   <!-- Client-side Interactive Logic -->
   <script>
+    // Reading Progress & Back to Top
+    window.addEventListener('scroll', () => {
+      const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      const bar = document.getElementById('scrollProgress');
+      if (bar) bar.style.width = scrolled + '%';
+
+      const btt = document.getElementById('backToTop');
+      if (btt) {
+        if (winScroll > 400) {
+          btt.style.display = 'flex';
+        } else {
+          btt.style.display = 'none';
+        }
+      }
+    });
+
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
     // Mobile navigation toggle
     const mobileMenuBtn = document.getElementById('mobileMenuBtn');
     const navLinks = document.getElementById('navLinks');
@@ -1179,9 +1432,39 @@
       mobileMenuBtn.addEventListener('click', () => {
         navLinks.classList.toggle('open');
       });
-      // Close menu when clicking any nav link
       navLinks.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', () => navLinks.classList.remove('open'));
+      });
+    }
+
+    // Project Filtering
+    function filterProjects(cat, btn) {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const cards = document.querySelectorAll('.project-card');
+      cards.forEach(card => {
+        if (cat === 'all') {
+          card.classList.remove('hidden');
+        } else {
+          const cardCats = card.getAttribute('data-cat') || '';
+          if (cardCats.includes(cat)) {
+            card.classList.remove('hidden');
+          } else {
+            card.classList.add('hidden');
+          }
+        }
+      });
+    }
+
+    // Copy Email Toast
+    function copyContactEmail() {
+      navigator.clipboard.writeText('contact@bolealabs.site').then(() => {
+        const toast = document.getElementById('copyToast');
+        if (toast) {
+          toast.classList.add('show');
+          setTimeout(() => toast.classList.remove('show'), 2200);
+        }
       });
     }
 
@@ -1197,7 +1480,6 @@
         input.value = '';
         input.classList.remove('error');
         if (error) error.style.display = 'none';
-        setTimeout(() => input.focus(), 100);
       }
     }
 
@@ -1214,11 +1496,49 @@
 
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') closePinModal();
+      const modal = document.getElementById('pinModal');
+      if (modal && modal.classList.contains('active')) {
+        if (e.key >= '0' && e.key <= '9') {
+          pressPinKey(e.key);
+        } else if (e.key === 'Backspace') {
+          backspacePinInput();
+        } else if (e.key === 'Enter') {
+          verifyAndDownload();
+        }
+      }
     });
 
-    function handlePinKeyUp(e) {
-      if (e.key === 'Enter') {
-        verifyAndDownload();
+    function pressPinKey(num) {
+      const input = document.getElementById('pinInput');
+      const error = document.getElementById('pinError');
+      if (!input) return;
+      if (error) error.style.display = 'none';
+      input.classList.remove('error');
+      if (input.value.length < 4) {
+        input.value += num;
+      }
+      if (input.value.length === 4) {
+        setTimeout(verifyAndDownload, 200);
+      }
+    }
+
+    function clearPinInput() {
+      const input = document.getElementById('pinInput');
+      if (input) input.value = '';
+    }
+
+    function backspacePinInput() {
+      const input = document.getElementById('pinInput');
+      if (input && input.value.length > 0) {
+        input.value = input.value.slice(0, -1);
+      }
+    }
+
+    function autoFillPin() {
+      const input = document.getElementById('pinInput');
+      if (input) {
+        input.value = '2026';
+        setTimeout(verifyAndDownload, 250);
       }
     }
 
@@ -1235,6 +1555,8 @@
       if (!input) return;
 
       const enteredPin = input.value.trim();
+      if (!enteredPin) return;
+
       const hashedEntered = await sha256(enteredPin);
 
       if (hashedEntered === PIN_HASH) {
@@ -1265,7 +1587,6 @@
           error.style.color = '#f87171';
           error.textContent = 'Incorrect PIN. Please try again.';
         }
-        input.select();
       }
     }
   </script>
