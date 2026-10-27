@@ -1,0 +1,372 @@
+/* ========================================================
+   BOLEA AI // LABS-01 AGENT WIDGET STYLES
+   Powered by FreeLLMAPI Gateway & Bolea Labs Engine
+======================================================== */
+
+:root {
+  --agent-gold: #f5b324;
+  --agent-gold-glow: rgba(245, 179, 36, 0.25);
+  --agent-cyan: #38bdf8;
+  --agent-emerald: #10b981;
+  --agent-bg: rgba(13, 16, 25, 0.94);
+  --agent-border: rgba(245, 179, 36, 0.35);
+  --agent-font-mono: 'JetBrains Mono', monospace;
+}
+
+/* Floating Agent Launcher Button */
+#agentLauncher {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 2100;
+  background: linear-gradient(135deg, #161a29, #0f121d);
+  border: 1px solid var(--agent-border);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7), 0 0 20px var(--agent-gold-glow);
+  border-radius: 9999px;
+  padding: 10px 20px 10px 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  color: #fff;
+  font-family: 'Space Grotesk', -apple-system, sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+#agentLauncher:hover {
+  transform: translateY(-4px) scale(1.02);
+  border-color: var(--agent-gold);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.8), 0 0 28px rgba(245, 179, 36, 0.45);
+}
+
+.agent-launcher-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--agent-gold), #d97706);
+  color: #07080c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  position: relative;
+}
+
+.agent-online-dot {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--agent-emerald);
+  border: 2px solid #0d1019;
+  box-shadow: 0 0 8px var(--agent-emerald);
+  animation: agentPulse 2s infinite;
+}
+
+@keyframes agentPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.2); }
+}
+
+.agent-launcher-text {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.agent-launcher-title {
+  color: #fff;
+  font-size: 0.86rem;
+  line-height: 1.2;
+}
+
+.agent-launcher-title span {
+  color: var(--agent-gold);
+}
+
+.agent-launcher-sub {
+  font-family: var(--agent-font-mono);
+  font-size: 0.68rem;
+  color: var(--agent-cyan);
+  letter-spacing: 0.5px;
+}
+
+/* Chat Drawer / Window */
+#agentWindow {
+  position: fixed;
+  bottom: 90px;
+  right: 24px;
+  width: 440px;
+  max-width: calc(100vw - 32px);
+  height: 620px;
+  max-height: calc(100vh - 120px);
+  background: var(--agent-bg);
+  border: 1px solid var(--agent-border);
+  border-radius: 20px;
+  box-shadow: 0 25px 65px rgba(0, 0, 0, 0.85), 0 0 35px rgba(245, 179, 36, 0.15);
+  display: none;
+  flex-direction: column;
+  z-index: 2200;
+  overflow: hidden;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  animation: agentSlideUp 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+#agentWindow.open {
+  display: flex;
+}
+
+@keyframes agentSlideUp {
+  from { opacity: 0; transform: translateY(20px) scale(0.96); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* Header */
+.agent-header {
+  padding: 16px 20px;
+  background: rgba(18, 22, 34, 0.9);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.agent-header-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.agent-badge-model {
+  font-family: var(--agent-font-mono);
+  font-size: 0.7rem;
+  color: var(--agent-emerald);
+  background: rgba(16, 185, 129, 0.12);
+  padding: 2px 8px;
+  border-radius: 999px;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.agent-badge-model::before {
+  content: '';
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--agent-emerald);
+}
+
+.agent-header-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.agent-btn-icon {
+  background: transparent;
+  border: none;
+  color: #94a3b8;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  transition: all 0.2s;
+}
+
+.agent-btn-icon:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+}
+
+/* Chat Messages Stream */
+.agent-messages {
+  flex: 1;
+  padding: 18px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  scroll-behavior: smooth;
+}
+
+.agent-msg {
+  display: flex;
+  flex-direction: column;
+  max-width: 88%;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  animation: msgFadeIn 0.2s ease-out;
+}
+
+@keyframes msgFadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.agent-msg.bot {
+  align-self: flex-start;
+  color: #e2e8f0;
+}
+
+.agent-msg.bot .msg-bubble {
+  background: rgba(24, 28, 42, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 14px 14px 14px 4px;
+  padding: 12px 16px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+}
+
+.agent-msg.user {
+  align-self: flex-end;
+  color: #07080c;
+}
+
+.agent-msg.user .msg-bubble {
+  background: linear-gradient(135deg, var(--agent-gold), #e5980b);
+  border-radius: 14px 14px 4px 14px;
+  padding: 10px 16px;
+  font-weight: 600;
+  color: #07080c;
+  box-shadow: 0 4px 15px rgba(245, 179, 36, 0.25);
+}
+
+.msg-sender {
+  font-family: var(--agent-font-mono);
+  font-size: 0.68rem;
+  color: #94a3b8;
+  margin-bottom: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Action Trigger Pills inside bot messages */
+.agent-action-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(245, 179, 36, 0.14);
+  border: 1px solid rgba(245, 179, 36, 0.4);
+  color: var(--agent-gold);
+  border-radius: 8px;
+  padding: 6px 12px;
+  font-family: var(--agent-font-mono);
+  font-size: 0.78rem;
+  font-weight: 700;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-decoration: none;
+}
+
+.agent-action-pill:hover {
+  background: var(--agent-gold);
+  color: #07080c;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(245, 179, 36, 0.35);
+}
+
+/* Quick Suggestion Chips */
+.agent-quick-chips {
+  padding: 8px 18px 12px;
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.agent-quick-chips::-webkit-scrollbar { display: none; }
+
+.agent-chip {
+  white-space: nowrap;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #cbd5e1;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.78rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.agent-chip:hover {
+  background: rgba(245, 179, 36, 0.15);
+  border-color: var(--agent-gold);
+  color: var(--agent-gold);
+}
+
+/* Input Area */
+.agent-input-bar {
+  padding: 14px 18px;
+  background: rgba(14, 17, 26, 0.95);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.agent-input {
+  flex: 1;
+  background: rgba(0, 0, 0, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  padding: 11px 14px;
+  color: #fff;
+  font-size: 0.9rem;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.agent-input:focus {
+  border-color: var(--agent-gold);
+}
+
+.agent-send-btn {
+  background: linear-gradient(135deg, var(--agent-gold), #d97706);
+  border: none;
+  border-radius: 10px;
+  width: 42px;
+  height: 42px;
+  color: #07080c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.agent-send-btn:hover {
+  transform: scale(1.06);
+  box-shadow: 0 0 16px rgba(245, 179, 36, 0.45);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 520px) {
+  #agentWindow {
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    max-height: 100vh;
+    border-radius: 0;
+  }
+  #agentLauncher {
+    bottom: 16px;
+    right: 16px;
+    padding: 8px 16px 8px 10px;
+  }
+}
