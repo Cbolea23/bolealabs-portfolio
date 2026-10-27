@@ -177,6 +177,7 @@ Projects:
 6. Agensi AI Skills: 6 commercialized AI workflow packages.
 7. Trivia Arena: Kotlin, Jetpack Compose, MVVM, Firebase Firestore atomic transactions.
 8. Online Banking & Enrollment API: Django REST Framework, SimpleJWT auth.
+9. BrainRot Galaxy! (com.coconut.brainrot_galaxy): Published commercial mobile Gacha TCG & 3D battler on Google Play Store. 45 collectible cards, upgraded to Godot 4.5+ with 3D Pokémon-style isometric turn-based combat, physical 3D coin toss, holographic foil shaders, pack opening physics, and synthesized retro audio.
 Certifications (all on Coursera):
 - Packt Backend Development & API Creation (13BPR5I0J77P)
 - Packt Frontend Development with React (L7GDU9MZ94WN)
@@ -267,11 +268,22 @@ I can open the vault for you right now:`,
       };
     }
 
+    if (q.includes("brainrot") || q.includes("galaxy") || q.includes("play store") || q.includes("gacha") || q.includes("tcg") || q.includes("godot")) {
+      return {
+        text: `**BrainRot Galaxy! Mobile Gacha TCG & 3D Combat Engine:**
+• **Google Play Publication:** Verified live production title published under package ID \`com.coconut.brainrot_galaxy\`.
+• **Gameplay & Content:** 45 collectible viral meme fighters across 5 rarity tiers (Common to Legendary), mid-battle tactical consumables, and daily login rewards.
+• **Engine Upgrade (Godot 4.5+):** Evolved from Flutter/Android client into a high-performance 3D Pokémon-style turn-based combat engine with an isometric diagonal battle arena, physical 3D coin toss turn decider, holographic foil card shaders, anticipation pack-ripping physics, and custom retro audio synthesis.`,
+        action: { label: "View on Google Play Store", link: "https://play.google.com/store/apps/details?id=com.coconut.brainrot_galaxy" }
+      };
+    }
+
     if (q.includes("mobile") || q.includes("flutter") || q.includes("android")) {
       return {
-        text: `Christian has extensive mobile engineering experience with **Flutter & Dart** and **Kotlin & Jetpack Compose**:
+        text: `Christian has extensive mobile engineering experience across **Flutter & Dart**, **Godot 4.5+ (Mobile)**, and **Kotlin & Jetpack Compose**:
 1. **NiyoSense Field App:** Offline-first Flutter app running dual TFLite neural networks and real-time Mel-spectrogram DSP.
-2. **Trivia Arena:** Native Android RPG game built with Kotlin, Jetpack Compose (MVVM), and atomic Firebase Firestore transactions.`,
+2. **BrainRot Galaxy! (Google Play Store):** Live published commercial mobile TCG & Gacha game (\`com.coconut.brainrot_galaxy\`) upgraded to Godot 4.5+ 3D Pokémon-style combat.
+3. **Trivia Arena:** Native Android RPG game built with Kotlin, Jetpack Compose (MVVM), and atomic Firebase Firestore transactions.`,
         action: { label: "Filter Portfolio to Mobile Projects", fn: "filterMobile" }
       };
     }
@@ -297,7 +309,7 @@ Feel free to ask about:
 3. The **A Day Back Then creator publishing suite** and verified channels.
 4. His **6 verified Coursera certifications** (Google, Meta, IBM, Packt).
 5. The **FreeLLMAPI & Canvas physics engine** powering this website.`,
-      action: { label: "Open Full Portfolio (8 Projects)", link: "/portfolio/" }
+      action: { label: "Open Full Portfolio (9 Projects)", link: "/portfolio/" }
     };
   }
 

@@ -454,6 +454,29 @@
       color: var(--cyan);
       border: 1px solid rgba(56, 189, 248, 0.35);
     }
+    .project-tag.green {
+      background: rgba(34, 197, 94, 0.15);
+      color: #4ade80;
+      border: 1px solid rgba(34, 197, 94, 0.35);
+    }
+    .project-banner-preview {
+      margin-bottom: 16px;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      max-height: 180px;
+      background: rgba(0, 0, 0, 0.4);
+    }
+    .project-banner-preview img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+    .project-card:hover .project-banner-preview img {
+      transform: scale(1.03);
+    }
     .project-title {
       font-family: var(--font-heading);
       font-size: 1.38rem;
@@ -739,7 +762,7 @@
       <nav class="nav-links" id="navLinks">
         <a href="/">&larr; Studio Home</a>
         <a href="/portfolio/" class="active">OJT Portfolio</a>
-        <a href="#projects">Projects (8)</a>
+        <a href="#projects">Projects (9)</a>
         <a href="#certifications">Certifications (6)</a>
         <a href="#skills">Skills</a>
         <a href="/adaybackthen.html">Creator Tool</a>
@@ -762,7 +785,7 @@
           BS Information Technology student at <strong>Manuel S. Enverga University Foundation (MSEUF)</strong> specializing in Web &amp; Mobile Application Development. Lead developer of the <strong>NiyoSense</strong> dual-model AI coconut grading system and architect of the <strong>Bolea Labs</strong> programmatic media pipeline.
         </p>
         <div class="hero-actions">
-          <a href="#projects" class="btn-primary">Explore 8 Projects &darr;</a>
+          <a href="#projects" class="btn-primary">Explore 9 Projects &darr;</a>
           <button class="btn-secondary" onclick="openPinModal()">Download Resume (PIN Protected)</button>
           <a href="https://www.linkedin.com/in/christian-bolea-264670252/" target="_blank" rel="noopener" class="btn-secondary">LinkedIn &nearr;</a>
           <a href="https://github.com/Cbolea23" target="_blank" rel="noopener" class="btn-secondary">GitHub &nearr;</a>
@@ -790,17 +813,17 @@
       </button>
     </div>
 
-    <!-- Projects Section (8 Projects Including bolealabs.site!) -->
+    <!-- Projects Section (9 Projects Including BrainRot Galaxy & bolealabs.site!) -->
     <section id="projects" class="reveal">
       <div class="section-header">
         <span class="section-eyebrow">// 01 &bull; Software Engineering Portfolio</span>
-        <h2 class="section-title">Featured <span>Projects (8)</span></h2>
+        <h2 class="section-title">Featured <span>Projects (9)</span></h2>
         <p class="section-subtitle">Production-grade mobile applications, full-stack web architectures, edge AI models, and automated pipelines.</p>
       </div>
 
       <div class="filter-bar">
-        <button class="filter-btn active" onclick="filterProjects('all', this)">All Projects (8)</button>
-        <button class="filter-btn" onclick="filterProjects('mobile', this)">Mobile (Flutter &amp; Android)</button>
+        <button class="filter-btn active" onclick="filterProjects('all', this)">All Projects (9)</button>
+        <button class="filter-btn" onclick="filterProjects('mobile', this)">Mobile (Flutter, Godot &amp; Android)</button>
         <button class="filter-btn" onclick="filterProjects('fullstack', this)">Full-Stack &amp; Web Engine</button>
         <button class="filter-btn" onclick="filterProjects('automation', this)">AI &amp; Media Automation</button>
       </div>
@@ -835,7 +858,39 @@
           </div>
         </div>
 
-        <!-- 2. Bolea Labs Studio Platform & Interactive Web Engine (THIS WEBSITE!) -->
+                <!-- 2. BrainRot Galaxy -->
+        <div class="project-card" data-cat="mobile fullstack">
+          <div>
+            <div class="project-banner-preview">
+              <img src="/brainrot-banner.webp" alt="BrainRot Galaxy Google Play Banner" loading="lazy">
+            </div>
+            <span class="project-tag green">Google Play Store &bull; Live Mobile Game</span>
+            <h3 class="project-title">BrainRot Galaxy: Mobile Gacha TCG &amp; 3D Battle Engine</h3>
+            <p class="project-subtitle">Live on Google Play (<code>com.coconut.brainrot_galaxy</code>) &bull; Upgraded to Godot 4.5+ 3D Combat</p>
+            <p class="project-desc">
+              Commercial indie mobile Trading Card Game (TCG) and Gacha battler published to Google Play under package <strong>com.coconut.brainrot_galaxy</strong>. Features 45 collectible viral meme fighters across 5 rarity tiers, tactical mid-battle items, and daily rewards. Upgraded from its original Flutter/Android client to a high-performance Godot 4.5+ 3D Pokémon-style turn-based combat engine featuring an isometric diagonal arena, 3D coin toss turn decider, holographic foil shaders, anticipation-driven pack opening physics, and synthesized retro audio.
+            </p>
+            <div class="architecture-box">
+              Google Play Verified Production &bull; 45 Collectible Cards &bull; 3D Pokémon-Style Diagonal Arena &bull; Physical 3D Coin Toss &bull; Gyro/Mouse Foil Shaders &bull; Consumable Item System
+            </div>
+            <div class="tech-stack">
+              <span class="tech-pill">Google Play Console</span>
+              <span class="tech-pill">Flutter &amp; Dart</span>
+              <span class="tech-pill">Godot 4.5+ (GDScript)</span>
+              <span class="tech-pill">3D Pokémon Combat</span>
+              <span class="tech-pill">Holographic Shaders</span>
+              <span class="tech-pill">Firebase Auth &amp; Firestore</span>
+              <span class="tech-pill">Vulkan / Mobile</span>
+              <span class="tech-pill">Sound Synthesis</span>
+            </div>
+          </div>
+          <div class="project-links">
+            <a href="https://play.google.com/store/apps/details?id=com.coconut.brainrot_galaxy&hl=en&pli=1" target="_blank" rel="noopener" class="btn-link">Google Play Store &nearr;</a>
+            <a href="https://github.com/Cbolea23/brainrot-galaxy-Personal" target="_blank" rel="noopener" class="btn-link">GitHub Repository &nearr;</a>
+          </div>
+        </div>
+
+        <!-- 3. Bolea Labs Studio Platform & Interactive Web Engine (THIS WEBSITE!) -->
         <div class="project-card" data-cat="fullstack">
           <div>
             <span class="project-tag cyan">Creative Web Engineering &bull; Live Site</span>
@@ -861,7 +916,7 @@
           </div>
         </div>
 
-        <!-- 3. A Day Back Then & Creator Publishing Suite -->
+        <!-- 4. A Day Back Then & Creator Publishing Suite -->
         <div class="project-card" data-cat="automation fullstack">
           <div>
             <span class="project-tag cyan">Media Pipeline &bull; OAuth Platform</span>
@@ -886,7 +941,7 @@
           </div>
         </div>
 
-        <!-- 4. Content Operations Dashboard -->
+        <!-- 5. Content Operations Dashboard -->
         <div class="project-card" data-cat="fullstack automation">
           <div>
             <span class="project-tag">Full-Stack &bull; Mobile PWA</span>
@@ -908,7 +963,7 @@
           </div>
         </div>
 
-        <!-- 5. 24/7 Livestream System -->
+        <!-- 6. 24/7 Livestream System -->
         <div class="project-card" data-cat="automation">
           <div>
             <span class="project-tag">DevOps &bull; Broadcast Infrastructure</span>
@@ -929,7 +984,7 @@
           </div>
         </div>
 
-        <!-- 6. Agensi AI Skills -->
+        <!-- 7. Agensi AI Skills -->
         <div class="project-card" data-cat="automation">
           <div>
             <span class="project-tag cyan">Commercial AI Products</span>
@@ -950,7 +1005,7 @@
           </div>
         </div>
 
-        <!-- 7. Trivia Arena -->
+        <!-- 8. Trivia Arena -->
         <div class="project-card" data-cat="mobile">
           <div>
             <span class="project-tag">Native Android &bull; Mobile Game</span>
@@ -972,7 +1027,7 @@
           </div>
         </div>
 
-        <!-- 8. Online Banking & Student Enrollment API -->
+        <!-- 9. Online Banking & Student Enrollment API -->
         <div class="project-card" data-cat="fullstack">
           <div>
             <span class="project-tag">Backend &bull; Enterprise APIs</span>

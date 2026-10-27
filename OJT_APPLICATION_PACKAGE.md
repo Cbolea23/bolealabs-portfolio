@@ -21,7 +21,7 @@
 
 | Role | Primary Tech Stack | Highlighted Project |
 | :--- | :--- | :--- |
-| **Mobile Developer Intern** | Flutter (Dart), Kotlin, Jetpack Compose, SQLite, TFLite | **NiyoSense** & **Trivia Arena** |
+| **Mobile Developer Intern** | Flutter (Dart), Godot 4, Kotlin, Compose, SQLite, TFLite | **NiyoSense**, **BrainRot Galaxy (Google Play)** & **Trivia Arena** |
 | **Full-Stack / Backend Intern** | Python (Django, DRF), PostgreSQL, Next.js, REST APIs | **NiyoSense Portal** & **Online Banking API** |
 | **Software Automation Intern** | Node.js, TypeScript, Remotion, FFmpeg, Cloud OAuth | **Bolea Labs Content Factory** |
 
@@ -37,7 +37,7 @@ Dear [Hiring Manager / Technical Recruiter Name],
 
 I am writing to express my strong interest in the Mobile Developer Internship position at [Company Name]. As a 3rd-year Information Technology student at Manuel S. Enverga University Foundation (MSEUF) majoring in Web and Mobile Application Development, I have dedicated my academic and personal projects to building robust, offline-first mobile solutions.
 
-As the Lead Mobile Developer for **NiyoSense**—our department's flagship capstone project—I engineered an offline-first Android application using **Flutter and Dart**. Because the application operates in remote coconut groves without reliable cellular service, I integrated on-device machine learning models (**TensorFlow Lite YOLOv8-cls**) and an in-memory pure-Dart 128-band Mel-spectrogram audio signal processor for acoustic knock resonance analysis. The system achieved a **92.8% fused grading accuracy** and a **4.84 / 5.00 ISO/IEC 25010 software quality rating**. In addition, I have built native Android applications utilizing **Kotlin, Jetpack Compose (MVVM), and atomic Firebase Firestore transactions** in **Trivia Arena**.
+As the Lead Mobile Developer for **NiyoSense**—our department's flagship capstone project—I engineered an offline-first Android application using **Flutter and Dart**. Because the application operates in remote coconut groves without reliable cellular service, I integrated on-device machine learning models (**TensorFlow Lite YOLOv8-cls**) and an in-memory pure-Dart 128-band Mel-spectrogram audio signal processor for acoustic knock resonance analysis. The system achieved a **92.8% fused grading accuracy** and a **4.84 / 5.00 ISO/IEC 25010 software quality rating**. In addition to offline-first edge AI, I have published commercial mobile applications directly to the **Google Play Store**—such as **BrainRot Galaxy!** (`com.coconut.brainrot_galaxy`), managing full production lifecycle releases, Google Play Console compliance, and cross-platform Flutter/Godot architecture. I have also built native Android applications utilizing **Kotlin, Jetpack Compose (MVVM), and atomic Firebase Firestore transactions** in **Trivia Arena**.
 
 I hold verified industry certifications from **IBM (Flutter and Dart Mobile Development)**, **Meta (Front-End Development & MySQL)**, and **Google (Cybersecurity)**. I am eager to contribute my hands-on mobile development experience to [Company Name]'s engineering team during my 486–500 hour practicum period.
 
