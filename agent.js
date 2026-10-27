@@ -49,6 +49,7 @@
         "Full-Stack Cloud Portals & PWAs (Django 6.1, Next.js, PostgreSQL)",
         "AI Agent Workflows & Commercial Skills (Agensi Marketplace)"
       ],
+      agensiCreator: "https://www.agensi.io/creators/cbolea23",
       channels: [
         { platform: "TikTok (Primary)", handle: "@adaybackthenofficial", url: "https://www.tiktok.com/@adaybackthenofficial" },
         { platform: "TikTok (Secondary)", handle: "@adaybackthen2official", url: "https://www.tiktok.com/@adaybackthen2official" },
@@ -64,8 +65,10 @@
     certifications: [
       { name: "Backend Development and API Creation", issuer: "Packt", date: "Apr 7, 2026", id: "13BPR5I0J77P", url: "https://coursera.org/verify/13BPR5I0J77P" },
       { name: "Frontend Development with React", issuer: "Packt", date: "May 3, 2026", id: "L7GDU9MZ94WN", url: "https://coursera.org/verify/L7GDU9MZ94WN" },
+      { name: "Advanced MySQL Topics", issuer: "Meta", date: "Oct 29, 2025", id: "XKDZ8Z1QMUMY", url: "https://coursera.org/verify/XKDZ8Z1QMUMY" },
       { name: "Database Structures and Management with MySQL", issuer: "Meta", date: "Oct 20, 2025", id: "ASZT80EG1ATO", url: "https://coursera.org/verify/ASZT80EG1ATO" },
       { name: "Introduction to Front-End Development", issuer: "Meta", date: "Oct 17, 2025", id: "PH3F7R5EW865", url: "https://coursera.org/verify/PH3F7R5EW865" },
+      { name: "Single Page Web Applications with AngularJS", issuer: "Johns Hopkins University", date: "Nov 18, 2025", id: "Z434HWP2AB1K", url: "https://coursera.org/verify/Z434HWP2AB1K" },
       { name: "Foundations of Cybersecurity", issuer: "Google", date: "Oct 8, 2025", id: "G4S3PIR857ID", url: "https://coursera.org/verify/G4S3PIR857ID" },
       { name: "Flutter and Dart: Developing iOS, Android, and Mobile Apps", issuer: "IBM", date: "May 6, 2025", id: "RU6NWZOOYURW", url: "https://coursera.org/verify/RU6NWZOOYURW" }
     ]
@@ -208,10 +211,10 @@ Always be concise, technical, precise, and enthusiastic.`
         text: `**OJT Candidate Match Analysis for Christian Louis Bolea:**
 • **Target Practicum:** 486–500 Hours (MSEUF BSIT, Web & Mobile App Development)
 • **Key Specializations:**
-  1. **Mobile Development (Flutter/Dart & Kotlin):** Lead architect of *NiyoSense* (offline-first dual-model edge AI) and *Trivia Arena* (Jetpack Compose, MVVM).
+  1. **Mobile Development (Flutter/Dart & Kotlin):** Lead architect of *NiyoSense* (edge AI late fusion), *BrainRot Galaxy* (Google Play 3D TCG), and *Angelica Photobooth* (Capacitor Android).
   2. **Full-Stack & Backend (Python/Django & Next.js):** Built centralized REST APIs on Django 6.1 with PostgreSQL and SimpleJWT authentication.
   3. **DevOps & Media Automation:** Remotion video factory, 24/7 FFmpeg RTMP broadcast loops, and FreeLLMAPI gateway routing.
-• **Certifications:** 6 verified credentials from **IBM**, **Google**, **Meta**, and **Packt**.
+• **Certifications:** 8 verified credentials from **IBM**, **Google**, **Meta**, **Johns Hopkins**, and **Packt**.
 • **Availability:** Immediate start (Remote, Hybrid, Lucena City, or Metro Manila).`,
         action: { label: "Open CV Vault (PIN: 2026)", fn: "openPinModal" }
       };
@@ -307,9 +310,9 @@ Feel free to ask about:
 1. His **OJT availability** & skill match (486–500 hours).
 2. The **NiyoSense AI capstone** (92.8% accuracy, 70/30 late fusion).
 3. The **A Day Back Then creator publishing suite** and verified channels.
-4. His **6 verified Coursera certifications** (Google, Meta, IBM, Packt).
+4. His **8 verified Coursera certifications** (Google, Meta, IBM, Johns Hopkins, Packt).
 5. The **FreeLLMAPI & Canvas physics engine** powering this website.`,
-      action: { label: "Open Full Portfolio (9 Projects)", link: "/portfolio/" }
+      action: { label: "Open Full Portfolio (8 Projects)", link: "/portfolio/" }
     };
   }
 

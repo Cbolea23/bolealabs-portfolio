@@ -105,17 +105,13 @@
       gap: 10px;
     }
     .logo-mark {
-      width: 30px;
-      height: 30px;
+      width: 32px;
+      height: 32px;
       border-radius: 8px;
-      background: linear-gradient(135deg, var(--gold), #d97706);
-      color: #07080c;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 800;
-      font-size: 0.95rem;
+      object-fit: contain;
       box-shadow: 0 0 16px rgba(245, 179, 36, 0.45);
+      display: inline-block;
+      vertical-align: middle;
     }
     .logo span { color: var(--gold); }
     .nav-links {
@@ -753,7 +749,7 @@
   <header>
     <div class="nav-container">
       <a href="/" class="logo">
-        <span class="logo-mark">B</span>
+        <img src="/logo-mark.webp" alt="Bolea Labs" class="logo-mark">
         BOLEA <span>LABS</span>
       </a>
       <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle Menu">
@@ -762,8 +758,8 @@
       <nav class="nav-links" id="navLinks">
         <a href="/">&larr; Studio Home</a>
         <a href="/portfolio/" class="active">OJT Portfolio</a>
-        <a href="#projects">Projects (9)</a>
-        <a href="#certifications">Certifications (6)</a>
+        <a href="#projects">Projects (8)</a>
+        <a href="#certifications">Certifications (8)</a>
         <a href="#skills">Skills</a>
         <a href="/adaybackthen.html">Creator Tool</a>
         <button class="btn-nav-resume" onclick="openPinModal()">Download Resume</button>
@@ -785,7 +781,7 @@
           BS Information Technology student at <strong>Manuel S. Enverga University Foundation (MSEUF)</strong> specializing in Web &amp; Mobile Application Development. Lead developer of the <strong>NiyoSense</strong> dual-model AI coconut grading system and architect of the <strong>Bolea Labs</strong> programmatic media pipeline.
         </p>
         <div class="hero-actions">
-          <a href="#projects" class="btn-primary">Explore 9 Projects &darr;</a>
+          <a href="#projects" class="btn-primary">Explore 8 Projects &darr;</a>
           <button class="btn-secondary" onclick="openPinModal()">Download Resume (PIN Protected)</button>
           <a href="https://www.linkedin.com/in/christian-bolea-264670252/" target="_blank" rel="noopener" class="btn-secondary">LinkedIn &nearr;</a>
           <a href="https://github.com/Cbolea23" target="_blank" rel="noopener" class="btn-secondary">GitHub &nearr;</a>
@@ -813,17 +809,17 @@
       </button>
     </div>
 
-    <!-- Projects Section (9 Projects Including BrainRot Galaxy & bolealabs.site!) -->
+    <!-- Projects Section (8 Featured Engineering Projects) -->
     <section id="projects" class="reveal">
       <div class="section-header">
         <span class="section-eyebrow">// 01 &bull; Software Engineering Portfolio</span>
-        <h2 class="section-title">Featured <span>Projects (9)</span></h2>
+        <h2 class="section-title">Featured <span>Projects (8)</span></h2>
         <p class="section-subtitle">Production-grade mobile applications, full-stack web architectures, edge AI models, and automated pipelines.</p>
       </div>
 
       <div class="filter-bar">
-        <button class="filter-btn active" onclick="filterProjects('all', this)">All Projects (9)</button>
-        <button class="filter-btn" onclick="filterProjects('mobile', this)">Mobile (Flutter, Godot &amp; Android)</button>
+        <button class="filter-btn active" onclick="filterProjects('all', this)">All Projects (8)</button>
+        <button class="filter-btn" onclick="filterProjects('mobile', this)">Mobile (Flutter, Godot, Capacitor &amp; Android)</button>
         <button class="filter-btn" onclick="filterProjects('fullstack', this)">Full-Stack &amp; Web Engine</button>
         <button class="filter-btn" onclick="filterProjects('automation', this)">AI &amp; Media Automation</button>
       </div>
@@ -864,7 +860,10 @@
             <div class="project-banner-preview">
               <img src="/brainrot-banner.webp" alt="BrainRot Galaxy Google Play Banner" loading="lazy">
             </div>
-            <span class="project-tag green">Google Play Store &bull; Live Mobile Game</span>
+            <div style="display:flex; align-items:center; gap:10px; margin-bottom:12px;">
+              <img src="/brainrot-icon.webp" alt="BrainRot Galaxy App Icon" style="width:36px; height:36px; border-radius:8px; border:1px solid rgba(255,255,255,0.15); box-shadow:0 4px 12px rgba(0,0,0,0.4);" loading="lazy">
+              <span class="project-tag green" style="margin-bottom:0;">Google Play Store &bull; Live Mobile Game</span>
+            </div>
             <h3 class="project-title">BrainRot Galaxy: Mobile Gacha TCG &amp; 3D Battle Engine</h3>
             <p class="project-subtitle">Live on Google Play (<code>com.coconut.brainrot_galaxy</code>) &bull; Upgraded to Godot 4.5+ 3D Combat</p>
             <p class="project-desc">
@@ -893,6 +892,9 @@
         <!-- 3. Bolea Labs Studio Platform & Interactive Web Engine (THIS WEBSITE!) -->
         <div class="project-card" data-cat="fullstack">
           <div>
+            <div class="project-banner-preview">
+              <img src="/logo-full.webp" alt="Bolea Labs Studio Platform & Web Engine Banner" loading="lazy">
+            </div>
             <span class="project-tag cyan">Creative Web Engineering &bull; Live Site</span>
             <h3 class="project-title">Bolea Labs Studio Platform &amp; Portfolio Engine</h3>
             <p class="project-subtitle">bolealabs.site &bull; Zero-Framework Interactive Web Architecture</p>
@@ -1001,51 +1003,37 @@
             </div>
           </div>
           <div class="project-links">
-            <span class="btn-link" style="opacity:0.85;">6 Published Marketplace Products</span>
+            <a href="https://www.agensi.io/creators/cbolea23" target="_blank" rel="noopener" class="btn-link">Agensi Creator Profile &nearr;</a>
           </div>
         </div>
 
-        <!-- 8. Trivia Arena -->
-        <div class="project-card" data-cat="mobile">
+        <!-- 5. Angelica Photobooth -->
+        <div class="project-card" data-cat="mobile fullstack">
           <div>
-            <span class="project-tag">Native Android &bull; Mobile Game</span>
-            <h3 class="project-title">Trivia Arena: Retro RPG Edition</h3>
-            <p class="project-subtitle">Kotlin &amp; Jetpack Compose RPG Trivia Application</p>
+            <div style="display:flex; align-items:center; gap:10px; margin-bottom:12px;">
+              <img src="/photobooth-icon.webp" alt="Angelica Photobooth Icon" style="width:36px; height:36px; border-radius:8px; border:1px solid rgba(255,255,255,0.15); box-shadow:0 4px 12px rgba(0,0,0,0.4);" loading="lazy">
+              <span class="project-tag green" style="margin-bottom:0;">Live Web App &bull; Capacitor Android</span>
+            </div>
+            <h3 class="project-title">Angelica Photobooth: Interactive Web &amp; Mobile Camera Suite</h3>
+            <p class="project-subtitle">Live on GitHub Pages &bull; Android APK Build (Capacitor) &bull; Custom Layout Engine</p>
             <p class="project-desc">
-              Gamified educational Android app blending RPG class strategy (Warrior, Mage, Rogue dodge/multiplier mechanics) with dynamic timed trivia stages. Built with MVVM architecture, Kotlin Coroutines, and atomic Firebase Firestore transactions for tamper-proof leaderboards.
+              Interactive photobooth web application and hybrid Android mobile camera suite built with Capacitor and vanilla web APIs. Features real-time camera capture with countdowns, flash simulations, dynamic mirror flipping, Long Distance Relationship (LDR) dual-frame photo merging, and client-side HTML5 Canvas multi-layout strip rendering (Vertical, Horizontal, 2x1 Grid, 2x2 Quad, Retro Filmstrip) with instant image downloads and an Android APK distribution build.
             </p>
+            <div class="architecture-box">
+              HTML5 MediaDevices API &bull; Client-Side Canvas 2D Strip Renderer &bull; Capacitor 8.x Android Bridge &bull; LDR Dual-Frame Photo Merge &bull; Standalone APK Distribution
+            </div>
             <div class="tech-stack">
-              <span class="tech-pill">Kotlin</span>
-              <span class="tech-pill">Jetpack Compose</span>
-              <span class="tech-pill">Firebase Auth &amp; Firestore</span>
-              <span class="tech-pill">Kotlin Coroutines</span>
-              <span class="tech-pill">MVVM Architecture</span>
+              <span class="tech-pill">Capacitor (Android)</span>
+              <span class="tech-pill">HTML5 MediaDevices</span>
+              <span class="tech-pill">HTML5 Canvas 2D</span>
+              <span class="tech-pill">JavaScript &amp; CSS3</span>
+              <span class="tech-pill">GitHub Pages Edge</span>
+              <span class="tech-pill">Android APK</span>
             </div>
           </div>
           <div class="project-links">
-            <span class="btn-link" style="opacity:0.85;">MSEUF Android Engineering</span>
-          </div>
-        </div>
-
-        <!-- 9. Online Banking & Student Enrollment API -->
-        <div class="project-card" data-cat="fullstack">
-          <div>
-            <span class="project-tag">Backend &bull; Enterprise APIs</span>
-            <h3 class="project-title">Online Banking &amp; Enrollment REST APIs</h3>
-            <p class="project-subtitle">Transactional Web &amp; Authenticated RESTful Services</p>
-            <p class="project-desc">
-              Full-stack online banking platform and student enrollment REST APIs built with Python, Django, and Django REST Framework. Implements SimpleJWT authentication, role-based access control, generic API views, and normalized relational schemas.
-            </p>
-            <div class="tech-stack">
-              <span class="tech-pill">Python</span>
-              <span class="tech-pill">Django &amp; DRF</span>
-              <span class="tech-pill">PostgreSQL / MySQL</span>
-              <span class="tech-pill">SimpleJWT Auth</span>
-              <span class="tech-pill">Postman Verification</span>
-            </div>
-          </div>
-          <div class="project-links">
-            <span class="btn-link" style="opacity:0.85;">Full-Stack Backend Systems</span>
+            <a href="https://cbolea23.github.io/online-photobooth/" target="_blank" rel="noopener" class="btn-link">Launch Live Photobooth &nearr;</a>
+            <a href="https://github.com/Cbolea23/online-photobooth" target="_blank" rel="noopener" class="btn-link">GitHub Repository &nearr;</a>
           </div>
         </div>
       </div>
@@ -1055,7 +1043,7 @@
     <section id="certifications" class="reveal">
       <div class="section-header">
         <span class="section-eyebrow">// 02 &bull; Verified Credentials</span>
-        <h2 class="section-title">Industry <span>Certifications (6)</span></h2>
+        <h2 class="section-title">Industry <span>Certifications (8)</span></h2>
         <p class="section-subtitle">Click any credential below to verify authenticity directly on Coursera.</p>
       </div>
 
@@ -1103,6 +1091,24 @@
             <div class="cert-date">Completed: October 8, 2025 &bull; ID: G4S3PIR857ID</div>
           </div>
           <a href="https://coursera.org/verify/G4S3PIR857ID" target="_blank" rel="noopener" class="cert-verify">Verify Official Credential &nearr;</a>
+        </div>
+
+        <div class="project-card">
+          <div>
+            <div class="cert-issuer">Meta &bull; Coursera</div>
+            <h3 class="cert-name">Advanced MySQL Topics</h3>
+            <div class="cert-date">Completed: October 29, 2025 &bull; ID: XKDZ8Z1QMUMY</div>
+          </div>
+          <a href="https://coursera.org/verify/XKDZ8Z1QMUMY" target="_blank" rel="noopener" class="cert-verify">Verify Official Credential &nearr;</a>
+        </div>
+
+        <div class="project-card">
+          <div>
+            <div class="cert-issuer">Johns Hopkins University &bull; Coursera</div>
+            <h3 class="cert-name">Single Page Web Applications with AngularJS</h3>
+            <div class="cert-date">Completed: November 18, 2025 &bull; ID: Z434HWP2AB1K</div>
+          </div>
+          <a href="https://coursera.org/verify/Z434HWP2AB1K" target="_blank" rel="noopener" class="cert-verify">Verify Official Credential &nearr;</a>
         </div>
 
         <div class="project-card">

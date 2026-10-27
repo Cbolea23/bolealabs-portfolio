@@ -120,17 +120,13 @@
       gap: 10px;
     }
     .logo-mark {
-      width: 30px;
-      height: 30px;
+      width: 32px;
+      height: 32px;
       border-radius: 8px;
-      background: linear-gradient(135deg, var(--gold), #d97706);
-      color: #07080c;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 800;
-      font-size: 0.95rem;
+      object-fit: contain;
       box-shadow: 0 0 16px rgba(245, 179, 36, 0.45);
+      display: inline-block;
+      vertical-align: middle;
     }
     .logo span { color: var(--gold); }
 
@@ -848,7 +844,7 @@
   <header>
     <div class="nav-container">
       <a href="/" class="logo">
-        <span class="logo-mark">B</span>
+        <img src="/logo-mark.webp" alt="Bolea Labs" class="logo-mark">
         BOLEA <span>LABS</span>
       </a>
       <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle Menu">
@@ -1057,7 +1053,7 @@
           <h2 class="section-title">Studio <span>Flagship Works</span></h2>
           <p class="section-desc">Live, deployed systems operating in production across agricultural AI and digital media.</p>
         </div>
-        <a href="/portfolio/#projects" class="btn-glass">View All 9 Projects in Portfolio &rarr;</a>
+        <a href="/portfolio/#projects" class="btn-glass">View All 8 Projects in Portfolio &rarr;</a>
       </div>
 
       <div class="bento-grid">
@@ -1133,6 +1129,9 @@
 
         <!-- BrainRot Galaxy -->
         <div class="tilt-card bento-span-12">
+          <div style="max-height:180px; overflow:hidden; border-radius:12px; margin-bottom:18px; border:1px solid rgba(255,255,255,0.08);">
+            <img src="/brainrot-banner.webp" alt="BrainRot Galaxy Google Play Banner" style="width:100%; height:100%; object-fit:cover; display:block;" loading="lazy">
+          </div>
           <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:24px; flex-wrap:wrap;">
             <div style="flex:1; min-width:320px;">
               <span class="bento-badge" style="background:rgba(34, 197, 94, 0.15); border-color:rgba(34, 197, 94, 0.35); color:#4ade80;">Google Play Store &bull; Live Mobile Game</span>
@@ -1214,7 +1213,7 @@
         <span class="section-eyebrow" style="margin-bottom:4px;">// Founder &amp; Lead Developer</span>
         <h2 style="font-family:var(--font-heading); font-size:1.85rem; color:#fff; margin-bottom:6px;">Christian Louis Bolea</h2>
         <p style="color:#cbd5e1; font-size:0.98rem; max-width:650px;">
-          BS Information Technology student at <strong>Manuel S. Enverga University Foundation (MSEUF)</strong>, specializing in Web &amp; Mobile Application Development. Currently seeking a <strong>486–500 hour On-the-Job Training (OJT) / Software Engineering Internship</strong>. Explore all 9 engineering projects, 6 verified Coursera certifications (Google, Meta, IBM, Packt), and full technical credentials in the dedicated portfolio tab.
+          BS Information Technology student at <strong>Manuel S. Enverga University Foundation (MSEUF)</strong>, specializing in Web &amp; Mobile Application Development. Currently seeking a <strong>486–500 hour On-the-Job Training (OJT) / Software Engineering Internship</strong>. Explore all 8 engineering projects, 8 verified Coursera certifications (Google, Meta, IBM, Johns Hopkins, Packt), and full technical credentials in the dedicated portfolio tab.
         </p>
       </div>
       <div style="display:flex; flex-direction:column; gap:10px; min-width:220px;">
