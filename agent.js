@@ -48,6 +48,13 @@
         "Multi-Platform Creator Tools (TikTok Content Posting API, YouTube Data API, Meta Graph API)",
         "Full-Stack Cloud Portals & PWAs (Django 6.1, Next.js, PostgreSQL)",
         "AI Agent Workflows & Commercial Skills (Agensi Marketplace)"
+      ],
+      channels: [
+        { platform: "TikTok (Primary)", handle: "@adaybackthenofficial", url: "https://www.tiktok.com/@adaybackthenofficial" },
+        { platform: "TikTok (Secondary)", handle: "@adaybackthen2official", url: "https://www.tiktok.com/@adaybackthen2official" },
+        { platform: "YouTube", handle: "@adaybackthenofficial", url: "https://www.youtube.com/@adaybackthenofficial" },
+        { platform: "Facebook", handle: "/adaybackthenofficial", url: "https://www.facebook.com/adaybackthenofficial/" },
+        { platform: "Instagram", handle: "@adaybackthenofficial", url: "https://www.instagram.com/adaybackthenofficial/" }
       ]
     },
     websiteTech: {
@@ -72,7 +79,7 @@
       <!-- Launcher Button -->
       <div id="agentLauncher" title="Open Bolea AI Assistant">
         <div class="agent-launcher-icon">
-          🤖
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2 2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z"/><rect x="4" y="8" width="16" height="12" rx="2"/><circle cx="9" cy="13" r="1"/><circle cx="15" cy="13" r="1"/><path d="M9 17h6"/></svg>
           <span class="agent-online-dot"></span>
         </div>
         <div class="agent-launcher-text">
@@ -85,15 +92,19 @@
       <div id="agentWindow">
         <div class="agent-header">
           <div class="agent-header-info">
-            <div class="agent-launcher-icon" style="width:28px; height:28px; font-size:0.85rem;">🤖</div>
+            <div class="agent-launcher-icon" style="width:28px; height:28px; font-size:0.85rem;">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="8" width="16" height="12" rx="2"/><circle cx="9" cy="13" r="1"/><circle cx="15" cy="13" r="1"/><path d="M9 17h6"/></svg>
+            </div>
             <div>
               <div style="font-weight:700; font-size:0.92rem; color:#fff;">Bolea AI // LABS-01</div>
-              <div class="agent-badge-model">Router: FreeLLMAPI • 429 Failover</div>
+              <div class="agent-badge-model">Router: FreeLLMAPI &bull; 429 Failover</div>
             </div>
           </div>
           <div class="agent-header-controls">
-            <button class="agent-btn-icon" onclick="window.BoleaAgent.clearChat()" title="Reset chat">🔄</button>
-            <button class="agent-btn-icon" onclick="window.BoleaAgent.toggle()" title="Close">✕</button>
+            <button class="agent-btn-icon" onclick="window.BoleaAgent.clearChat()" title="Reset chat">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
+            </button>
+            <button class="agent-btn-icon" onclick="window.BoleaAgent.toggle()" title="Close">&times;</button>
           </div>
         </div>
 
@@ -101,26 +112,29 @@
           <div class="agent-msg bot">
             <div class="msg-sender">BOLEA AI // SYSTEM</div>
             <div class="msg-bubble">
-              Hello! I'm <strong>Bolea AI (LABS-01)</strong>, the technical concierge for Bolea Labs and Christian's OJT portfolio. Powered by the <strong>FreeLLMAPI smart router</strong>.
+              Hello. I am <strong>Bolea AI (LABS-01)</strong>, the technical concierge for Bolea Labs and Christian's OJT portfolio. Powered by the <strong>FreeLLMAPI smart router</strong>.
               <br><br>
-              How can I assist you? I can analyze Christian's technical fit for an internship, explain our edge AI models, or trigger actions on this site.
+              How can I assist you? I can analyze Christian's technical fit for an internship, explain our edge AI models, or navigate the project portfolio.
             </div>
           </div>
         </div>
 
         <!-- Quick Prompt Chips -->
         <div class="agent-quick-chips">
-          <button class="agent-chip" onclick="window.BoleaAgent.sendChip('Match Christian for an OJT / Software Developer role')">🎯 Match for OJT</button>
-          <button class="agent-chip" onclick="window.BoleaAgent.sendChip('Explain the NiyoSense AI formula and architecture')">🥥 NiyoSense AI</button>
-          <button class="agent-chip" onclick="window.BoleaAgent.sendChip('How is bolealabs.site engineered?')">⚡ Site Tech Stack</button>
-          <button class="agent-chip" onclick="window.BoleaAgent.sendChip('Unlock and download Christian\\'s resume')">📄 Unlock Resume</button>
-          <button class="agent-chip" onclick="window.BoleaAgent.sendChip('Filter projects to mobile apps')">📱 Filter: Mobile</button>
+          <button class="agent-chip" onclick="window.BoleaAgent.sendChip('Match Christian for an OJT / Software Developer role')">Match for OJT</button>
+          <button class="agent-chip" onclick="window.BoleaAgent.sendChip('Explain the NiyoSense AI formula and architecture')">NiyoSense AI</button>
+          <button class="agent-chip" onclick="window.BoleaAgent.sendChip('What are the official creator channels?')">Official Channels</button>
+          <button class="agent-chip" onclick="window.BoleaAgent.sendChip('How is bolealabs.site engineered?')">Site Architecture</button>
+          <button class="agent-chip" onclick="window.BoleaAgent.sendChip('Unlock and download Christian\\'s resume')">Unlock Resume</button>
+          <button class="agent-chip" onclick="window.BoleaAgent.sendChip('Filter projects to mobile apps')">Filter: Mobile</button>
         </div>
 
         <!-- Input Bar -->
         <div class="agent-input-bar">
-          <input type="text" id="agentInput" class="agent-input" placeholder="Ask about projects, OJT fit, tech stack..." autocomplete="off">
-          <button class="agent-send-btn" id="agentSendBtn" onclick="window.BoleaAgent.send()">➤</button>
+          <input type="text" id="agentInput" class="agent-input" placeholder="Ask about projects, OJT fit, tech stack, channels..." autocomplete="off">
+          <button class="agent-send-btn" id="agentSendBtn" onclick="window.BoleaAgent.send()" aria-label="Send message">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          </button>
         </div>
       </div>
     `;
@@ -190,7 +204,7 @@ Always be concise, technical, precise, and enthusiastic.`
     // 2. High-Precision Local Knowledge Engine & UI Tool-Calling
     if (q.includes("match") || q.includes("ojt") || q.includes("hire") || q.includes("role") || q.includes("intern")) {
       return {
-        text: `**🎯 OJT Candidate Match Analysis for Christian Louis Bolea:**
+        text: `**OJT Candidate Match Analysis for Christian Louis Bolea:**
 • **Target Practicum:** 486–500 Hours (MSEUF BSIT, Web & Mobile App Development)
 • **Key Specializations:**
   1. **Mobile Development (Flutter/Dart & Kotlin):** Lead architect of *NiyoSense* (offline-first dual-model edge AI) and *Trivia Arena* (Jetpack Compose, MVVM).
@@ -198,13 +212,13 @@ Always be concise, technical, precise, and enthusiastic.`
   3. **DevOps & Media Automation:** Remotion video factory, 24/7 FFmpeg RTMP broadcast loops, and FreeLLMAPI gateway routing.
 • **Certifications:** 6 verified credentials from **IBM**, **Google**, **Meta**, and **Packt**.
 • **Availability:** Immediate start (Remote, Hybrid, Lucena City, or Metro Manila).`,
-        action: { label: "📄 Open CV Vault (PIN: 2026)", fn: "openPinModal" }
+        action: { label: "Open CV Vault (PIN: 2026)", fn: "openPinModal" }
       };
     }
 
     if (q.includes("niyosense") || q.includes("formula") || q.includes("grading") || q.includes("coconut") || q.includes("acoustic")) {
       return {
-        text: `**🥥 NiyoSense Dual-Model AI Architecture:**
+        text: `**NiyoSense Dual-Model AI Architecture:**
 • **Acoustic-Dominant Late Fusion Rule:**
   $$\\mathbf{P_{\\text{final}}(c) = (0.70 \\times P_{\\text{audio}}) + (0.30 \\times P_{\\text{visual}})}$$
 • **The Innovation:** Outer green husks of young and medium coconuts look near-identical, but internal meat thickness strongly modulates acoustic knock resonance.
@@ -213,19 +227,32 @@ Always be concise, technical, precise, and enthusiastic.`
   2. Dual standalone **YOLOv8-cls** TFLite neural networks running 100% offline in Flutter.
   3. **3-Gate Safeguard:** HSV chromaticity filter + 300Hz high-pass filter + temperature scaling ($T=1.6$).
 • **Results:** **92.8% Fused Accuracy** & **4.84 / 5.00 ISO/IEC 25010** software quality score.`,
-        action: { label: "🌐 Visit Live Portal (niyosense.me)", link: "https://niyosense.me" }
+        action: { label: "Visit Live Portal (niyosense.me)", link: "https://niyosense.me" }
+      };
+    }
+
+    if (q.includes("channel") || q.includes("social") || q.includes("tiktok") || q.includes("youtube") || q.includes("facebook") || q.includes("instagram") || q.includes("watch")) {
+      return {
+        text: `**A Day Back Then &bull; Verified Creator Channels:**\n
+• **TikTok (Primary):** [tiktok.com/@adaybackthenofficial](https://www.tiktok.com/@adaybackthenofficial)
+• **TikTok (Secondary):** [tiktok.com/@adaybackthen2official](https://www.tiktok.com/@adaybackthen2official)
+• **YouTube:** [youtube.com/@adaybackthenofficial](https://www.youtube.com/@adaybackthenofficial)
+• **Facebook:** [facebook.com/adaybackthenofficial](https://www.facebook.com/adaybackthenofficial/)
+• **Instagram:** [instagram.com/adaybackthenofficial](https://www.instagram.com/adaybackthenofficial/)\n
+All content is produced via Bolea Labs' Remotion &amp; Node.js programmatic video factory and published through official OAuth human review gates.`,
+        action: { label: "Open Creator Tool & Shows", link: "/adaybackthen.html" }
       };
     }
 
     if (q.includes("tech stack") || q.includes("how is this") || q.includes("engineered") || q.includes("freellmapi") || q.includes("canvas")) {
       return {
-        text: `**⚡ Bolea Labs Studio Platform Engineering (bolealabs.site):**
+        text: `**Bolea Labs Studio Platform Engineering (bolealabs.site):**
 • **FreeLLMAPI Gateway:** Integrated OpenAI-compatible gateway (\`tashfeenahmed/freellmapi\`) pooling free-tier keys (Gemini, Groq, Cerebras, GitHub Models) with automatic 429 failover.
 • **Visual Physics:** 60 FPS HTML5 Canvas 2D neural particle network calculating real-time Euclidean distance vectors.
 • **Spatial Shaders:** 3D CSS perspective transforms (\`rotateX\`, \`rotateY\`) coupled with cursor-tracked radial specular lighting.
 • **Client Cryptography:** Web Crypto API (\`crypto.subtle.digest\`) SHA-256 hash validation for the resume vault.
 • **Edge Performance:** Zero-dependency vanilla ES2026 deployed via Fastly / GitHub Edge CDN with automated TLS 1.3.`,
-        action: { label: "🔍 View Site Architecture Section", fn: "scrollToSiteTech" }
+        action: { label: "View Site Architecture Section", fn: "scrollToSiteTech" }
       };
     }
 
@@ -233,10 +260,10 @@ Always be concise, technical, precise, and enthusiastic.`
       return {
         text: `Christian's verified PDF resume is protected in our **Client-Side SHA-256 Vault**.
 Recruiters and hiring managers can unlock it instantly using:
-👉 **Default Recruiter PIN:** \`2026\`
+• **Default Recruiter PIN:** \`2026\`
 
 I can open the vault for you right now:`,
-        action: { label: "🔓 Open CV Vault Now", fn: "openPinModal" }
+        action: { label: "Open CV Vault Now", fn: "openPinModal" }
       };
     }
 
@@ -245,7 +272,7 @@ I can open the vault for you right now:`,
         text: `Christian has extensive mobile engineering experience with **Flutter & Dart** and **Kotlin & Jetpack Compose**:
 1. **NiyoSense Field App:** Offline-first Flutter app running dual TFLite neural networks and real-time Mel-spectrogram DSP.
 2. **Trivia Arena:** Native Android RPG game built with Kotlin, Jetpack Compose (MVVM), and atomic Firebase Firestore transactions.`,
-        action: { label: "📱 Filter Portfolio to Mobile Projects", fn: "filterMobile" }
+        action: { label: "Filter Portfolio to Mobile Projects", fn: "filterMobile" }
       };
     }
 
@@ -256,7 +283,7 @@ I can open the vault for you right now:`,
 • **Academic Email:** \`A21-32404@student.mseuf.edu.ph\`
 • **LinkedIn:** \`https://www.linkedin.com/in/christian-bolea-264670252/\`
 • **GitHub:** \`https://github.com/Cbolea23\``,
-        action: { label: "📋 Copy contact@bolealabs.site", fn: "copyEmail" }
+        action: { label: "Copy contact@bolealabs.site", fn: "copyEmail" }
       };
     }
 
@@ -267,9 +294,10 @@ I can open the vault for you right now:`,
 Feel free to ask about:
 1. His **OJT availability** & skill match (486–500 hours).
 2. The **NiyoSense AI capstone** (92.8% accuracy, 70/30 late fusion).
-3. His **6 verified Coursera certifications** (Google, Meta, IBM, Packt).
-4. The **FreeLLMAPI & Canvas physics engine** powering this website.`,
-      action: { label: "👨‍💻 Open Full Portfolio (8 Projects)", link: "/portfolio/" }
+3. The **A Day Back Then creator publishing suite** and verified channels.
+4. His **6 verified Coursera certifications** (Google, Meta, IBM, Packt).
+5. The **FreeLLMAPI & Canvas physics engine** powering this website.`,
+      action: { label: "Open Full Portfolio (8 Projects)", link: "/portfolio/" }
     };
   }
 
