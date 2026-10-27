@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Creator Tools &amp; Operations Center — Bolea Labs</title>
+  <meta name="description" content="Official creator toolchain and operations control center for Bolea Labs and A Day Back Then media automation.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/agent.css">
+  <style>
+    :root {
+      --bg: #0b0c10;
+      --card-bg: rgba(22, 24, 30, 0.85);
+      --card-hover: rgba(28, 31, 40, 0.95);
+      --border: rgba(255, 255, 255, 0.08);
+      --border-gold: rgba(245, 179, 36, 0.35);
+      --text: #f0f2f5;
+      --text-muted: #9ba3af;
+      --accent-gold: #f5b324;
+      --accent-gold-glow: rgba(245, 179, 36, 0.15);
+      --accent-cyan: #38bdf8;
+      --accent-emerald: #10b981;
+      --accent-amber: #f59e0b;
+      --accent-rose: #f43f5e;
+      --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-display: 'Space Grotesk', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      line-height: 1.65;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    header {
+      background: rgba(11, 12, 16, 0.88);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      padding: 16px 24px;
+    }
+    .header-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+    .brand {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .brand span { color: var(--accent-gold); }
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    nav a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.92rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    nav a:hover, nav a.active { color: var(--accent-gold); }
+
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 44px 24px 72px;
+      flex: 1;
+      width: 100%;
+    }
+    .hero-banner {
+      margin-bottom: 36px;
+    }
+    .badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 5px 12px;
+      border-radius: 999px;
+      background: rgba(245, 179, 36, 0.12);
+      border: 1px solid var(--border-gold);
+      color: var(--accent-gold);
+      font-size: 0.82rem;
+      font-family: var(--font-mono);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 14px;
+    }
+    h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 3.5vw, 2.75rem);
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 12px;
+      color: var(--text);
+    }
+    h1 span { color: var(--accent-gold); }
+    .hero-desc {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      max-width: 780px;
+    }
+
+    /* Live Telemetry Bar */
+    .telemetry-strip {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin-bottom: 32px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .telemetry-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .status-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--accent-emerald);
+      box-shadow: 0 0 10px var(--accent-emerald);
+      transition: background 0.3s, box-shadow 0.3s;
+    }
+    .status-dot.amber {
+      background: var(--accent-amber);
+      box-shadow: 0 0 10px var(--accent-amber);
+    }
+    .status-dot.rose {
+      background: var(--accent-rose);
+      box-shadow: 0 0 10px var(--accent-rose);
+    }
+    .telemetry-label {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      font-family: var(--font-mono);
+    }
+    .telemetry-value {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    /* Cards Grid */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+    .card:hover {
+      border-color: var(--border-gold);
+      transform: translateY(-2px);
+    }
+    .card-highlight {
+      grid-column: 1 / -1;
+      border-color: var(--border-gold);
+      background: linear-gradient(180deg, rgba(22, 24, 30, 0.95) 0%, rgba(16, 19, 28, 0.85) 100%);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+    }
+    .card-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+    .card-title {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+    .card-highlight .card-title {
+      color: var(--accent-gold);
+    }
+    .card-desc {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 24px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: var(--accent-gold);
+      color: #07080c;
+      font-weight: 700;
+      text-decoration: none;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      transition: opacity 0.2s, transform 0.2s;
+      width: 100%;
+    }
+    .btn:hover {
+      opacity: 0.92;
+      transform: translateY(-1px);
+    }
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border);
+      color: var(--text);
+    }
+    .btn-secondary:hover {
+      border-color: var(--border-gold);
+      color: var(--accent-gold);
+    }
+    .meta-tag {
+      display: inline-block;
+      font-size: 0.76rem;
+      color: var(--text-muted);
+      font-family: var(--font-mono);
+      background: rgba(255, 255, 255, 0.04);
+      padding: 3px 8px;
+      border-radius: 4px;
+      margin-top: 14px;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 32px 24px;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.88rem;
+      margin-top: auto;
+    }
+    footer a {
+      color: var(--text-muted);
+      text-decoration: none;
+      margin: 0 10px;
+      transition: color 0.2s;
+    }
+    footer a:hover {
+      color: var(--accent-gold);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <a href="/" class="brand">BOLEA <span>LABS</span></a>
+      <nav>
+        <a href="/">Studio Home</a>
+        <a href="/adaybackthen.html">A Day Back Then</a>
+        <a href="/creator-tools.html" class="active">Creator Tools</a>
+        <a href="/portfolio/">Founder Portfolio</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="hero-banner">
+      <div class="badge-pill">Creator Operations Hub</div>
+      <h1>Production Toolchain &amp; <span>Control Room</span></h1>
+      <p class="hero-desc">
+        Unified infrastructure powering the A Day Back Then autonomous video pipeline, cloud telemetry, asset storage, and cross-platform scheduling.
+      </p>
+    </div>
+
+    <!-- Live Telemetry Strip -->
+    <div class="telemetry-strip">
+      <div class="telemetry-item">
+        <span class="status-dot" id="dashDot"></span>
+        <div>
+          <div class="telemetry-label">Dashboard Telemetry</div>
+          <div class="telemetry-value" id="dashText">Checking status...</div>
+        </div>
+      </div>
+      <div class="telemetry-item">
+        <span class="status-dot" id="streamDot"></span>
+        <div>
+          <div class="telemetry-label">24/7 Livestream</div>
+          <div class="telemetry-value" id="streamText">Checking feed...</div>
+        </div>
+      </div>
+      <div class="telemetry-item">
+        <div>
+          <div class="telemetry-label">Heartbeat Sync</div>
+          <div class="telemetry-value" id="syncTime">--:--:--</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cards-grid">
+      <!-- Flagship Dashboard Card -->
+      <div class="card card-highlight">
+        <div>
+          <div class="card-header">
+            <h2 class="card-title">Content Operations Dashboard</h2>
+            <span class="badge-pill" style="margin-bottom: 0;">Secured Access</span>
+          </div>
+          <p class="card-desc">
+            Primary production mission control: real-time YouTube Analytics &amp; Meta Graph metrics, autonomous video vault, asset production tracking, and multi-platform publishing calendar. Authenticated and protected behind Cloudflare Access.
+          </p>
+        </div>
+        <div>
+          <a href="https://dashboard.bolealabs.site" target="_blank" rel="noopener noreferrer" class="btn">
+            Open Operations Dashboard &rarr;
+          </a>
+          <div class="meta-tag">Domain: dashboard.bolealabs.site &bull; Auth: Cloudflare One-Time PIN</div>
+        </div>
+      </div>
+
+      <!-- Drive Vault Card -->
+      <div class="card">
+        <div>
+          <div class="card-header">
+            <h3 class="card-title">Production Media Vault</h3>
+          </div>
+          <p class="card-desc">
+            Shared cloud handover infrastructure holding master 1080x1920 visuals, neural TTS voice recordings, audio mastering stems, and final rendered cuts for production runs.
+          </p>
+        </div>
+        <div>
+          <a href="https://drive.google.com" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+            Open Drive Vault &rarr;
+          </a>
+          <div class="meta-tag">Sync: Google Drive API &bull; Automated File Exchange</div>
+        </div>
+      </div>
+
+      <!-- Discord Bridge Card -->
+      <div class="card">
+        <div>
+          <div class="card-header">
+            <h3 class="card-title">Discord Operations Bridge</h3>
+          </div>
+          <p class="card-desc">
+            Autonomous coordination room connecting remote asset generation factories, local render nodes, pipeline status listeners, and one-click owner approval gates.
+          </p>
+        </div>
+        <div>
+          <a href="https://discord.com/channels/@me" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+            Open Operations Channel &rarr;
+          </a>
+          <div class="meta-tag">Channel: #muse-and-antigravity-communication</div>
+        </div>
+      </div>
+
+      <!-- Agensi AI Skills Card -->
+      <div class="card">
+        <div>
+          <div class="card-header">
+            <h3 class="card-title">Agensi AI Marketplace</h3>
+          </div>
+          <p class="card-desc">
+            Creator automation packages and production skills authored by Bolea Labs, including Dual-Agent Production Governors, Hook Retention Engineers, and Video Engines.
+          </p>
+        </div>
+        <div>
+          <a href="https://agensi.io" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+            View Marketplace Storefront &rarr;
+          </a>
+          <div class="meta-tag">Platform: Agensi Agent Marketplace</div>
+        </div>
+      </div>
+
+      <!-- GitHub Repository Card -->
+      <div class="card">
+        <div>
+          <div class="card-header">
+            <h3 class="card-title">Production Repository</h3>
+          </div>
+          <p class="card-desc">
+            Full code repository for the A Day Back Then automation suite: Remotion code-based video engine, multi-platform publishing scripts, and daemon listeners.
+          </p>
+        </div>
+        <div>
+          <a href="https://github.com/Cbolea23/a-day-back-then-automation" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+            View GitHub Repository &rarr;
+          </a>
+          <div class="meta-tag">Repo: Cbolea23/a-day-back-then-automation</div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Bolea Labs &bull; Christian Louis Bolea. All rights reserved.</p>
+    <p style="margin-top: 8px;">
+      <a href="/">Studio Home</a>
+      <a href="/adaybackthen.html">Showcase</a>
+      <a href="/creator-tools.html">Creator Tools</a>
+      <a href="/privacy.html">Privacy Policy</a>
+      <a href="/terms.html">Terms of Service</a>
+      <a href="mailto:contact@bolealabs.site">contact@bolealabs.site</a>
+    </p>
+  </footer>
+
+  <script>
+    async function updateTelemetry() {
+      const dashDot = document.getElementById('dashDot');
+      const dashText = document.getElementById('dashText');
+      const streamDot = document.getElementById('streamDot');
+      const streamText = document.getElementById('streamText');
+      const syncTime = document.getElementById('syncTime');
+
+      try {
+        const res = await fetch('/status.json?t=' + Date.now());
+        if (!res.ok) throw new Error('Status HTTP ' + res.status);
+        const data = await res.json();
+
+        // Dashboard state
+        if (data.dashboard === 'up') {
+          dashDot.className = 'status-dot';
+          dashText.textContent = 'Online (Operational)';
+        } else {
+          dashDot.className = 'status-dot rose';
+          dashText.textContent = 'Degraded';
+        }
+
+        // Livestream state
+        if (data.stream === 'live') {
+          streamDot.className = 'status-dot';
+          streamText.textContent = 'Streaming 24/7 (Live)';
+        } else {
+          streamDot.className = 'status-dot rose';
+          streamText.textContent = 'Offline';
+        }
+
+        // Stale timestamp calculation (> 15 mins)
+        if (data.updated_at) {
+          const updatedDate = new Date(data.updated_at);
+          const diffMinutes = (Date.now() - updatedDate.getTime()) / (1000 * 60);
+          syncTime.textContent = updatedDate.toLocaleTimeString();
+
+          if (diffMinutes > 15) {
+            dashDot.className = 'status-dot amber';
+            dashText.textContent = 'Telemetry Stale (' + Math.round(diffMinutes) + 'm ago)';
+          }
+        }
+      } catch (err) {
+        dashDot.className = 'status-dot rose';
+        dashText.textContent = 'Signal Unreachable';
+        streamDot.className = 'status-dot rose';
+        streamText.textContent = 'Signal Unreachable';
+        syncTime.textContent = 'Offline';
+      }
+    }
+
+    updateTelemetry();
+    setInterval(updateTelemetry, 60000);
+  </script>
+</body>
+</html>
