@@ -6,6 +6,13 @@
   <title>Christian Louis Bolea — Software Developer &amp; Bolea Labs</title>
   <meta name="description" content="Portfolio of Christian Louis Bolea, BSIT student developer at MSEUF and founder of Bolea Labs. Mobile developer (Flutter), backend engineer (Django), and creator of the NiyoSense AI capstone & media automation systems.">
   
+  <!-- Clean URL Redirection (Removes /index.html) -->
+  <script>
+    if (window.location.pathname.endsWith('/index.html') || window.location.pathname === '/index.html') {
+      window.history.replaceState(null, '', '/' + window.location.search + window.location.hash);
+    }
+  </script>
+  
   <!-- Modern Typography -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -881,7 +888,7 @@
   <!-- Header -->
   <header>
     <div class="nav-container">
-      <a href="index.html" class="logo">BOLEA <span>LABS</span></a>
+      <a href="/" class="logo">BOLEA <span>LABS</span></a>
       <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation">☰</button>
       <nav class="nav-links" id="navLinks">
         <a href="#projects">Projects</a>
@@ -1350,7 +1357,7 @@
     <div style="max-width: 1200px; margin: 0 auto;">
       <p>&copy; 2026 Bolea Labs &bull; Christian Louis Bolea. All rights reserved.</p>
       <p style="margin-top: 10px;">
-        <a href="index.html">Portfolio Home</a>
+        <a href="/">Portfolio Home</a>
         <a href="adaybackthen.html">Creator Tool &amp; Shows</a>
         <a href="privacy.html">Privacy Policy</a>
         <a href="terms.html">Terms of Service</a>
