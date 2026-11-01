@@ -1,5 +1,18 @@
 {
   "dashboard": "up",
   "stream": "live",
-  "updated_at": "2026-11-01T22:28:54+08:00"
+  "version": "2.0.0",
+  "queues": "operational",
+  "buffer_runway_days": 8,
+  "channels": [
+    "kwentong-pinoy",
+    "adaybackthen",
+    "genesis-to-glory"
+  ],
+  "active_lanes": {
+    "youtube_facebook": "autonomous_cloud",
+    "instagram": "active_catchup",
+    "tiktok": "partner_verification"
+  },
+  "updated_at": "2026-11-01T22:50:00+08:00"
 }
