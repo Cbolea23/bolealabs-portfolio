@@ -6,7 +6,7 @@
 (function () {
   const GATEWAY_URL = window.FREELLMAPI_GATEWAY || "https://ai.bolealabs.site/v1/chat/completions";
   const MODEL_NAME = window.FREELLMAPI_MODEL || "freellmapi-auto-failover";
-  const RESUME_DOC_URL = "https://docs.google.com/document/d/1YdLI6E5Fq4_VSKi45eN3nae14dqvbs9MYOpj4qB-ZvI/edit?usp=sharing";
+  const RESUME_PDF_URL = "/resume.pdf";
   const CREDLY_URL = "https://www.credly.com/users/christian-bolea";
 
   function initAgentUI() {
@@ -91,10 +91,10 @@
       const timeoutId = setTimeout(() => controller.abort(), 2200);
 
       const sysPrompt = `You are the OJT Portfolio Assistant for Christian Louis Bolea (BSIT Student at Manuel S. Enverga University Foundation, Expected Graduation 2027).
-He is seeking a 540-600 hour OJT / internship placement in AI-assisted software workflows, QA testing, application integration, or IT operations.
+He is seeking a 540-600 hour OJT placement (available Dec 7, 2026 onward) in AI-assisted software workflows, QA testing, application integration, or IT operations.
 Contacts: Bolea2133@gmail.com | 09762539052 | Lucena City, Quezon | linkedin.com/in/bolea23 | github.com/cbolea23 | credly.com/users/christian-bolea.
 Be completely honest and transparent about his capabilities:
-- Capstone (NiyoSense): Led end-to-end integration and deployment of the Flutter mobile app and Django web backend using structured AI-assisted coding workflows. Designed UI in Figma, tested APK builds in Android Studio and physical Android hardware, verified API endpoints in Postman, and managed version control on GitHub.
+- Capstone (NiyoSense): Collaborated in a 3-person capstone team as Lead Developer & Integrator to build and deploy NiyoSense (offline-first Flutter mobile field app + Django plantation owner dashboard) using AI-assisted workflows. Designed mobile and web flows in Figma, ran hands-on build testing in Android Studio and physical Android devices, verified REST API endpoints in Postman, ran black-box functional and edge-case testing (offline SQLite queuing, QR device pairing, cloud batch sync), and managed GitHub + Agile Kanban workflows.
 - Skills: Gemini, Google AI Studio, Google Cloud Agent Platform/Vertex AI Prompt Design, Antigravity (AI-assisted dev), Python (Basics), Django (AI-assisted/basic integration), Flutter & Dart (Coursework fundamentals), Postman, Android Studio, Figma, GitHub, VS Code, Electronics Soldering, and Hardware Troubleshooting.
 - Certifications: Google AI Professional Certificate (8-Course Specialization, Nov 2026), Prompt Design in Vertex AI Skill Badge (Google Cloud, Nov 2026), Google Generative AI Accelerator Program (100% completed, Nov 2026), Wadhwani JobReady (With AI) Advanced Level (75 hrs, Nov 2026), Packt Backend Development & API Creation (Apr 2026), Meta Introduction to Front-End Development (Oct 2025).
 Keep answers concise, honest, and employer-friendly.`;
@@ -129,25 +129,25 @@ Keep answers concise, honest, and employer-friendly.`;
     if (q.includes("ojt") || q.includes("hour") || q.includes("540") || q.includes("600") || q.includes("role") || q.includes("intern")) {
       return {
         text: `**OJT Placement Summary for Christian Louis Bolea:**
-• **Required Duration:** **540–600 Hours** (MSEUF BSIT, Major in Web & Mobile App Development, Expected Graduation: 2027)
+• **Required Duration & Availability:** **540–600 Hours** — **Available Dec 7, 2026 onward** (MSEUF BSIT, Expected Graduation: 2027)
 • **Target OJT Roles:**
   1. **AI-Assisted Software Workflows & Application Integration**
   2. **QA Testing, API Verification (Postman) & Mobile Build Testing (Android Hardware)**
   3. **IT Operations, Technical Support & Hardware Troubleshooting**
 • **Work Setup:** Open to Remote, Hybrid, Lucena City, or Metro Manila placements.`,
-        action: { label: "View Current Resume (Google Docs)", link: RESUME_DOC_URL }
+        action: { label: "View Resume (PDF)", link: RESUME_PDF_URL }
       };
     }
 
     if (q.includes("niyosense") || q.includes("capstone")) {
       return {
         text: `**NiyoSense Capstone Project — Honest Role Breakdown:**
-• **Role:** Lead Developer & Integrator (AI-Assisted Development, 2024 – Present)
+• **Role:** Lead Developer & Integrator (3-person capstone team, AI-Assisted Development, 2024 – Present)
 • **What Christian Did:**
-  1. Led the end-to-end integration and deployment of the Flutter mobile application and Django web backend utilizing structured AI-assisted coding and prototyping workflows.
-  2. Designed user interfaces and user flows in **Figma**, and ran hands-on APK build testing using **Android Studio** and physical Android devices.
-  3. Verified and debugged backend REST API endpoints using **Postman** to ensure reliable client-server communication.
-  4. Managed source code versioning, issue tracking, and releases using **GitHub** and **VS Code**.`,
+  1. Collaborated in a 3-person team to build and deploy NiyoSense (offline-first mobile field app + Django plantation owner dashboard) via structured AI-assisted workflows.
+  2. Designed mobile and web user flows in **Figma**, and ran hands-on build testing in **Android Studio** and on physical Android devices across field-sorting scenarios.
+  3. Verified REST API endpoints in **Postman** and executed black-box functional and edge-case testing (offline SQLite queuing, QR device pairing, cloud batch sync).
+  4. Managed source code versioning, issue tracking, and **Agile Kanban** task workflows across the team in **GitHub** and **VS Code**.`,
         action: { label: "Visit NiyoSense Portal (niyosense.me)", link: "https://niyosense.me" }
       };
     }
@@ -187,20 +187,20 @@ Keep answers concise, honest, and employer-friendly.`;
 • **GitHub:** \`github.com/cbolea23\`
 • **Credly:** \`credly.com/users/christian-bolea\`
 
-You can open Christian's current Google Docs resume directly or download the PDF copy:`,
-        action: { label: "Open Resume (Google Docs)", link: RESUME_DOC_URL }
+You can open or download Christian's current 1-page PDF resume directly:`,
+        action: { label: "View Resume (PDF)", link: RESUME_PDF_URL }
       };
     }
 
     return {
-      text: `Christian Louis Bolea is a **BS Information Technology student at MSEUF** (Expected Graduation: 2027) seeking a **540–600 hour OJT placement** in AI-assisted software workflows, QA/API testing, application integration, or IT operations.
+      text: `Christian Louis Bolea is a **BS Information Technology student at MSEUF** (Expected Graduation: 2027) seeking a **540–600 hour OJT placement (available Dec 7, 2026 onward)** in AI-assisted software workflows, QA/API testing, application integration, or IT operations.
 
 Ask me about:
 1. His **540–600 hour OJT availability** and target roles.
 2. His hands-on contribution to the **NiyoSense capstone project**.
 3. His **Google AI Professional Certificate**, **Vertex AI badge**, and **Wadhwani JobReady (75 hrs)** training.
 4. His **honest technical skills** (Postman, Figma, Android Studio, AI-assisted coding, hardware troubleshooting).`,
-      action: { label: "View Current Resume (Google Docs)", link: RESUME_DOC_URL }
+      action: { label: "View Resume (PDF)", link: RESUME_PDF_URL }
     };
   }
 
