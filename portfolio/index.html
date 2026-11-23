@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Christian Louis Bolea — BSIT OJT Portfolio (540–600 Hours) | AI-Assisted App Development &amp; IT</title>
+  <title>Christian Louis Bolea — BSIT OJT Portfolio (540–600 Hours)</title>
   <meta name="description" content="OJT and Internship Portfolio of Christian Louis Bolea — BS Information Technology student at MSEUF seeking a 540–600 hour OJT placement in AI-assisted software workflows, QA testing, application integration, or IT operations.">
 
   <!-- Clean URL Redirection -->
@@ -21,21 +21,26 @@
 
   <style>
     :root {
-      --bg: #07080c;
-      --bg-elevated: #0d1017;
-      --bg-card: rgba(16, 19, 28, 0.82);
-      --bg-card-hover: rgba(22, 26, 38, 0.96);
-      --border: rgba(255, 255, 255, 0.08);
-      --border-focus: rgba(245, 179, 36, 0.45);
-      --gold: #f5b324;
-      --gold-light: #fde047;
-      --gold-glow: rgba(245, 179, 36, 0.14);
-      --emerald: #10b981;
-      --emerald-glow: rgba(16, 185, 129, 0.15);
-      --cyan: #38bdf8;
-      --cyan-glow: rgba(56, 189, 248, 0.15);
-      --text: #f3f4f6;
-      --text-muted: #94a3b8;
+      --bg: #f8fafc;
+      --bg-surface: #ffffff;
+      --bg-subtle: #f1f5f9;
+      --border: #e2e8f0;
+      --border-strong: #cbd5e1;
+      --blue: #2563eb;
+      --blue-hover: #1d4ed8;
+      --blue-soft: #eff6ff;
+      --blue-border: #bfdbfe;
+      --amber: #d97706;
+      --amber-soft: #fffbeb;
+      --amber-border: #fde68a;
+      --emerald: #059669;
+      --emerald-soft: #ecfdf5;
+      --emerald-border: #a7f3d0;
+      --ink: #0f172a;
+      --ink-body: #334155;
+      --ink-muted: #64748b;
+      --shadow-card: 0 4px 20px rgba(15, 23, 42, 0.05);
+      --shadow-hover: 0 16px 36px rgba(15, 23, 42, 0.09);
       --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
       --font-heading: 'Space Grotesk', sans-serif;
       --font-mono: 'JetBrains Mono', monospace;
@@ -45,7 +50,12 @@
     html { scroll-behavior: smooth; }
     body {
       background-color: var(--bg);
-      color: var(--text);
+      background-image:
+        radial-gradient(circle at 12% 8%, rgba(37, 99, 235, 0.06), transparent 42%),
+        radial-gradient(circle at 88% 14%, rgba(217, 119, 6, 0.06), transparent 40%),
+        radial-gradient(circle at 50% 65%, rgba(5, 150, 105, 0.04), transparent 45%);
+      background-attachment: fixed;
+      color: var(--ink-body);
       font-family: var(--font-body);
       line-height: 1.65;
       overflow-x: hidden;
@@ -58,22 +68,9 @@
       top: 0;
       left: 0;
       height: 3px;
-      background: linear-gradient(90deg, var(--gold), var(--cyan), var(--emerald));
+      background: linear-gradient(90deg, var(--blue), var(--emerald), var(--amber));
       width: 0%;
       z-index: 3000;
-      box-shadow: 0 0 12px var(--gold);
-    }
-
-    /* Subtle Background Canvas */
-    #neuralCanvas {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      pointer-events: none;
-      z-index: 0;
-      opacity: 0.45;
     }
 
     /* Header & Navigation */
@@ -81,11 +78,11 @@
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: rgba(7, 8, 12, 0.88);
+      background: rgba(255, 255, 255, 0.88);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
       border-bottom: 1px solid var(--border);
-      padding: 14px 24px;
+      padding: 13px 24px;
     }
     .nav-container {
       max-width: 1180px;
@@ -96,11 +93,11 @@
     }
     .logo {
       font-family: var(--font-heading);
-      font-size: 1.15rem;
+      font-size: 1.12rem;
       font-weight: 700;
-      color: #fff;
+      color: var(--ink);
       text-decoration: none;
-      letter-spacing: 0.3px;
+      letter-spacing: -0.2px;
       display: flex;
       align-items: center;
       gap: 10px;
@@ -110,18 +107,17 @@
       height: 32px;
       border-radius: 8px;
       object-fit: contain;
-      box-shadow: 0 0 14px rgba(245, 179, 36, 0.35);
-      display: inline-block;
-      vertical-align: middle;
+      border: 1px solid var(--border);
+      box-shadow: 0 2px 8px rgba(15, 23, 42, 0.08);
     }
-    .logo span { color: var(--gold); }
+    .logo span { color: var(--blue); }
     .logo-sub {
       font-family: var(--font-mono);
-      font-size: 0.72rem;
-      color: var(--text-muted);
-      font-weight: 500;
-      padding-left: 8px;
-      border-left: 1px solid var(--border);
+      font-size: 0.7rem;
+      color: var(--ink-muted);
+      font-weight: 600;
+      padding-left: 10px;
+      border-left: 1px solid var(--border-strong);
     }
     .nav-links {
       display: flex;
@@ -129,36 +125,37 @@
       gap: 20px;
     }
     .nav-links a {
-      color: var(--text-muted);
+      color: var(--ink-body);
       text-decoration: none;
       font-size: 0.88rem;
-      font-weight: 500;
+      font-weight: 600;
       transition: color 0.2s;
     }
-    .nav-links a:hover, .nav-links a.active { color: var(--gold); }
+    .nav-links a:hover, .nav-links a.active { color: var(--blue); }
     .btn-nav-resume {
-      background: var(--gold);
-      color: #07080c !important;
+      background: var(--blue);
+      color: #ffffff !important;
       font-weight: 700 !important;
       padding: 8px 16px;
       border-radius: 8px;
-      cursor: pointer;
-      border: none;
-      font-size: 0.86rem;
-      font-family: var(--font-body);
       text-decoration: none;
-      transition: transform 0.2s, box-shadow 0.2s;
+      font-size: 0.85rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
     }
     .btn-nav-resume:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 18px rgba(245, 179, 36, 0.35);
+      background: var(--blue-hover);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 16px rgba(37, 99, 235, 0.25);
     }
     .mobile-menu-btn {
       display: none;
-      background: transparent;
+      background: var(--bg-surface);
       border: 1px solid var(--border);
-      color: var(--text);
-      padding: 6px 10px;
+      color: var(--ink);
+      padding: 7px 10px;
       border-radius: 8px;
       cursor: pointer;
     }
@@ -168,12 +165,23 @@
       z-index: 1;
       max-width: 1180px;
       margin: 0 auto;
-      padding: 0 24px 90px;
+      padding: 0 24px 88px;
     }
 
-    /* Portfolio Hero */
+    /* Scroll Reveal Animations */
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Hero Section */
     .hero {
-      padding: 56px 0 36px;
+      padding: 48px 0 28px;
       display: grid;
       grid-template-columns: 1fr auto;
       gap: 44px;
@@ -183,84 +191,86 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      background: var(--emerald-glow);
-      border: 1px solid rgba(16, 185, 129, 0.38);
+      background: var(--emerald-soft);
+      border: 1px solid var(--emerald-border);
       color: var(--emerald);
       padding: 6px 14px;
       border-radius: 9999px;
       font-family: var(--font-mono);
-      font-size: 0.78rem;
+      font-size: 0.76rem;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.5px;
-      margin-bottom: 16px;
+      margin-bottom: 14px;
     }
     .status-pulse {
       width: 8px;
       height: 8px;
       background: var(--emerald);
       border-radius: 50%;
-      box-shadow: 0 0 10px var(--emerald);
+      box-shadow: 0 0 0 0 rgba(5, 150, 105, 0.45);
       animation: pulse 2s infinite;
     }
     @keyframes pulse {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.45; transform: scale(1.25); }
+      0% { box-shadow: 0 0 0 0 rgba(5, 150, 105, 0.5); }
+      70% { box-shadow: 0 0 0 8px rgba(5, 150, 105, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(5, 150, 105, 0); }
     }
     h1.hero-title {
       font-family: var(--font-heading);
-      font-size: clamp(2.3rem, 4.6vw, 3.5rem);
+      font-size: clamp(2.25rem, 4.4vw, 3.4rem);
       font-weight: 700;
-      line-height: 1.12;
-      color: #fff;
+      line-height: 1.1;
+      color: var(--ink);
       margin-bottom: 10px;
-      letter-spacing: -0.8px;
+      letter-spacing: -0.9px;
     }
     h1.hero-title span {
-      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+      background: linear-gradient(135deg, var(--blue) 0%, #0284c7 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
     .hero-subtitle {
-      font-size: 1.12rem;
+      font-size: 1.08rem;
       font-weight: 600;
-      color: var(--gold);
+      color: var(--amber);
       margin-bottom: 12px;
     }
     .hero-meta {
       font-family: var(--font-mono);
-      font-size: 0.82rem;
-      color: #cbd5e1;
-      margin-bottom: 18px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      align-items: center;
-    }
-    .hero-meta a {
-      color: var(--cyan);
-      text-decoration: none;
-    }
-    .hero-meta a:hover { text-decoration: underline; }
-    .hero-desc {
-      color: var(--text-muted);
-      font-size: 1.01rem;
-      line-height: 1.72;
-      margin-bottom: 24px;
-      max-width: 730px;
-    }
-    .hero-desc strong { color: #fff; }
-    .hero-actions {
+      font-size: 0.8rem;
+      color: var(--ink-muted);
+      margin-bottom: 16px;
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
       align-items: center;
     }
+    .hero-meta a {
+      color: var(--blue);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .hero-meta a:hover { text-decoration: underline; }
+    .hero-desc {
+      color: var(--ink-body);
+      font-size: 1rem;
+      line-height: 1.68;
+      margin-bottom: 22px;
+      max-width: 710px;
+    }
+    .hero-desc strong { color: var(--ink); }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+    }
     .btn-primary {
-      background: linear-gradient(135deg, var(--gold), #e5980b);
-      color: #07080c;
-      font-weight: 800;
-      padding: 12px 22px;
+      background: var(--blue);
+      color: #ffffff;
+      font-weight: 700;
+      padding: 11px 20px;
       border-radius: 10px;
       text-decoration: none;
       display: inline-flex;
@@ -268,34 +278,37 @@
       gap: 8px;
       cursor: pointer;
       border: none;
-      font-size: 0.92rem;
+      font-size: 0.9rem;
       font-family: var(--font-body);
-      transition: all 0.25s;
+      box-shadow: 0 4px 14px rgba(37, 99, 235, 0.24);
+      transition: all 0.2s ease;
     }
     .btn-primary:hover {
+      background: var(--blue-hover);
       transform: translateY(-2px);
-      box-shadow: 0 8px 22px rgba(245, 179, 36, 0.4);
+      box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
     }
     .btn-secondary {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid var(--border);
-      color: #fff;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-strong);
+      color: var(--ink);
       font-weight: 600;
-      padding: 12px 18px;
+      padding: 10px 16px;
       border-radius: 10px;
       text-decoration: none;
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      font-size: 0.9rem;
+      gap: 6px;
+      font-size: 0.88rem;
       font-family: var(--font-body);
       cursor: pointer;
-      transition: all 0.2s;
+      box-shadow: 0 2px 6px rgba(15, 23, 42, 0.04);
+      transition: all 0.2s ease;
     }
     .btn-secondary:hover {
-      background: rgba(255, 255, 255, 0.1);
-      border-color: var(--gold);
-      color: var(--gold);
+      border-color: var(--blue);
+      color: var(--blue);
+      background: var(--blue-soft);
       transform: translateY(-2px);
     }
 
@@ -303,27 +316,28 @@
     .hero-avatar-wrapper {
       position: relative;
       display: flex;
-      justify-content: center;
+      flex-direction: column;
+      align-items: center;
     }
     .avatar-glow {
       position: absolute;
-      inset: -12px;
+      inset: -10px;
       border-radius: 28px;
-      background: linear-gradient(135deg, var(--gold), var(--cyan));
-      opacity: 0.25;
-      filter: blur(16px);
+      background: linear-gradient(135deg, rgba(37, 99, 235, 0.18), rgba(217, 119, 6, 0.16));
+      filter: blur(18px);
       z-index: 1;
     }
     .avatar-frame {
       position: relative;
       z-index: 2;
-      width: 225px;
-      height: 225px;
-      border-radius: 24px;
-      border: 2px solid var(--border-focus);
+      width: 216px;
+      height: 216px;
+      border-radius: 22px;
+      border: 3px solid #ffffff;
+      outline: 1px solid var(--border);
       overflow: hidden;
-      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.65);
-      background: #111;
+      box-shadow: 0 18px 38px rgba(15, 23, 42, 0.12);
+      background: #e2e8f0;
     }
     .avatar-frame img {
       width: 100%;
@@ -331,83 +345,224 @@
       object-fit: cover;
       object-position: center top;
     }
+    .avatar-caption {
+      position: relative;
+      z-index: 3;
+      margin-top: -14px;
+      background: #ffffff;
+      border: 1px solid var(--border);
+      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
+      padding: 4px 12px;
+      border-radius: 9999px;
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--ink);
+    }
 
-    /* OJT Objective & Key Strengths Grid */
+    /* Verified Skill Badges Marquee (Directly Below Hero, Above OJT Banner) */
+    .badges-showcase {
+      margin: 14px 0 28px;
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 20px 0 22px;
+      box-shadow: var(--shadow-card);
+      overflow: hidden;
+    }
+    .badges-bar-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding: 0 24px 16px;
+    }
+    .badges-bar-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .badges-bar-title span.tag-mono {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: var(--blue);
+      background: var(--blue-soft);
+      border: 1px solid var(--blue-border);
+      padding: 3px 10px;
+      border-radius: 999px;
+    }
+    .badges-bar-title h2 {
+      font-family: var(--font-heading);
+      font-size: 1.05rem;
+      color: var(--ink);
+    }
+    .badges-bar-link {
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--blue);
+      text-decoration: none;
+    }
+    .badges-bar-link:hover { text-decoration: underline; }
+
+    .badge-marquee-viewport {
+      width: 100%;
+      overflow: hidden;
+      -webkit-mask-image: linear-gradient(to right, transparent, #000 6%, #000 94%, transparent);
+      mask-image: linear-gradient(to right, transparent, #000 6%, #000 94%, transparent);
+    }
+    .badge-marquee-track {
+      display: flex;
+      width: max-content;
+      gap: 16px;
+      padding: 6px 8px;
+      animation: marquee-rtl 36s linear infinite;
+    }
+    .badge-marquee-viewport:hover .badge-marquee-track {
+      animation-play-state: paused;
+    }
+    @keyframes marquee-rtl {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .credly-badge-item {
+      flex: 0 0 185px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 14px 12px;
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 10px;
+      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+    }
+    .credly-badge-item:hover {
+      transform: translateY(-4px) scale(1.02);
+      border-color: var(--blue);
+      background: #ffffff;
+      box-shadow: 0 12px 24px rgba(37, 99, 235, 0.12);
+    }
+    .credly-badge-img-wrap {
+      width: 88px;
+      height: 88px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .credly-badge-img-wrap img {
+      width: 88px;
+      height: 88px;
+      object-fit: contain;
+      filter: drop-shadow(0 4px 10px rgba(15, 23, 42, 0.12));
+    }
+    .credly-badge-name {
+      font-family: var(--font-heading);
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--ink);
+      line-height: 1.3;
+    }
+    .credly-badge-issuer {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      color: var(--ink-muted);
+      margin-top: auto;
+    }
+
+    /* Practicum OJT Banner */
     .ojt-banner {
-      background: linear-gradient(135deg, rgba(245, 179, 36, 0.11), rgba(16, 185, 129, 0.07));
-      border: 1px solid rgba(245, 179, 36, 0.35);
+      background: linear-gradient(135deg, #ffffff 0%, #eff6ff 100%);
+      border: 1px solid var(--blue-border);
+      border-left: 5px solid var(--blue);
       border-radius: 16px;
-      padding: 24px 28px;
-      margin: 8px 0 28px;
+      padding: 22px 26px;
+      margin: 0 0 22px;
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
       gap: 18px;
+      box-shadow: var(--shadow-card);
     }
     .ojt-banner-title {
       font-family: var(--font-heading);
-      font-size: 1.18rem;
-      color: #fff;
+      font-size: 1.14rem;
+      color: var(--ink);
       font-weight: 700;
     }
     .ojt-banner-text {
-      font-size: 0.94rem;
-      color: #d1d5db;
-      margin-top: 6px;
-      max-width: 820px;
-      line-height: 1.65;
+      font-size: 0.92rem;
+      color: var(--ink-body);
+      margin-top: 5px;
+      max-width: 800px;
+      line-height: 1.62;
     }
 
+    /* Key Strengths Grid */
     .strengths-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
       gap: 18px;
-      margin-bottom: 48px;
+      margin-bottom: 44px;
     }
     .strength-card {
-      background: rgba(16, 19, 28, 0.68);
+      background: var(--bg-surface);
       border: 1px solid var(--border);
-      border-left: 3px solid var(--gold);
-      border-radius: 12px;
+      border-top: 3px solid var(--amber);
+      border-radius: 14px;
       padding: 20px 22px;
+      box-shadow: var(--shadow-card);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .strength-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-hover);
     }
     .strength-card h3 {
       font-family: var(--font-heading);
-      font-size: 1.04rem;
-      color: #fff;
+      font-size: 1.02rem;
+      color: var(--ink);
       margin-bottom: 6px;
     }
     .strength-card p {
-      font-size: 0.9rem;
-      color: var(--text-muted);
+      font-size: 0.89rem;
+      color: var(--ink-muted);
       line-height: 1.6;
     }
 
     /* Section Headers */
     .section-header {
-      margin: 60px 0 24px;
+      margin: 56px 0 22px;
     }
     .section-eyebrow {
       font-family: var(--font-mono);
-      font-size: 0.76rem;
+      font-size: 0.74rem;
+      font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 1.4px;
-      color: var(--gold);
+      letter-spacing: 1.2px;
+      color: var(--blue);
       margin-bottom: 6px;
       display: block;
     }
     .section-title {
       font-family: var(--font-heading);
-      font-size: 2.05rem;
-      color: #fff;
+      font-size: 2rem;
+      color: var(--ink);
+      letter-spacing: -0.5px;
     }
-    .section-title span { color: var(--gold); }
+    .section-title span { color: var(--blue); }
     .section-subtitle {
-      color: var(--text-muted);
-      font-size: 0.98rem;
+      color: var(--ink-muted);
+      font-size: 0.96rem;
       margin-top: 6px;
-      max-width: 780px;
+      max-width: 740px;
     }
 
     /* Filter Bar */
@@ -415,88 +570,88 @@
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
-      margin-bottom: 24px;
+      margin-bottom: 22px;
     }
     .filter-btn {
-      background: rgba(255, 255, 255, 0.04);
-      border: 1px solid var(--border);
-      color: var(--text-muted);
-      padding: 8px 18px;
-      border-radius: 30px;
-      font-size: 0.85rem;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-strong);
+      color: var(--ink-body);
+      padding: 8px 16px;
+      border-radius: 999px;
+      font-size: 0.84rem;
       font-weight: 600;
       cursor: pointer;
       font-family: var(--font-body);
-      transition: all 0.2s;
+      transition: all 0.2s ease;
     }
-    .filter-btn:hover { background: rgba(255, 255, 255, 0.08); color: #fff; }
+    .filter-btn:hover { border-color: var(--blue); color: var(--blue); }
     .filter-btn.active {
-      background: var(--gold);
-      color: #07080c;
-      border-color: var(--gold);
-      font-weight: 700;
+      background: var(--blue);
+      color: #ffffff;
+      border-color: var(--blue);
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.22);
     }
 
-    /* Project & Certification Cards */
+    /* Project Cards */
     .projects-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-      gap: 24px;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 22px;
     }
     .project-card {
-      background: var(--bg-card);
+      background: var(--bg-surface);
       border: 1px solid var(--border);
-      border-radius: 18px;
-      padding: 28px;
+      border-radius: 16px;
+      padding: 26px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      position: relative;
-      overflow: hidden;
-      transition: transform 0.2s ease, border-color 0.25s, box-shadow 0.25s;
+      box-shadow: var(--shadow-card);
+      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
     }
     .project-card:hover {
-      border-color: rgba(245, 179, 36, 0.42);
-      transform: translateY(-3px);
-      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+      border-color: var(--blue-border);
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-hover);
     }
     .project-card.featured {
       grid-column: 1 / -1;
-      background: linear-gradient(145deg, rgba(22, 26, 38, 0.95), rgba(14, 16, 24, 0.95));
-      border: 1px solid rgba(245, 179, 36, 0.42);
+      background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+      border: 1px solid var(--blue-border);
     }
     .project-card.hidden { display: none !important; }
 
     .project-tag {
       display: inline-block;
       font-family: var(--font-mono);
-      font-size: 0.72rem;
+      font-size: 0.7rem;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.7px;
       padding: 4px 10px;
       border-radius: 6px;
-      background: var(--gold);
-      color: #07080c;
-      margin-bottom: 14px;
+      background: var(--amber-soft);
+      color: var(--amber);
+      border: 1px solid var(--amber-border);
+      margin-bottom: 12px;
     }
-    .project-tag.cyan {
-      background: rgba(56, 189, 248, 0.14);
-      color: var(--cyan);
-      border: 1px solid rgba(56, 189, 248, 0.35);
+    .project-tag.blue {
+      background: var(--blue-soft);
+      color: var(--blue);
+      border-color: var(--blue-border);
     }
     .project-tag.green {
-      background: rgba(34, 197, 94, 0.14);
-      color: #4ade80;
-      border: 1px solid rgba(34, 197, 94, 0.35);
+      background: var(--emerald-soft);
+      color: var(--emerald);
+      border-color: var(--emerald-border);
     }
     .project-banner-preview {
-      margin-bottom: 16px;
+      margin-bottom: 14px;
       border-radius: 12px;
       overflow: hidden;
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      max-height: 175px;
-      background: rgba(0, 0, 0, 0.4);
+      border: 1px solid var(--border);
+      max-height: 168px;
+      background: var(--bg-subtle);
     }
     .project-banner-preview img {
       width: 100%;
@@ -506,69 +661,58 @@
     }
     .project-title {
       font-family: var(--font-heading);
-      font-size: 1.35rem;
-      color: #fff;
-      margin-bottom: 6px;
+      font-size: 1.28rem;
+      color: var(--ink);
+      margin-bottom: 4px;
     }
     .project-subtitle {
-      font-size: 0.88rem;
-      color: var(--gold);
+      font-size: 0.86rem;
+      color: var(--blue);
       font-weight: 600;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
     .project-desc {
-      color: #d1d5db;
-      font-size: 0.93rem;
-      line-height: 1.65;
-      margin-bottom: 14px;
+      color: var(--ink-body);
+      font-size: 0.92rem;
+      line-height: 1.62;
+      margin-bottom: 12px;
     }
     .project-bullets {
       list-style: none;
-      margin: 0 0 18px 0;
+      margin: 0 0 16px 0;
       padding: 0;
     }
     .project-bullets li {
       position: relative;
-      padding-left: 18px;
-      font-size: 0.9rem;
-      color: #cbd5e1;
-      margin-bottom: 8px;
-      line-height: 1.58;
+      padding-left: 16px;
+      font-size: 0.88rem;
+      color: var(--ink-body);
+      margin-bottom: 6px;
+      line-height: 1.55;
     }
     .project-bullets li::before {
       content: '•';
       position: absolute;
       left: 2px;
-      color: var(--gold);
-      font-weight: 700;
+      color: var(--blue);
+      font-weight: 800;
     }
-    .project-bullets li strong {
-      color: #fff;
-    }
-    .architecture-box {
-      background: rgba(0, 0, 0, 0.32);
-      border-left: 3px solid var(--gold);
-      padding: 11px 15px;
-      border-radius: 0 8px 8px 0;
-      margin-bottom: 16px;
-      font-size: 0.83rem;
-      color: #cbd5e1;
-      font-family: var(--font-mono);
-    }
+    .project-bullets li strong { color: var(--ink); }
     .tech-stack {
       display: flex;
       flex-wrap: wrap;
-      gap: 7px;
-      margin-bottom: 20px;
+      gap: 6px;
+      margin-bottom: 18px;
     }
     .tech-pill {
       font-family: var(--font-mono);
-      background: rgba(255, 255, 255, 0.04);
+      background: var(--bg-subtle);
       border: 1px solid var(--border);
       border-radius: 6px;
-      padding: 4px 10px;
-      font-size: 0.74rem;
-      color: #e5e7eb;
+      padding: 4px 9px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--ink-body);
     }
     .project-links {
       display: flex;
@@ -577,94 +721,475 @@
       margin-top: auto;
     }
     .btn-link {
-      color: var(--gold);
+      color: var(--blue);
       text-decoration: none;
-      font-size: 0.85rem;
-      font-weight: 600;
-      padding: 6px 12px;
-      background: rgba(245, 179, 36, 0.09);
-      border-radius: 6px;
-      border: 1px solid rgba(245, 179, 36, 0.25);
-      transition: all 0.2s;
+      font-size: 0.84rem;
+      font-weight: 700;
+      padding: 7px 12px;
+      background: var(--blue-soft);
+      border-radius: 8px;
+      border: 1px solid var(--blue-border);
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
     }
     .btn-link:hover {
-      background: var(--gold);
-      color: #07080c;
+      background: var(--blue);
+      color: #ffffff;
     }
 
-    /* Certifications Grid */
-    .certs-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    /* ============================================================
+       CERTIFICATIONS: HIGHLIGHTED SLIDES CAROUSEL + GALLERY GRID
+       ============================================================ */
+    .cert-slider-wrap {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 24px 24px 22px;
+      box-shadow: var(--shadow-card);
+      margin-bottom: 36px;
+    }
+    .cert-slider-topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+    .cert-sub-heading {
+      font-family: var(--font-heading);
+      font-size: 1.2rem;
+      color: var(--ink);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .cert-sub-pill {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--amber);
+      background: var(--amber-soft);
+      border: 1px solid var(--amber-border);
+      padding: 3px 10px;
+      border-radius: 999px;
+    }
+    .slider-controls {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .slider-btn {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: var(--bg);
+      border: 1px solid var(--border-strong);
+      color: var(--ink);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .slider-btn:hover {
+      background: var(--blue);
+      border-color: var(--blue);
+      color: #ffffff;
+    }
+
+    .cert-viewport {
+      overflow: hidden;
+      width: 100%;
+    }
+    .cert-track {
+      display: flex;
       gap: 20px;
+      transition: transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+      will-change: transform;
+    }
+    .cert-slide {
+      flex: 0 0 calc((100% - 40px) / 3);
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+    .cert-slide:hover {
+      border-color: var(--blue);
+      background: #ffffff;
+      box-shadow: 0 14px 28px rgba(15, 23, 42, 0.08);
+      transform: translateY(-3px);
+    }
+
+    /* Framed Certificate Image & Diploma Wrapper */
+    .cert-frame {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      border-radius: 10px;
+      overflow: hidden;
+      background: #ffffff;
+      border: 1px solid var(--border-strong);
+      box-shadow: 0 4px 14px rgba(15, 23, 42, 0.07);
+      margin-bottom: 14px;
+      cursor: zoom-in;
+    }
+    .cert-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.35s ease;
+    }
+    .cert-frame:hover img {
+      transform: scale(1.03);
+    }
+    .cert-zoom-hint {
+      position: absolute;
+      bottom: 8px;
+      right: 8px;
+      background: rgba(15, 23, 42, 0.78);
+      color: #ffffff;
+      font-family: var(--font-mono);
+      font-size: 0.66rem;
+      font-weight: 600;
+      padding: 4px 8px;
+      border-radius: 6px;
+      opacity: 0;
+      transition: opacity 0.2s ease;
+      pointer-events: none;
+    }
+    .cert-frame:hover .cert-zoom-hint {
+      opacity: 1;
+    }
+
+    /* Authentic 4:3 HTML/CSS Diploma Visual for Wadhwani Foundation */
+    .wf-diploma {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(155deg, #fffdf9 0%, #f8fafc 100%);
+      padding: 12px;
+      display: flex;
+      align-items: stretch;
+      justify-content: stretch;
+    }
+    .wf-diploma-outer {
+      flex: 1;
+      border: 2.5px solid #1e3a8a;
+      padding: 4px;
+      display: flex;
+      background: #ffffff;
+    }
+    .wf-diploma-inner {
+      flex: 1;
+      border: 1px solid #d97706;
+      padding: 12px 14px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      text-align: center;
+      position: relative;
+      background: radial-gradient(circle at center, rgba(217, 119, 6, 0.04), transparent 70%);
+    }
+    .wf-org {
+      font-family: var(--font-heading);
+      font-size: 0.68rem;
+      font-weight: 800;
+      letter-spacing: 1.8px;
+      color: #1e3a8a;
+      text-transform: uppercase;
+    }
+    .wf-heading {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin: 2px 0;
+    }
+    .wf-presented {
+      font-size: 0.58rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #64748b;
+    }
+    .wf-recipient {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 0.96rem;
+      font-weight: 700;
+      color: #b45309;
+      border-bottom: 1px solid #cbd5e1;
+      padding-bottom: 3px;
+      margin: 2px auto;
+      width: 82%;
+    }
+    .wf-course {
+      font-size: 0.68rem;
+      font-weight: 700;
+      color: #1e293b;
+      line-height: 1.25;
+      padding: 0 4px;
+    }
+    .wf-meta-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      font-family: var(--font-mono);
+      font-size: 0.54rem;
+      color: #64748b;
+      border-top: 1px dashed #e2e8f0;
+      padding-top: 5px;
+    }
+    .wf-seal {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #f59e0b, #b45309);
+      color: #ffffff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 0.52rem;
+      letter-spacing: 0.4px;
+      box-shadow: 0 2px 6px rgba(180, 83, 9, 0.35);
+      border: 1.5px solid #fef3c7;
+    }
+
+    .cert-card-meta {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
     }
     .cert-issuer {
       font-family: var(--font-mono);
-      font-size: 0.74rem;
-      text-transform: uppercase;
-      letter-spacing: 0.8px;
-      color: var(--gold);
+      font-size: 0.7rem;
       font-weight: 700;
-      margin-bottom: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.7px;
+      color: var(--amber);
+      margin-bottom: 4px;
     }
     .cert-name {
       font-family: var(--font-heading);
-      font-size: 1.14rem;
-      color: #fff;
-      margin-bottom: 6px;
+      font-size: 1.02rem;
+      font-weight: 700;
+      color: var(--ink);
+      line-height: 1.32;
+      margin-bottom: 12px;
     }
-    .cert-focus {
-      font-size: 0.86rem;
-      color: #cbd5e1;
-      margin-bottom: 10px;
-      line-height: 1.55;
+    .cert-actions-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+      margin-top: auto;
+      padding-top: 10px;
+      border-top: 1px solid var(--border);
     }
-    .cert-date {
-      font-family: var(--font-mono);
+    .btn-preview-sm {
+      background: transparent;
+      border: 1px solid var(--border-strong);
+      color: var(--ink-body);
       font-size: 0.78rem;
-      color: var(--text-muted);
-      margin-bottom: 14px;
+      font-weight: 600;
+      padding: 5px 10px;
+      border-radius: 7px;
+      cursor: pointer;
+      font-family: var(--font-body);
+      transition: all 0.2s;
+    }
+    .btn-preview-sm:hover {
+      border-color: var(--ink);
+      color: var(--ink);
+      background: var(--bg-subtle);
     }
     .cert-verify {
-      color: var(--cyan);
+      color: var(--blue);
       text-decoration: none;
-      font-size: 0.84rem;
-      font-weight: 600;
-      margin-top: auto;
-      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
     }
     .cert-verify:hover { text-decoration: underline; }
+
+    .slider-dots {
+      display: flex;
+      justify-content: center;
+      gap: 7px;
+      margin-top: 18px;
+    }
+    .slider-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--border-strong);
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      transition: width 0.25s ease, background 0.25s ease;
+    }
+    .slider-dot.active {
+      width: 24px;
+      background: var(--blue);
+    }
+
+    /* Additional Accomplished Certificates Grid */
+    .other-certs-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 12px 0 18px;
+    }
+    .certs-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .cert-grid-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: var(--shadow-card);
+      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+    .cert-grid-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--blue-border);
+      box-shadow: var(--shadow-hover);
+    }
+    .cert-grid-card.hidden { display: none !important; }
+    .cert-toggle-wrap {
+      display: flex;
+      justify-content: center;
+      margin-top: 26px;
+    }
 
     /* Skills Grid */
     .skills-section {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(265px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 20px;
     }
     .skill-cat-title {
       font-family: var(--font-heading);
-      font-size: 1.08rem;
-      color: var(--gold);
-      margin-bottom: 10px;
+      font-size: 1.05rem;
+      color: var(--ink);
+      margin-bottom: 6px;
     }
     .skill-cat-desc {
       font-size: 0.84rem;
-      color: var(--text-muted);
+      color: var(--ink-muted);
       margin-bottom: 14px;
       line-height: 1.5;
     }
     .skill-chips {
       display: flex;
       flex-wrap: wrap;
-      gap: 8px;
+      gap: 7px;
     }
     .skill-chip {
-      background: rgba(255, 255, 255, 0.04);
+      background: var(--bg-subtle);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 5px 12px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--ink-body);
+    }
+
+    /* Lightbox Modal */
+    #certLightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.78);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      z-index: 3500;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    #certLightbox.open { display: flex; }
+    .lightbox-card {
+      background: #ffffff;
       border: 1px solid var(--border);
       border-radius: 20px;
-      padding: 6px 13px;
-      font-size: 0.83rem;
-      color: #e5e7eb;
+      max-width: 780px;
+      width: 100%;
+      padding: 24px;
+      box-shadow: 0 28px 64px rgba(15, 23, 42, 0.35);
+      animation: lbPop 0.24s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    @keyframes lbPop {
+      from { opacity: 0; transform: scale(0.95) translateY(10px); }
+      to { opacity: 1; transform: scale(1) translateY(0); }
+    }
+    .lightbox-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 14px;
+      margin-bottom: 14px;
+    }
+    .lightbox-close {
+      background: var(--bg-subtle);
+      border: 1px solid var(--border);
+      color: var(--ink);
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      font-size: 1.2rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .lightbox-close:hover { background: #e2e8f0; }
+    .lightbox-visual {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: var(--bg-subtle);
+      margin-bottom: 16px;
+    }
+    .lightbox-visual img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+      background: #ffffff;
+    }
+    .lightbox-visual .wf-org { font-size: 1rem; }
+    .lightbox-visual .wf-heading { font-size: 1.7rem; }
+    .lightbox-visual .wf-presented { font-size: 0.78rem; }
+    .lightbox-visual .wf-recipient { font-size: 1.55rem; margin: 8px auto; }
+    .lightbox-visual .wf-course { font-size: 1rem; }
+    .lightbox-visual .wf-meta-row { font-size: 0.76rem; padding-top: 10px; }
+    .lightbox-visual .wf-seal { width: 52px; height: 52px; font-size: 0.78rem; }
+    .lightbox-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
     }
 
     /* Toast */
@@ -673,10 +1198,11 @@
       bottom: 24px;
       left: 24px;
       background: var(--emerald);
-      color: #07080c;
+      color: #ffffff;
       font-weight: 700;
       padding: 12px 20px;
       border-radius: 10px;
+      box-shadow: 0 10px 24px rgba(5, 150, 105, 0.3);
       z-index: 3000;
       opacity: 0;
       transform: translateY(20px);
@@ -689,17 +1215,20 @@
       border-top: 1px solid var(--border);
       padding: 36px 24px;
       text-align: center;
-      color: var(--text-muted);
+      color: var(--ink-muted);
       font-size: 0.88rem;
-      background: #050609;
-      position: relative;
-      z-index: 10;
+      background: #ffffff;
     }
-    footer a { color: var(--text-muted); margin: 0 10px; text-decoration: none; }
-    footer a:hover { color: var(--gold); }
+    footer a { color: var(--ink-body); margin: 0 10px; text-decoration: none; font-weight: 600; }
+    footer a:hover { color: var(--blue); }
+
+    @media (max-width: 1024px) {
+      .cert-slide { flex: 0 0 calc((100% - 20px) / 2); }
+      .certs-grid { grid-template-columns: repeat(2, 1fr); }
+    }
 
     @media (max-width: 860px) {
-      .hero { grid-template-columns: 1fr; text-align: center; padding-top: 28px; }
+      .hero { grid-template-columns: 1fr; text-align: center; padding-top: 28px; gap: 28px; }
       .hero-meta { justify-content: center; }
       .hero-actions { justify-content: center; }
       .avatar-frame { width: 185px; height: 185px; }
@@ -711,19 +1240,30 @@
         top: 100%;
         left: 0;
         right: 0;
-        background: #0b0d14;
+        background: #ffffff;
         padding: 20px;
         border-bottom: 1px solid var(--border);
+        box-shadow: 0 14px 30px rgba(15, 23, 42, 0.1);
       }
       .mobile-menu-btn { display: block; }
       .projects-grid { grid-template-columns: 1fr; }
       .logo-sub { display: none; }
     }
+
+    @media (max-width: 680px) {
+      .cert-slide { flex: 0 0 100%; }
+      .certs-grid { grid-template-columns: 1fr; }
+      .cert-slider-wrap { padding: 18px 16px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .badge-marquee-track { animation: none; }
+      .reveal { opacity: 1; transform: none; transition: none; }
+    }
   </style>
 </head>
 <body>
   <div id="scrollProgress"></div>
-  <canvas id="neuralCanvas"></canvas>
 
   <!-- Header -->
   <header>
@@ -738,10 +1278,10 @@
       </button>
       <nav class="nav-links" id="navLinks">
         <a href="#objective" class="active">OJT Objective</a>
-        <a href="#projects">Projects (5)</a>
-        <a href="#certifications">Certifications &amp; Badges</a>
-        <a href="#skills">Skills &amp; Tools</a>
-        <a href="#education">Education</a>
+        <a href="#badges">Skill Badges</a>
+        <a href="#projects">Projects</a>
+        <a href="#certifications">Certifications</a>
+        <a href="#skills">Skills</a>
         <a href="https://docs.google.com/document/d/1YdLI6E5Fq4_VSKi45eN3nae14dqvbs9MYOpj4qB-ZvI/edit?usp=sharing" target="_blank" rel="noopener" class="btn-nav-resume">View Resume &nearr;</a>
       </nav>
     </div>
@@ -756,7 +1296,7 @@
           Seeking 540–600 Hour IT / Software OJT Placement
         </div>
         <h1 class="hero-title">Christian Louis <span>Bolea</span></h1>
-        <p class="hero-subtitle">BS Information Technology Student &bull; AI-Assisted Application Development &amp; IT OJT Applicant</p>
+        <p class="hero-subtitle">BS Information Technology Student &bull; AI-Assisted App Development &amp; IT OJT Applicant</p>
         <div class="hero-meta">
           <span>Lucena City, Quezon, PH</span>
           <span>&bull;</span>
@@ -767,12 +1307,11 @@
           <a href="https://www.credly.com/users/christian-bolea" target="_blank" rel="noopener">credly.com/users/christian-bolea &nearr;</a>
         </div>
         <p class="hero-desc">
-          Detail-oriented BS Information Technology student at <strong>Manuel S. Enverga University Foundation (MSEUF)</strong> (Major in Web and Mobile Application Development, Expected Graduation: 2027) seeking a <strong>540–600 hour OJT placement</strong> in <strong>AI-assisted software workflows, QA testing, application integration, or IT operations</strong>. Certified in the <strong>Google AI Professional Certificate</strong> and <strong>Wadhwani JobReady (With AI — Advanced Level)</strong>, with hands-on experience leading the end-to-end integration of a mobile and web capstone system, API verification, and hardware troubleshooting. Committed to honest, reliable teamwork and continuous technical learning.
+          BS Information Technology student at <strong>MSEUF</strong> (Expected Graduation: 2027) seeking a <strong>540–600 hour OJT placement</strong> in AI-assisted software workflows, QA testing, application integration, or IT operations. Certified in the <strong>Google AI Professional Certificate</strong> and <strong>Wadhwani JobReady (With AI — Advanced Level)</strong>, with hands-on capstone integration, Postman API testing, and hardware troubleshooting experience.
         </p>
         <div class="hero-actions">
-          <a href="https://docs.google.com/document/d/1YdLI6E5Fq4_VSKi45eN3nae14dqvbs9MYOpj4qB-ZvI/edit?usp=sharing" target="_blank" rel="noopener" class="btn-primary">View Current Resume (Google Docs) &nearr;</a>
+          <a href="https://docs.google.com/document/d/1YdLI6E5Fq4_VSKi45eN3nae14dqvbs9MYOpj4qB-ZvI/edit?usp=sharing" target="_blank" rel="noopener" class="btn-primary">View Resume (Google Docs) &nearr;</a>
           <a href="/resume.pdf" download="Christian_Louis_Bolea_Resume.pdf" class="btn-secondary">Download PDF Resume</a>
-          <a href="https://www.credly.com/users/christian-bolea" target="_blank" rel="noopener" class="btn-secondary">Credly Badges (9) &nearr;</a>
           <a href="https://github.com/Cbolea23" target="_blank" rel="noopener" class="btn-secondary">GitHub &nearr;</a>
           <a href="https://www.linkedin.com/in/bolea23" target="_blank" rel="noopener" class="btn-secondary">LinkedIn &nearr;</a>
         </div>
@@ -783,44 +1322,206 @@
         <div class="avatar-frame">
           <img src="/profile.jpg" alt="Christian Louis Bolea">
         </div>
+        <span class="avatar-caption">MSEUF BSIT &bull; Class of 2027</span>
       </div>
     </section>
 
-    <!-- OJT Placement Banner -->
-    <div class="ojt-banner">
+    <!-- Verified Skill Badges Marquee (Directly Below Hero Description & Above OJT Requirement) -->
+    <section class="badges-showcase reveal" id="badges" aria-label="Verified Skill Badges">
+      <div class="badges-bar-head">
+        <div class="badges-bar-title">
+          <span class="tag-mono">Credly Verified</span>
+          <h2>Earned Skill Badges (9)</h2>
+        </div>
+        <a href="https://www.credly.com/users/christian-bolea" target="_blank" rel="noopener" class="badges-bar-link">Verify All on Credly &nearr;</a>
+      </div>
+
+      <div class="badge-marquee-viewport">
+        <div class="badge-marquee-track">
+          <!-- Set 1: 9 Verified Credly Badges -->
+          <a href="https://www.credly.com/badges/42e64133-9626-4c32-a586-3132d1b3eb92/public_url" target="_blank" rel="noopener" class="credly-badge-item">
+            <div class="credly-badge-img-wrap">
+              <img src="https://images.credly.com/images/cef82b2e-970a-4318-8e59-c3e26b7f5c19/image.png" alt="Prompt Design in Vertex AI Skill Badge">
+            </div>
+            <div class="credly-badge-name">Prompt Design in Vertex AI</div>
+            <div class="credly-badge-issuer">Google Cloud &bull; 2026</div>
+          </a>
+
+          <a href="https://www.credly.com/badges/a25920ba-00a9-4f0f-b0ea-6be85cd1cddf/public_url" target="_blank" rel="noopener" class="credly-badge-item">
+            <div class="credly-badge-img-wrap">
+              <img src="https://images.credly.com/images/2cf18bea-6b75-401a-bf9d-ac0a23f582fd/blob" alt="Google AI for App Building Badge">
+            </div>
+            <div class="credly-badge-name">Google AI for App Building</div>
+            <div class="credly-badge-issuer">Google / Coursera</div>
+          </a>
+
+          <a href="https://www.credly.com/badges/ce0a3fb0-76c3-4599-8abb-8428947f7f22/public_url" target="_blank" rel="noopener" class="credly-badge-item">
+            <div class="credly-badge-img-wrap">
+              <img src="https://images.credly.com/images/82d20026-f78d-471a-920f-d971704ac3b6/blob" alt="Google AI for App Deployment Badge">
+            </div>
+            <div class="credly-badge-name">Google AI for App Deployment</div>
+            <div class="credly-badge-issuer">Google / Coursera</div>
+          </a>
+
+          <a href="https://www.credly.com/badges/3572d2ac-c952-4de2-ac98-a63a4abbfa88/public_url" target="_blank" rel="noopener" class="credly-badge-item">
+            <div class="credly-badge-img-wrap">
+              <img src="https://images.credly.com/images/97e068dc-d64a-4806-a6cd-5c4e68fa3d5f/blob" alt="Google AI for Data Analysis Badge">
+            </div>
+            <div class="credly-badge-name">Google AI for Data Analysis</div>
+            <div class="credly-badge-issuer">Google / Coursera</div>
+          </a>
+
+          <a href="https://www.credly.com/badges/a3c7d1f8-7ac7-4927-a718-e9487741caf8/public_url" target="_blank" rel="noopener" class="credly-badge-item">
+            <div class="credly-badge-img-wrap">
+              <img src="https://images.credly.com/images/c065d009-d51b-40f8-8f9b-4b90cb4ece67/blob" alt="Google AI for Research and Insights Badge">
+            </div>
+            <div class="credly-badge-name">Google AI for Research &amp; Insights</div>
+            <div class="credly-badge-issuer">Google / Coursera</div>
+          </a>
+
+          <a href="https://www.credly.com/badges/a0aebb6f-664a-42df-b76d-05fb83df5344/public_url" target="_blank" rel="noopener" class="credly-badge-item">
+            <div class="credly-badge-img-wrap">
+              <img src="https://images.credly.com/images/fb6dc8be-1471-4aab-b2ab-da1f76080ecf/blob" alt="Google AI for Brainstorming and Planning Badge">
+            </div>
+            <div class="credly-badge-name">Google AI for Brainstorming &amp; Planning</div>
+            <div class="credly-badge-issuer">Google / Coursera</div>
+          </a>
+
+          <a href="https://www.credly.com/badges/78c77065-ad7b-40af-87ca-200097eccad7/public_url" target="_blank" rel="noopener" class="credly-badge-item">
+            <div class="credly-badge-img-wrap">
+              <img src="https://images.credly.com/images/f0c5c16d-1480-4968-9259-50851d03f79a/blob" alt="Google AI for Content Creation Badge">
+            </div>
+            <div class="credly-badge-name">Google AI for Content Creation</div>
+            <div class="credly-badge-issuer">Google / Coursera</div>
+          </a>
+
+          <a href="https://www.credly.com/badges/a050f0cd-9711-4b00-88f3-7321e11cb0d1/public_url" target="_blank" rel="noopener" class="credly-badge-item">
+            <div class="credly-badge-img-wrap">
+              <img src="https://images.credly.com/images/791a77e5-1590-40bc-92a9-c69126fa4e4b/blob" alt="Google AI for Writing and Communicating Badge">
+            </div>
+            <div class="credly-badge-name">Google AI for Writing &amp; Communicating</div>
+            <div class="credly-badge-issuer">Google / Coursera</div>
+          </a>
+
+          <a href="https://www.credly.com/badges/076dd144-6b75-429e-bdca-67454149e959/public_url" target="_blank" rel="noopener" class="credly-badge-item">
+            <div class="credly-badge-img-wrap">
+              <img src="https://images.credly.com/images/36ecc7ff-8ccf-4bd8-83a7-6f35797e0b64/blob" alt="Google AI Fundamentals Badge">
+            </div>
+            <div class="credly-badge-name">Google AI Fundamentals</div>
+            <div class="credly-badge-issuer">Google / Coursera</div>
+          </a>
+
+          <!-- Set 2: Seamless Infinite Loop Duplicate -->
+          <a href="https://www.credly.com/badges/42e64133-9626-4c32-a586-3132d1b3eb92/public_url" target="_blank" rel="noopener" class="credly-badge-item" aria-hidden="true" tabindex="-1">
+            <div class="credly-badge-img-wrap">
+              <img src="https://images.credly.com/images/cef82b2e-970a-4318-8e59-c3e26b7f5c19/image.png" alt="">
+            </div>
+            <div class="credly-badge-name">Prompt Design in Vertex AI</div>
+            <div class="credly-badge-issuer">Google Cloud &bull; 2026</div>
+          </a>
+
+          <a href="https://www.credly.com/badges/a25920ba-00a9-4f0f-b0ea-6be85cd1cddf/public_url" target="_blank" rel="noopener" class="credly-badge-item" aria-hidden="true" tabindex="-1">
+            <div class="credly-badge-img-wrap">
+              <img src="https://images.credly.com/images/2cf18bea-6b75-401a-bf9d-ac0a23f582fd/blob" alt="">
+            </div>
+            <div class="credly-badge-name">Google AI for App Building</div>
+            <div class="credly-badge-issuer">Google / Coursera</div>
+          </a>
+
+          <a href="https://www.credly.com/badges/ce0a3fb0-76c3-4599-8abb-8428947f7f22/public_url" target="_blank" rel="noopener" class="credly-badge-item" aria-hidden="true" tabindex="-1">
+            <div class="credly-badge-img-wrap">
+              <img src="https://images.credly.com/images/82d20026-f78d-471a-920f-d971704ac3b6/blob" alt="">
+            </div>
+            <div class="credly-badge-name">Google AI for App Deployment</div>
+            <div class="credly-badge-issuer">Google / Coursera</div>
+          </a>
+
+          <a href="https://www.credly.com/badges/3572d2ac-c952-4de2-ac98-a63a4abbfa88/public_url" target="_blank" rel="noopener" class="credly-badge-item" aria-hidden="true" tabindex="-1">
+            <div class="credly-badge-img-wrap">
+              <img src="https://images.credly.com/images/97e068dc-d64a-4806-a6cd-5c4e68fa3d5f/blob" alt="">
+            </div>
+            <div class="credly-badge-name">Google AI for Data Analysis</div>
+            <div class="credly-badge-issuer">Google / Coursera</div>
+          </a>
+
+          <a href="https://www.credly.com/badges/a3c7d1f8-7ac7-4927-a718-e9487741caf8/public_url" target="_blank" rel="noopener" class="credly-badge-item" aria-hidden="true" tabindex="-1">
+            <div class="credly-badge-img-wrap">
+              <img src="https://images.credly.com/images/c065d009-d51b-40f8-8f9b-4b90cb4ece67/blob" alt="">
+            </div>
+            <div class="credly-badge-name">Google AI for Research &amp; Insights</div>
+            <div class="credly-badge-issuer">Google / Coursera</div>
+          </a>
+
+          <a href="https://www.credly.com/badges/a0aebb6f-664a-42df-b76d-05fb83df5344/public_url" target="_blank" rel="noopener" class="credly-badge-item" aria-hidden="true" tabindex="-1">
+            <div class="credly-badge-img-wrap">
+              <img src="https://images.credly.com/images/fb6dc8be-1471-4aab-b2ab-da1f76080ecf/blob" alt="">
+            </div>
+            <div class="credly-badge-name">Google AI for Brainstorming &amp; Planning</div>
+            <div class="credly-badge-issuer">Google / Coursera</div>
+          </a>
+
+          <a href="https://www.credly.com/badges/78c77065-ad7b-40af-87ca-200097eccad7/public_url" target="_blank" rel="noopener" class="credly-badge-item" aria-hidden="true" tabindex="-1">
+            <div class="credly-badge-img-wrap">
+              <img src="https://images.credly.com/images/f0c5c16d-1480-4968-9259-50851d03f79a/blob" alt="">
+            </div>
+            <div class="credly-badge-name">Google AI for Content Creation</div>
+            <div class="credly-badge-issuer">Google / Coursera</div>
+          </a>
+
+          <a href="https://www.credly.com/badges/a050f0cd-9711-4b00-88f3-7321e11cb0d1/public_url" target="_blank" rel="noopener" class="credly-badge-item" aria-hidden="true" tabindex="-1">
+            <div class="credly-badge-img-wrap">
+              <img src="https://images.credly.com/images/791a77e5-1590-40bc-92a9-c69126fa4e4b/blob" alt="">
+            </div>
+            <div class="credly-badge-name">Google AI for Writing &amp; Communicating</div>
+            <div class="credly-badge-issuer">Google / Coursera</div>
+          </a>
+
+          <a href="https://www.credly.com/badges/076dd144-6b75-429e-bdca-67454149e959/public_url" target="_blank" rel="noopener" class="credly-badge-item" aria-hidden="true" tabindex="-1">
+            <div class="credly-badge-img-wrap">
+              <img src="https://images.credly.com/images/36ecc7ff-8ccf-4bd8-83a7-6f35797e0b64/blob" alt="">
+            </div>
+            <div class="credly-badge-name">Google AI Fundamentals</div>
+            <div class="credly-badge-issuer">Google / Coursera</div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Practicum / OJT Requirement Banner -->
+    <div class="ojt-banner reveal">
       <div>
         <div class="ojt-banner-title">Practicum / On-the-Job Training (OJT) Requirement: 540–600 Hours</div>
         <p class="ojt-banner-text">
-          Open to roles in <strong>AI-Assisted Application Prototyping &amp; Integration</strong>, <strong>Software QA &amp; API/Mobile Testing (Postman / Android Hardware)</strong>, <strong>IT Operations &amp; Technical Support</strong>, or <strong>Junior Web/Mobile Support</strong>. Ready to follow company standard operating procedures (SOPs) and contribute reliably in Remote, Hybrid, Lucena City, or Metro Manila setups.
+          Target roles: <strong>AI-Assisted Software Workflows</strong>, <strong>QA &amp; API/Mobile Testing (Postman &amp; Android Hardware)</strong>, <strong>Application Integration</strong>, and <strong>IT Operations / Technical Support</strong>. Available for Remote, Hybrid, Lucena City, or Metro Manila setups.
         </p>
       </div>
-      <button class="btn-primary" onclick="copyEmail('Bolea2133@gmail.com')" style="font-size: 0.86rem; padding: 10px 18px;">
+      <button class="btn-primary" onclick="copyEmail('Bolea2133@gmail.com')" style="font-size: 0.85rem; padding: 10px 18px;">
         Copy Bolea2133@gmail.com
       </button>
     </div>
 
-    <!-- Key Strengths (Directly Aligned with Resume) -->
-    <div class="strengths-grid">
+    <!-- Key Strengths Grid -->
+    <div class="strengths-grid reveal">
       <div class="strength-card">
-        <h3>Modern AI-Assisted App Workflow</h3>
-        <p>Trained in structured prompting, output verification, and leveraging AI tools (Gemini, Google AI Studio, Antigravity) responsibly to prototype, integrate, and deploy working applications.</p>
+        <h3>AI-Assisted App Workflow</h3>
+        <p>Trained in structured prompting and output verification using Gemini, Google AI Studio, and Antigravity to prototype and integrate working apps.</p>
       </div>
       <div class="strength-card">
         <h3>Practical Testing &amp; Debugging</h3>
-        <p>Hands-on experience designing UI flows in Figma, verifying backend REST API responses in Postman, testing mobile APK builds on physical Android hardware, and resolving integration issues.</p>
+        <p>Hands-on experience designing flows in Figma, verifying backend endpoints in Postman, and testing Android APK builds on physical devices.</p>
       </div>
       <div class="strength-card">
         <h3>Transparent &amp; Adaptable Learner</h3>
-        <p>Honest about current technical boundaries (foundational Python/Django/Flutter plus AI-assisted workflows) while quick to follow technical documentation, SOPs, and senior developer feedback.</p>
+        <p>Honest about current technical boundaries while disciplined in following technical documentation, SOPs, and senior developer feedback.</p>
       </div>
     </div>
 
     <!-- Projects Section -->
-    <section id="projects">
+    <section id="projects" class="reveal">
       <div class="section-header">
-        <span class="section-eyebrow">// 01 &bull; Capstone &amp; Applied Projects</span>
-        <h2 class="section-title">Hands-On <span>Projects (5)</span></h2>
-        <p class="section-subtitle">An honest breakdown of my academic capstone and personal projects—highlighting what I integrated, how I used AI-assisted development tools responsibly, and how I tested and deployed each build.</p>
+        <span class="section-eyebrow">// 01 &bull; Applied Work</span>
+        <h2 class="section-title">Capstone &amp; <span>Projects (5)</span></h2>
+        <p class="section-subtitle">An honest overview of what I built, how AI-assisted workflows were applied, and how each build was tested.</p>
       </div>
 
       <div class="filter-bar">
@@ -834,32 +1535,31 @@
         <!-- 1. NiyoSense Capstone -->
         <div class="project-card featured" data-cat="capstone mobile ai-workflow">
           <div>
-            <span class="project-tag">Academic Capstone Project &bull; 2024 – Present</span>
-            <h3 class="project-title">NiyoSense — Lead Developer &amp; System Integrator (AI-Assisted Development)</h3>
-            <p class="project-subtitle">Manuel S. Enverga University Foundation (MSEUF) &bull; Flutter Mobile App + Django Web Backend</p>
+            <span class="project-tag">Academic Capstone &bull; 2024 – Present</span>
+            <h3 class="project-title">NiyoSense — Lead Developer &amp; Integrator (AI-Assisted Development)</h3>
+            <p class="project-subtitle">MSEUF BSIT Capstone &bull; Flutter Mobile App + Django Web Backend</p>
             <p class="project-desc">
-              Our BSIT capstone project designed to assist coconut maturity grading and field data recording through a Flutter mobile application connected to a centralized Django web dashboard.
+              Capstone mobile and web platform supporting field data recording and coconut maturity grading workflows.
             </p>
             <ul class="project-bullets">
-              <li><strong>AI-Assisted Full-Stack Integration:</strong> Led the end-to-end development, system integration, and cloud deployment of the NiyoSense Flutter mobile app and Django web backend utilizing structured AI-assisted coding and prototyping workflows.</li>
-              <li><strong>UI/UX Design &amp; Physical Device Testing:</strong> Designed mobile user interfaces and user flows in <strong>Figma</strong>, and conducted hands-on build compilation and field testing using <strong>Android Studio</strong> and physical Android smartphones.</li>
-              <li><strong>API Verification &amp; Debugging:</strong> Verified and debugged backend REST API endpoints using <strong>Postman</strong> to ensure reliable client-server synchronization between the mobile app, local SQLite storage, and the PostgreSQL database.</li>
-              <li><strong>Repository &amp; Version Control:</strong> Managed source code versioning, issue tracking, and release builds (APK v1.5.2) using <strong>GitHub</strong> and <strong>Visual Studio Code</strong>.</li>
+              <li><strong>End-to-End Integration:</strong> Integrated and deployed the Flutter mobile app and Django backend using structured AI-assisted coding and prototyping workflows.</li>
+              <li><strong>UI &amp; Device QA:</strong> Designed screens in <strong>Figma</strong>, compiled builds in <strong>Android Studio</strong>, and tested directly on physical Android smartphones.</li>
+              <li><strong>API &amp; Git Workflows:</strong> Debugged REST API endpoints with <strong>Postman</strong> and managed versioning on <strong>GitHub</strong> via VS Code.</li>
             </ul>
             <div class="tech-stack">
-              <span class="tech-pill">AI-Assisted Development</span>
+              <span class="tech-pill">AI-Assisted Dev</span>
               <span class="tech-pill">Flutter &amp; Dart</span>
               <span class="tech-pill">Django (Python)</span>
-              <span class="tech-pill">Postman (API Testing)</span>
-              <span class="tech-pill">Figma (UI Design)</span>
+              <span class="tech-pill">Postman API QA</span>
+              <span class="tech-pill">Figma</span>
               <span class="tech-pill">Android Studio</span>
-              <span class="tech-pill">GitHub &amp; VS Code</span>
+              <span class="tech-pill">GitHub</span>
             </div>
           </div>
           <div class="project-links">
-            <a href="https://niyosense.me" target="_blank" rel="noopener" class="btn-link">Live Web Portal (niyosense.me) &nearr;</a>
-            <a href="https://github.com/Cbolea23/niyosense-capstone/releases/tag/v1.5.2" target="_blank" rel="noopener" class="btn-link">Android APK Build v1.5.2 &nearr;</a>
-            <a href="https://github.com/Cbolea23/niyosense-capstone" target="_blank" rel="noopener" class="btn-link">GitHub Repository &nearr;</a>
+            <a href="https://niyosense.me" target="_blank" rel="noopener" class="btn-link">Live Web Portal &nearr;</a>
+            <a href="https://github.com/Cbolea23/niyosense-capstone/releases/tag/v1.5.2" target="_blank" rel="noopener" class="btn-link">Android APK v1.5.2 &nearr;</a>
+            <a href="https://github.com/Cbolea23/niyosense-capstone" target="_blank" rel="noopener" class="btn-link">GitHub &nearr;</a>
           </div>
         </div>
 
@@ -869,113 +1569,106 @@
             <div class="project-banner-preview">
               <img src="/brainrot-banner.webp" alt="BrainRot Galaxy Google Play Banner" loading="lazy">
             </div>
-            <div style="display:flex; align-items:center; gap:10px; margin-bottom:12px;">
-              <img src="/brainrot-icon.webp" alt="BrainRot Galaxy App Icon" style="width:36px; height:36px; border-radius:8px; border:1px solid rgba(255,255,255,0.15);" loading="lazy">
-              <span class="project-tag green" style="margin-bottom:0;">Google Play Store Release &bull; Mobile Prototype</span>
+            <div style="display:flex; align-items:center; gap:10px; margin-bottom:10px;">
+              <img src="/brainrot-icon.webp" alt="BrainRot Galaxy App Icon" style="width:34px; height:34px; border-radius:8px; border:1px solid var(--border);" loading="lazy">
+              <span class="project-tag green" style="margin-bottom:0;">Google Play Release</span>
             </div>
-            <h3 class="project-title">BrainRot Galaxy — Mobile Card Game &amp; Play Store Deployment</h3>
-            <p class="project-subtitle">Published on Google Play (<code>com.coconut.brainrot_galaxy</code>) &bull; AI-Assisted Flutter &amp; Godot Build</p>
+            <h3 class="project-title">BrainRot Galaxy — Mobile Game Deployment</h3>
+            <p class="project-subtitle">Package: com.coconut.brainrot_galaxy</p>
             <p class="project-desc">
-              A personal mobile card-collection and turn-based battler built using AI-assisted prototyping to learn the complete mobile game lifecycle—from UI layout and state management in Flutter/Godot to publishing a live app on the Google Play Store.
+              Mobile card-collection battler built through AI-assisted prototyping to master end-to-end Google Play Store publishing.
             </p>
             <ul class="project-bullets">
-              <li>Configured Android app signing, `.aab` bundle compilation, store graphics, privacy compliance, and production release tracks in the <strong>Google Play Console</strong>.</li>
-              <li>Tested builds across Android emulators and physical hardware to fix layout scaling and touch interaction bugs.</li>
+              <li>Configured Android `.aab` bundle builds, app signing, and production Play Console listings.</li>
+              <li>Verified responsive UI scaling and touch controls on physical Android hardware.</li>
             </ul>
             <div class="tech-stack">
               <span class="tech-pill">Google Play Console</span>
-              <span class="tech-pill">AI-Assisted Prototyping</span>
-              <span class="tech-pill">Flutter &amp; Dart</span>
-              <span class="tech-pill">Godot 4.5+</span>
-              <span class="tech-pill">Android App Bundle (.aab)</span>
+              <span class="tech-pill">Flutter &amp; Godot</span>
+              <span class="tech-pill">Android App Bundle</span>
               <span class="tech-pill">Firebase</span>
             </div>
           </div>
           <div class="project-links">
-            <a href="https://play.google.com/store/apps/details?id=com.coconut.brainrot_galaxy&hl=en" target="_blank" rel="noopener" class="btn-link">Google Play Store &nearr;</a>
-            <a href="https://github.com/Cbolea23/brainrot-galaxy-Personal" target="_blank" rel="noopener" class="btn-link">GitHub Repository &nearr;</a>
+            <a href="https://play.google.com/store/apps/details?id=com.coconut.brainrot_galaxy&hl=en" target="_blank" rel="noopener" class="btn-link">Google Play &nearr;</a>
+            <a href="https://github.com/Cbolea23/brainrot-galaxy-Personal" target="_blank" rel="noopener" class="btn-link">GitHub &nearr;</a>
           </div>
         </div>
 
         <!-- 3. Angelica Photobooth -->
         <div class="project-card" data-cat="mobile ai-workflow">
           <div>
-            <div style="display:flex; align-items:center; gap:10px; margin-bottom:12px;">
-              <img src="/photobooth-icon.webp" alt="Angelica Photobooth Icon" style="width:36px; height:36px; border-radius:8px; border:1px solid rgba(255,255,255,0.15);" loading="lazy">
-              <span class="project-tag green" style="margin-bottom:0;">Live Web App &bull; Capacitor Android APK</span>
+            <div style="display:flex; align-items:center; gap:10px; margin-bottom:10px;">
+              <img src="/photobooth-icon.webp" alt="Angelica Photobooth Icon" style="width:34px; height:34px; border-radius:8px; border:1px solid var(--border);" loading="lazy">
+              <span class="project-tag green" style="margin-bottom:0;">Live Web App &bull; Capacitor APK</span>
             </div>
-            <h3 class="project-title">Angelica Photobooth — Web &amp; Hybrid Android Camera App</h3>
-            <p class="project-subtitle">AI-Assisted Web Application &amp; Capacitor Mobile Packaging</p>
+            <h3 class="project-title">Angelica Photobooth — Camera Web &amp; APK</h3>
+            <p class="project-subtitle">HTML5 Camera API + Capacitor Android Packaging</p>
             <p class="project-desc">
-              An interactive browser and Android photobooth application built with AI-assisted HTML/CSS/JavaScript workflows. Allows users to capture timed camera shots, apply custom strip layouts (Vertical, Grid, Quad, Filmstrip), merge dual frames, and save downloadable photo strips.
+              Interactive browser and Android camera booth built with AI-assisted HTML/CSS/JS workflows for custom photo-strip layouts.
             </p>
             <ul class="project-bullets">
-              <li>Integrated browser webcam/mobile camera access (`MediaDevices.getUserMedia`) and HTML5 Canvas image compositing.</li>
-              <li>Packaged the web project into an installable Android `.apk` using <strong>Capacitor</strong> and hosted the web version on <strong>GitHub Pages</strong>.</li>
+              <li>Implemented camera capture (`getUserMedia`) and Canvas 2D multi-layout strip compositing.</li>
+              <li>Packaged into a hybrid Android `.apk` with <strong>Capacitor</strong> and deployed to GitHub Pages.</li>
             </ul>
             <div class="tech-stack">
               <span class="tech-pill">HTML / CSS / JS</span>
-              <span class="tech-pill">AI-Assisted Workflow</span>
-              <span class="tech-pill">HTML5 Canvas &amp; Camera API</span>
-              <span class="tech-pill">Capacitor (Android APK)</span>
-              <span class="tech-pill">GitHub Pages</span>
+              <span class="tech-pill">Canvas 2D &amp; Camera API</span>
+              <span class="tech-pill">Capacitor Android</span>
             </div>
           </div>
           <div class="project-links">
-            <a href="https://cbolea23.github.io/online-photobooth/" target="_blank" rel="noopener" class="btn-link">Launch Live Web App &nearr;</a>
-            <a href="https://github.com/Cbolea23/online-photobooth" target="_blank" rel="noopener" class="btn-link">GitHub Repository &nearr;</a>
+            <a href="https://cbolea23.github.io/online-photobooth/" target="_blank" rel="noopener" class="btn-link">Live Web App &nearr;</a>
+            <a href="https://github.com/Cbolea23/online-photobooth" target="_blank" rel="noopener" class="btn-link">GitHub &nearr;</a>
           </div>
         </div>
 
-        <!-- 4. A Day Back Then Media Workflow -->
+        <!-- 4. A Day Back Then -->
         <div class="project-card" data-cat="ai-workflow">
           <div>
-            <span class="project-tag cyan">Prompt Engineering &bull; Media Automation</span>
-            <h3 class="project-title">A Day Back Then — AI-Assisted Video &amp; Content Pipeline</h3>
-            <p class="project-subtitle">Structured Prompting, Script Generation &amp; Video Assembly Workflow</p>
+            <span class="project-tag blue">Prompt Engineering &bull; Automation</span>
+            <h3 class="project-title">A Day Back Then — AI Video Pipeline</h3>
+            <p class="project-subtitle">Structured Prompting &amp; Content Workflow</p>
             <p class="project-desc">
-              A personal media automation project exploring how structured prompt engineering (Gemini / Google AI Studio), TTS voiceovers, and Remotion/FFmpeg scripts can streamline short-form historical and Philippine folklore video production.
+              Media automation workflow exploring how structured Gemini prompts, narration, and Remotion/FFmpeg scripts streamline short-form history videos.
             </p>
             <ul class="project-bullets">
-              <li>Designed repeatable prompt templates and evaluation checks for script generation, captions, and visual storyboarding.</li>
-              <li>Managed multi-platform content publishing and API integration experiments across TikTok, YouTube, and Facebook.</li>
+              <li>Built repeatable prompt templates and evaluation checks for storyboarding and captions.</li>
+              <li>Coordinated cross-platform channel publishing experiments on TikTok and YouTube.</li>
             </ul>
             <div class="tech-stack">
-              <span class="tech-pill">Gemini &amp; Google AI Studio</span>
-              <span class="tech-pill">Prompt Engineering</span>
-              <span class="tech-pill">Node.js &amp; Remotion</span>
-              <span class="tech-pill">FFmpeg</span>
-              <span class="tech-pill">Agensi Workflows</span>
+              <span class="tech-pill">Gemini &amp; AI Studio</span>
+              <span class="tech-pill">Prompt Design</span>
+              <span class="tech-pill">Node.js &amp; FFmpeg</span>
             </div>
           </div>
           <div class="project-links">
-            <a href="https://www.tiktok.com/@adaybackthenofficial" target="_blank" rel="noopener" class="btn-link">TikTok Channel &nearr;</a>
-            <a href="https://www.youtube.com/@adaybackthenofficial" target="_blank" rel="noopener" class="btn-link">YouTube Channel &nearr;</a>
-            <a href="https://github.com/Cbolea23/a-day-back-then-automation" target="_blank" rel="noopener" class="btn-link">GitHub Repository &nearr;</a>
+            <a href="https://www.tiktok.com/@adaybackthenofficial" target="_blank" rel="noopener" class="btn-link">TikTok &nearr;</a>
+            <a href="https://www.youtube.com/@adaybackthenofficial" target="_blank" rel="noopener" class="btn-link">YouTube &nearr;</a>
+            <a href="https://github.com/Cbolea23/a-day-back-then-automation" target="_blank" rel="noopener" class="btn-link">GitHub &nearr;</a>
           </div>
         </div>
 
-        <!-- 5. Personal OJT Portfolio Website -->
+        <!-- 5. OJT Portfolio Website -->
         <div class="project-card" data-cat="ai-workflow">
           <div>
             <div class="project-banner-preview">
-              <img src="/logo-full.webp" alt="Portfolio Website Banner" loading="lazy">
+              <img src="/logo-full.webp" alt="Bolea Labs Portfolio Banner" loading="lazy">
             </div>
-            <span class="project-tag cyan">AI-Assisted Web Deployment &bull; Custom DNS</span>
-            <h3 class="project-title">Personal OJT Portfolio Website (bolealabs.site)</h3>
-            <p class="project-subtitle">Static Web Hosting, Custom Domain DNS &amp; AI Assistant Integration</p>
+            <span class="project-tag blue">Web Deployment &bull; Custom DNS</span>
+            <h3 class="project-title">Personal OJT Portfolio (bolealabs.site)</h3>
+            <p class="project-subtitle">Static Web Hosting &amp; AI Q&amp;A Assistant</p>
             <p class="project-desc">
-              Built and deployed this portfolio website using AI-assisted development tools (Antigravity &amp; Gemini) to present my OJT credentials, verified certificates, and project documentation in a clean, accessible format.
+              Built and deployed using AI-assisted workflows (Antigravity &amp; Gemini) to organize OJT credentials, badges, and certificates in a clean layout.
             </p>
             <ul class="project-bullets">
-              <li>Configured custom domain DNS routing (Namecheap A records &amp; CNAME), TLS/HTTPS certificates, and automated deployment on <strong>GitHub Pages</strong>.</li>
-              <li>Embedded an interactive portfolio Q&amp;A assistant to help recruiters quickly inspect my OJT hours, skills, and resume.</li>
+              <li>Configured Namecheap custom domain DNS records, HTTPS/TLS, and GitHub Pages publishing.</li>
+              <li>Embedded an interactive portfolio Q&amp;A assistant tailored for OJT employers.</li>
             </ul>
             <div class="tech-stack">
-              <span class="tech-pill">Antigravity (AI-Assisted Dev)</span>
+              <span class="tech-pill">Antigravity AI</span>
               <span class="tech-pill">HTML5 / CSS3 / JS</span>
-              <span class="tech-pill">GitHub Pages</span>
-              <span class="tech-pill">Custom DNS &amp; HTTPS</span>
+              <span class="tech-pill">GitHub Pages &amp; DNS</span>
             </div>
           </div>
           <div class="project-links">
@@ -985,122 +1678,615 @@
       </div>
     </section>
 
-    <!-- Verified Certifications Section -->
-    <section id="certifications">
+    <!-- Certifications Section (Strictly Titled "Certifications") -->
+    <section id="certifications" class="reveal">
       <div class="section-header">
-        <span class="section-eyebrow">// 02 &bull; Verified Credentials &amp; Training</span>
-        <h2 class="section-title">Certifications &amp; <span>Skill Badges</span></h2>
-        <p class="section-subtitle">All certificates and digital skill badges below are verifiable via Credly, Coursera, Google Cloud Skills, and Wadhwani Foundation.</p>
+        <span class="section-eyebrow">// 02 &bull; Official Credentials</span>
+        <h2 class="section-title"><span>Certifications</span></h2>
+        <p class="section-subtitle">Click any certificate frame to inspect full-size, or use the verify link to confirm authenticity directly with the issuing organization.</p>
       </div>
 
-      <div class="certs-grid">
-        <!-- 1. Google AI Professional Certificate -->
-        <div class="project-card" style="border-color: rgba(245, 179, 36, 0.4);">
-          <div>
-            <div class="cert-issuer">Google &bull; Coursera &amp; Credly (8-Course Specialization)</div>
-            <h3 class="cert-name">Google AI Professional Certificate</h3>
-            <p class="cert-focus">Includes 8 verified badges: <em>Google AI for App Building</em>, <em>AI for App Deployment</em>, <em>AI for Data Analysis</em>, <em>AI for Research &amp; Insights</em>, <em>AI for Brainstorming &amp; Planning</em>, <em>AI for Content Creation</em>, <em>AI for Writing &amp; Communicating</em>, and <em>Google AI Fundamentals</em>.</p>
-            <div class="cert-date">Completed: November 2026 &bull; 8 Credly Badges Issued</div>
+      <!-- Part A: Highlighted Certifications Auto-Sliding Carousel (10 Slides) -->
+      <div class="cert-slider-wrap" id="certSliderWrap">
+        <div class="cert-slider-topbar">
+          <div class="cert-sub-heading">
+            <span>Highlighted Certifications</span>
+            <span class="cert-sub-pill">10 Featured &bull; Auto-Sliding</span>
           </div>
-          <a href="https://www.credly.com/users/christian-bolea" target="_blank" rel="noopener" class="cert-verify">Verify All 8 Badges on Credly &nearr;</a>
+          <div class="slider-controls">
+            <button class="slider-btn" id="certPrevBtn" aria-label="Previous certificate slide">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+            </button>
+            <button class="slider-btn" id="certNextBtn" aria-label="Next certificate slide">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+            </button>
+          </div>
         </div>
 
-        <!-- 2. Prompt Design in Vertex AI -->
-        <div class="project-card" style="border-color: rgba(56, 189, 248, 0.35);">
-          <div>
-            <div class="cert-issuer">Google Cloud &bull; Credly Skill Badge</div>
-            <h3 class="cert-name">Prompt Design in Vertex AI Skill Badge</h3>
-            <p class="cert-focus">Hands-on challenge lab validation in prompt engineering, multimodal image analysis, and generative AI parameter tuning within Google Cloud Vertex AI.</p>
-            <div class="cert-date">Completed: November 22, 2026 &bull; Validated Lab Assessment</div>
+        <div class="cert-viewport" id="certViewport">
+          <div class="cert-track" id="certTrack">
+            <!-- H1: Google AI Professional Certificate -->
+            <div class="cert-slide">
+              <div class="cert-frame" onclick="openLightboxImg('https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~FAI3SKKE8Q5X/CERTIFICATE_LANDING_PAGE~FAI3SKKE8Q5X.jpeg', 'Google AI Professional Certificate (Specialization)', 'Google / Coursera', 'https://coursera.org/share/423768e8941e92643ba22038e6f7dba0')">
+                <img src="https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~FAI3SKKE8Q5X/CERTIFICATE_LANDING_PAGE~FAI3SKKE8Q5X.jpeg" alt="Google AI Professional Certificate" loading="lazy">
+                <span class="cert-zoom-hint">Click to Zoom</span>
+              </div>
+              <div class="cert-card-meta">
+                <div class="cert-issuer">Google &bull; Coursera Specialization</div>
+                <div class="cert-name">Google AI Professional Certificate</div>
+                <div class="cert-actions-row">
+                  <button class="btn-preview-sm" onclick="openLightboxImg('https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~FAI3SKKE8Q5X/CERTIFICATE_LANDING_PAGE~FAI3SKKE8Q5X.jpeg', 'Google AI Professional Certificate (Specialization)', 'Google / Coursera', 'https://coursera.org/share/423768e8941e92643ba22038e6f7dba0')">Preview</button>
+                  <a href="https://coursera.org/share/423768e8941e92643ba22038e6f7dba0" target="_blank" rel="noopener" class="cert-verify">Verify &nearr;</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- H2: Wadhwani JobReady (With AI) — Framed HTML Diploma Card -->
+            <div class="cert-slide">
+              <div class="cert-frame" onclick="openLightboxWadhwani()">
+                <div class="wf-diploma">
+                  <div class="wf-diploma-outer">
+                    <div class="wf-diploma-inner">
+                      <div>
+                        <div class="wf-org">Wadhwani Foundation</div>
+                        <div class="wf-heading">Certificate of Completion</div>
+                      </div>
+                      <div>
+                        <div class="wf-presented">Awarded To</div>
+                        <div class="wf-recipient">Christian Louis Bolea</div>
+                        <div class="wf-course">Employability Skills: JobReady (With AI) v1 &mdash; Advanced Level (75 Hours)</div>
+                      </div>
+                      <div class="wf-meta-row">
+                        <span>ID: 6afd82d5e9122901c229675e</span>
+                        <span class="wf-seal">VERIFIED</span>
+                        <span>NOV 2026</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <span class="cert-zoom-hint">Click to Zoom</span>
+              </div>
+              <div class="cert-card-meta">
+                <div class="cert-issuer">Wadhwani Foundation &bull; 75 Hours</div>
+                <div class="cert-name">JobReady (With AI) v1 — Advanced Level</div>
+                <div class="cert-actions-row">
+                  <button class="btn-preview-sm" onclick="openLightboxWadhwani()">Preview</button>
+                  <a href="https://web.certificate.wfglobal.org/en/certificate?certificateId=6afd82d5e9122901c229675e" target="_blank" rel="noopener" class="cert-verify">Verify &nearr;</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- H3: AI for Data Analysis -->
+            <div class="cert-slide">
+              <div class="cert-frame" onclick="openLightboxImg('https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~SIDFAA7LIDKL/CERTIFICATE_LANDING_PAGE~SIDFAA7LIDKL.jpeg', 'AI for Data Analysis', 'Google / Coursera', 'https://coursera.org/share/886399000ee8d1f0795247a4db77de40')">
+                <img src="https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~SIDFAA7LIDKL/CERTIFICATE_LANDING_PAGE~SIDFAA7LIDKL.jpeg" alt="Certificate: AI for Data Analysis" loading="lazy">
+                <span class="cert-zoom-hint">Click to Zoom</span>
+              </div>
+              <div class="cert-card-meta">
+                <div class="cert-issuer">Google &bull; Coursera</div>
+                <div class="cert-name">AI for Data Analysis</div>
+                <div class="cert-actions-row">
+                  <button class="btn-preview-sm" onclick="openLightboxImg('https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~SIDFAA7LIDKL/CERTIFICATE_LANDING_PAGE~SIDFAA7LIDKL.jpeg', 'AI for Data Analysis', 'Google / Coursera', 'https://coursera.org/share/886399000ee8d1f0795247a4db77de40')">Preview</button>
+                  <a href="https://coursera.org/share/886399000ee8d1f0795247a4db77de40" target="_blank" rel="noopener" class="cert-verify">Verify &nearr;</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- H4: AI for Content Creation -->
+            <div class="cert-slide">
+              <div class="cert-frame" onclick="openLightboxImg('https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~IHXS1PAHAGSA/CERTIFICATE_LANDING_PAGE~IHXS1PAHAGSA.jpeg', 'AI for Content Creation', 'Google / Coursera', 'https://coursera.org/share/ed02016f43c65a4ff34cdc6b8f4f43e4')">
+                <img src="https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~IHXS1PAHAGSA/CERTIFICATE_LANDING_PAGE~IHXS1PAHAGSA.jpeg" alt="Certificate: AI for Content Creation" loading="lazy">
+                <span class="cert-zoom-hint">Click to Zoom</span>
+              </div>
+              <div class="cert-card-meta">
+                <div class="cert-issuer">Google &bull; Coursera</div>
+                <div class="cert-name">AI for Content Creation</div>
+                <div class="cert-actions-row">
+                  <button class="btn-preview-sm" onclick="openLightboxImg('https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~IHXS1PAHAGSA/CERTIFICATE_LANDING_PAGE~IHXS1PAHAGSA.jpeg', 'AI for Content Creation', 'Google / Coursera', 'https://coursera.org/share/ed02016f43c65a4ff34cdc6b8f4f43e4')">Preview</button>
+                  <a href="https://coursera.org/share/ed02016f43c65a4ff34cdc6b8f4f43e4" target="_blank" rel="noopener" class="cert-verify">Verify &nearr;</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- H5: AI for Writing and Communicating -->
+            <div class="cert-slide">
+              <div class="cert-frame" onclick="openLightboxImg('https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~QT93KB1UPGMR/CERTIFICATE_LANDING_PAGE~QT93KB1UPGMR.jpeg', 'AI for Writing and Communicating', 'Google / Coursera', 'https://coursera.org/share/6e1c48d141a9cb727b153bd955084b9f')">
+                <img src="https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~QT93KB1UPGMR/CERTIFICATE_LANDING_PAGE~QT93KB1UPGMR.jpeg" alt="Certificate: AI for Writing and Communicating" loading="lazy">
+                <span class="cert-zoom-hint">Click to Zoom</span>
+              </div>
+              <div class="cert-card-meta">
+                <div class="cert-issuer">Google &bull; Coursera</div>
+                <div class="cert-name">AI for Writing and Communicating</div>
+                <div class="cert-actions-row">
+                  <button class="btn-preview-sm" onclick="openLightboxImg('https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~QT93KB1UPGMR/CERTIFICATE_LANDING_PAGE~QT93KB1UPGMR.jpeg', 'AI for Writing and Communicating', 'Google / Coursera', 'https://coursera.org/share/6e1c48d141a9cb727b153bd955084b9f')">Preview</button>
+                  <a href="https://coursera.org/share/6e1c48d141a9cb727b153bd955084b9f" target="_blank" rel="noopener" class="cert-verify">Verify &nearr;</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- H6: AI for Research and Insights -->
+            <div class="cert-slide">
+              <div class="cert-frame" onclick="openLightboxImg('https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~GREYJ82VP2DV/CERTIFICATE_LANDING_PAGE~GREYJ82VP2DV.jpeg', 'AI for Research and Insights', 'Google / Coursera', 'https://coursera.org/share/c0851f0b0477ce39814c1542aa16133f')">
+                <img src="https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~GREYJ82VP2DV/CERTIFICATE_LANDING_PAGE~GREYJ82VP2DV.jpeg" alt="Certificate: AI for Research and Insights" loading="lazy">
+                <span class="cert-zoom-hint">Click to Zoom</span>
+              </div>
+              <div class="cert-card-meta">
+                <div class="cert-issuer">Google &bull; Coursera</div>
+                <div class="cert-name">AI for Research and Insights</div>
+                <div class="cert-actions-row">
+                  <button class="btn-preview-sm" onclick="openLightboxImg('https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~GREYJ82VP2DV/CERTIFICATE_LANDING_PAGE~GREYJ82VP2DV.jpeg', 'AI for Research and Insights', 'Google / Coursera', 'https://coursera.org/share/c0851f0b0477ce39814c1542aa16133f')">Preview</button>
+                  <a href="https://coursera.org/share/c0851f0b0477ce39814c1542aa16133f" target="_blank" rel="noopener" class="cert-verify">Verify &nearr;</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- H7: AI for Brainstorming and Planning -->
+            <div class="cert-slide">
+              <div class="cert-frame" onclick="openLightboxImg('https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~8LEEX4STK5NF/CERTIFICATE_LANDING_PAGE~8LEEX4STK5NF.jpeg', 'AI for Brainstorming and Planning', 'Google / Coursera', 'https://coursera.org/share/388de16506f2a04ad92005dbfd325e9b')">
+                <img src="https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~8LEEX4STK5NF/CERTIFICATE_LANDING_PAGE~8LEEX4STK5NF.jpeg" alt="Certificate: AI for Brainstorming and Planning" loading="lazy">
+                <span class="cert-zoom-hint">Click to Zoom</span>
+              </div>
+              <div class="cert-card-meta">
+                <div class="cert-issuer">Google &bull; Coursera</div>
+                <div class="cert-name">AI for Brainstorming and Planning</div>
+                <div class="cert-actions-row">
+                  <button class="btn-preview-sm" onclick="openLightboxImg('https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~8LEEX4STK5NF/CERTIFICATE_LANDING_PAGE~8LEEX4STK5NF.jpeg', 'AI for Brainstorming and Planning', 'Google / Coursera', 'https://coursera.org/share/388de16506f2a04ad92005dbfd325e9b')">Preview</button>
+                  <a href="https://coursera.org/share/388de16506f2a04ad92005dbfd325e9b" target="_blank" rel="noopener" class="cert-verify">Verify &nearr;</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- H8: AI for App Deployment -->
+            <div class="cert-slide">
+              <div class="cert-frame" onclick="openLightboxImg('https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~TR2W8DQ24UP8/CERTIFICATE_LANDING_PAGE~TR2W8DQ24UP8.jpeg', 'AI for App Deployment', 'Google / Coursera', 'https://coursera.org/share/7af0642ead4bfdc9741073dc4e21a37f')">
+                <img src="https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~TR2W8DQ24UP8/CERTIFICATE_LANDING_PAGE~TR2W8DQ24UP8.jpeg" alt="Certificate: AI for App Deployment" loading="lazy">
+                <span class="cert-zoom-hint">Click to Zoom</span>
+              </div>
+              <div class="cert-card-meta">
+                <div class="cert-issuer">Google &bull; Coursera</div>
+                <div class="cert-name">AI for App Deployment</div>
+                <div class="cert-actions-row">
+                  <button class="btn-preview-sm" onclick="openLightboxImg('https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~TR2W8DQ24UP8/CERTIFICATE_LANDING_PAGE~TR2W8DQ24UP8.jpeg', 'AI for App Deployment', 'Google / Coursera', 'https://coursera.org/share/7af0642ead4bfdc9741073dc4e21a37f')">Preview</button>
+                  <a href="https://coursera.org/share/7af0642ead4bfdc9741073dc4e21a37f" target="_blank" rel="noopener" class="cert-verify">Verify &nearr;</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- H9: AI for App Building -->
+            <div class="cert-slide">
+              <div class="cert-frame" onclick="openLightboxImg('https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~KAZVH0WMM6AM/CERTIFICATE_LANDING_PAGE~KAZVH0WMM6AM.jpeg', 'AI for App Building', 'Google / Coursera', 'https://coursera.org/share/f94a314d4dc887718b7714257eb1bf5e')">
+                <img src="https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~KAZVH0WMM6AM/CERTIFICATE_LANDING_PAGE~KAZVH0WMM6AM.jpeg" alt="Certificate: AI for App Building" loading="lazy">
+                <span class="cert-zoom-hint">Click to Zoom</span>
+              </div>
+              <div class="cert-card-meta">
+                <div class="cert-issuer">Google &bull; Coursera</div>
+                <div class="cert-name">AI for App Building</div>
+                <div class="cert-actions-row">
+                  <button class="btn-preview-sm" onclick="openLightboxImg('https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~KAZVH0WMM6AM/CERTIFICATE_LANDING_PAGE~KAZVH0WMM6AM.jpeg', 'AI for App Building', 'Google / Coursera', 'https://coursera.org/share/f94a314d4dc887718b7714257eb1bf5e')">Preview</button>
+                  <a href="https://coursera.org/share/f94a314d4dc887718b7714257eb1bf5e" target="_blank" rel="noopener" class="cert-verify">Verify &nearr;</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- H10: AI Fundamentals -->
+            <div class="cert-slide">
+              <div class="cert-frame" onclick="openLightboxImg('https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~0T3ZTCOTITBM/CERTIFICATE_LANDING_PAGE~0T3ZTCOTITBM.jpeg', 'AI Fundamentals', 'Google / Coursera', 'https://coursera.org/share/94de9606b14f8357ceacccbda58dee03')">
+                <img src="https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~0T3ZTCOTITBM/CERTIFICATE_LANDING_PAGE~0T3ZTCOTITBM.jpeg" alt="Certificate: AI Fundamentals" loading="lazy">
+                <span class="cert-zoom-hint">Click to Zoom</span>
+              </div>
+              <div class="cert-card-meta">
+                <div class="cert-issuer">Google &bull; Coursera</div>
+                <div class="cert-name">AI Fundamentals</div>
+                <div class="cert-actions-row">
+                  <button class="btn-preview-sm" onclick="openLightboxImg('https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~0T3ZTCOTITBM/CERTIFICATE_LANDING_PAGE~0T3ZTCOTITBM.jpeg', 'AI Fundamentals', 'Google / Coursera', 'https://coursera.org/share/94de9606b14f8357ceacccbda58dee03')">Preview</button>
+                  <a href="https://coursera.org/share/94de9606b14f8357ceacccbda58dee03" target="_blank" rel="noopener" class="cert-verify">Verify &nearr;</a>
+                </div>
+              </div>
+            </div>
           </div>
-          <a href="https://www.credly.com/badges/42e64133-9626-4c32-a586-3132d1b3eb92/public_url" target="_blank" rel="noopener" class="cert-verify">Verify Official Google Cloud Badge &nearr;</a>
         </div>
 
-        <!-- 3. Google Generative AI Accelerator Program -->
-        <div class="project-card">
-          <div>
-            <div class="cert-issuer">Google Cloud Skills &bull; SkillWallet</div>
-            <h3 class="cert-name">Google Generative AI Accelerator Program</h3>
-            <p class="cert-focus">Focus: Generative AI, Large Language Models, and Prompt Design in Google Cloud Agent Platform (100% coursework &amp; labs completed).</p>
-            <div class="cert-date">Completed: November 2026 &bull; 100% Completed (Certificate Pending Issuance)</div>
+        <div class="slider-dots" id="sliderDots" aria-label="Certificate Slide Navigation"></div>
+      </div>
+
+      <!-- Part B: Additional Accomplished Certificates (23 Visual Framed Cards) -->
+      <div class="other-certs-header">
+        <div class="cert-sub-heading">
+          <span>Additional Accomplished Certificates</span>
+          <span class="cert-sub-pill" style="background: var(--blue-soft); color: var(--blue); border-color: var(--blue-border);">23 Verified</span>
+        </div>
+        <span style="font-size: 0.85rem; color: var(--ink-muted);">Full-Stack Web, Mobile, Linux, Security &amp; Tools</span>
+      </div>
+
+      <div class="filter-bar" id="certFilterBar">
+        <button class="filter-btn active" onclick="filterCerts('all', this)">All (23)</button>
+        <button class="filter-btn" onclick="filterCerts('web', this)">Web &amp; Backend (8)</button>
+        <button class="filter-btn" onclick="filterCerts('mobile', this)">Mobile &amp; iOS (5)</button>
+        <button class="filter-btn" onclick="filterCerts('infra', this)">Linux, Data &amp; Security (7)</button>
+        <button class="filter-btn" onclick="filterCerts('other', this)">Java, AI Ethics &amp; Tools (3)</button>
+      </div>
+
+      <div class="certs-grid" id="otherCertsGrid">
+        <!-- O1: MERN Stack Specialization -->
+        <div class="cert-grid-card" data-cert-cat="web">
+          <div class="cert-frame" onclick="openLightboxImg('https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~8KTWQFQQZ0Y4/CERTIFICATE_LANDING_PAGE~8KTWQFQQZ0Y4.jpeg', 'MERN Stack Front To Back: Full Stack React, Redux &amp; Node.js', 'Coursera Specialization', 'https://coursera.org/share/36ec87ec1b650af5b7ac0ddc9968203e')">
+            <img src="https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~8KTWQFQQZ0Y4/CERTIFICATE_LANDING_PAGE~8KTWQFQQZ0Y4.jpeg" alt="MERN Stack Specialization Certificate" loading="lazy">
+            <span class="cert-zoom-hint">Click to Zoom</span>
           </div>
-          <a href="https://www.credly.com/users/christian-bolea" target="_blank" rel="noopener" class="cert-verify">View Completed Lab Badges &nearr;</a>
+          <div class="cert-card-meta">
+            <div class="cert-issuer">Coursera &bull; Specialization</div>
+            <div class="cert-name">MERN Stack Front To Back: Full Stack React, Redux &amp; Node.js</div>
+            <div class="cert-actions-row">
+              <button class="btn-preview-sm" onclick="openLightboxImg('https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~8KTWQFQQZ0Y4/CERTIFICATE_LANDING_PAGE~8KTWQFQQZ0Y4.jpeg', 'MERN Stack Front To Back: Full Stack React, Redux &amp; Node.js', 'Coursera Specialization', 'https://coursera.org/share/36ec87ec1b650af5b7ac0ddc9968203e')">Preview</button>
+              <a href="https://coursera.org/share/36ec87ec1b650af5b7ac0ddc9968203e" target="_blank" rel="noopener" class="cert-verify">Verify &nearr;</a>
+            </div>
+          </div>
         </div>
 
-        <!-- 4. Wadhwani JobReady -->
-        <div class="project-card">
-          <div>
-            <div class="cert-issuer">Wadhwani Foundation</div>
-            <h3 class="cert-name">Employability Skills: JobReady (With AI) v1 — Advanced Level</h3>
-            <p class="cert-focus">75-hour intensive training covering workplace professionalism, business communication, collaborative problem-solving, and AI-assisted workplace productivity.</p>
-            <div class="cert-date">Completed: November 2026 &bull; 75 Hours (Advanced Level)</div>
+        <!-- O2: React Native -->
+        <div class="cert-grid-card" data-cert-cat="mobile">
+          <div class="cert-frame" onclick="openLightboxImg('https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~1866K2ETEOPB/CERTIFICATE_LANDING_PAGE~1866K2ETEOPB.jpeg', 'React Native', 'Meta / Coursera', 'https://coursera.org/share/c33d3fb8cff8b3950786f71f3f69aab9')">
+            <img src="https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~1866K2ETEOPB/CERTIFICATE_LANDING_PAGE~1866K2ETEOPB.jpeg" alt="Certificate: React Native" loading="lazy">
+            <span class="cert-zoom-hint">Click to Zoom</span>
           </div>
-          <a href="https://docs.google.com/document/d/1YdLI6E5Fq4_VSKi45eN3nae14dqvbs9MYOpj4qB-ZvI/edit?usp=sharing" target="_blank" rel="noopener" class="cert-verify">Listed on Official Resume &nearr;</a>
-        </div>
-
-        <!-- 5. Packt Backend Development -->
-        <div class="project-card">
-          <div>
-            <div class="cert-issuer">Packt &bull; Coursera</div>
-            <h3 class="cert-name">Backend Development and API Creation</h3>
-            <p class="cert-focus">Foundational backend architecture, RESTful endpoint structure, HTTP methods, and API request/response verification.</p>
-            <div class="cert-date">Completed: April 7, 2026 &bull; ID: 13BPR5I0J77P</div>
-          </div>
-          <a href="https://coursera.org/verify/13BPR5I0J77P" target="_blank" rel="noopener" class="cert-verify">Verify Official Credential &nearr;</a>
-        </div>
-
-        <!-- 6. Meta Front-End Development -->
-        <div class="project-card">
-          <div>
+          <div class="cert-card-meta">
             <div class="cert-issuer">Meta &bull; Coursera</div>
-            <h3 class="cert-name">Introduction to Front-End Development</h3>
-            <p class="cert-focus">Core web structure with HTML5, responsive CSS3 styling, DOM fundamentals, and modern UI component layout concepts.</p>
-            <div class="cert-date">Completed: October 17, 2025 &bull; ID: PH3F7R5EW865</div>
+            <div class="cert-name">React Native</div>
+            <div class="cert-actions-row">
+              <button class="btn-preview-sm" onclick="openLightboxImg('https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~1866K2ETEOPB/CERTIFICATE_LANDING_PAGE~1866K2ETEOPB.jpeg', 'React Native', 'Meta / Coursera', 'https://coursera.org/share/c33d3fb8cff8b3950786f71f3f69aab9')">Preview</button>
+              <a href="https://coursera.org/share/c33d3fb8cff8b3950786f71f3f69aab9" target="_blank" rel="noopener" class="cert-verify">Verify &nearr;</a>
+            </div>
           </div>
-          <a href="https://coursera.org/verify/PH3F7R5EW865" target="_blank" rel="noopener" class="cert-verify">Verify Official Credential &nearr;</a>
         </div>
 
-        <!-- 7. Meta MySQL & Advanced MySQL -->
-        <div class="project-card">
-          <div>
-            <div class="cert-issuer">Meta &bull; Coursera (2 Certificates)</div>
-            <h3 class="cert-name">Database Structures, Management &amp; Advanced MySQL Topics</h3>
-            <p class="cert-focus">Relational database schemas, SQL queries, joins, indexing, stored procedures, and data integrity principles.</p>
-            <div class="cert-date">Completed: October 2025 &bull; IDs: ASZT80EG1ATO &amp; XKDZ8Z1QMUMY</div>
+        <!-- O3: Working with Data in iOS -->
+        <div class="cert-grid-card" data-cert-cat="mobile">
+          <div class="cert-frame" onclick="openLightboxImg('https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~HG653GBKYPO7/CERTIFICATE_LANDING_PAGE~HG653GBKYPO7.jpeg', 'Working with Data in iOS', 'Meta / Coursera', 'https://coursera.org/share/99c7aedc4b22be9b780c2b1ae876bb98')">
+            <img src="https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~HG653GBKYPO7/CERTIFICATE_LANDING_PAGE~HG653GBKYPO7.jpeg" alt="Certificate: Working with Data in iOS" loading="lazy">
+            <span class="cert-zoom-hint">Click to Zoom</span>
           </div>
-          <a href="https://coursera.org/verify/ASZT80EG1ATO" target="_blank" rel="noopener" class="cert-verify">Verify MySQL Management &nearr;</a>
+          <div class="cert-card-meta">
+            <div class="cert-issuer">Meta &bull; Coursera</div>
+            <div class="cert-name">Working with Data in iOS</div>
+            <div class="cert-actions-row">
+              <button class="btn-preview-sm" onclick="openLightboxImg('https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~HG653GBKYPO7/CERTIFICATE_LANDING_PAGE~HG653GBKYPO7.jpeg', 'Working with Data in iOS', 'Meta / Coursera', 'https://coursera.org/share/99c7aedc4b22be9b780c2b1ae876bb98')">Preview</button>
+              <a href="https://coursera.org/share/99c7aedc4b22be9b780c2b1ae876bb98" target="_blank" rel="noopener" class="cert-verify">Verify &nearr;</a>
+            </div>
+          </div>
         </div>
 
-        <!-- 8. Google Cybersecurity -->
-        <div class="project-card">
-          <div>
+        <!-- O4: Advanced Programming in Swift -->
+        <div class="cert-grid-card" data-cert-cat="mobile">
+          <div class="cert-frame" onclick="openLightboxImg('https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~YPPGKR1XIYKV/CERTIFICATE_LANDING_PAGE~YPPGKR1XIYKV.jpeg', 'Advanced Programming in Swift', 'Meta / Coursera', 'https://coursera.org/share/19ef21b3378c85c1dbacb27a5daf5594')">
+            <img src="https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~YPPGKR1XIYKV/CERTIFICATE_LANDING_PAGE~YPPGKR1XIYKV.jpeg" alt="Certificate: Advanced Programming in Swift" loading="lazy">
+            <span class="cert-zoom-hint">Click to Zoom</span>
+          </div>
+          <div class="cert-card-meta">
+            <div class="cert-issuer">Meta &bull; Coursera</div>
+            <div class="cert-name">Advanced Programming in Swift</div>
+            <div class="cert-actions-row">
+              <button class="btn-preview-sm" onclick="openLightboxImg('https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~YPPGKR1XIYKV/CERTIFICATE_LANDING_PAGE~YPPGKR1XIYKV.jpeg', 'Advanced Programming in Swift', 'Meta / Coursera', 'https://coursera.org/share/19ef21b3378c85c1dbacb27a5daf5594')">Preview</button>
+              <a href="https://coursera.org/share/19ef21b3378c85c1dbacb27a5daf5594" target="_blank" rel="noopener" class="cert-verify">Verify &nearr;</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- O5: Laravel From Scratch -->
+        <div class="cert-grid-card" data-cert-cat="web">
+          <div class="cert-frame" onclick="openLightboxImg('https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~BMZW5X6IAQON/CERTIFICATE_LANDING_PAGE~BMZW5X6IAQON.jpeg', 'Laravel From Scratch', 'Coursera', 'https://coursera.org/share/ba374213c247a8f091483a995945d1d2')">
+            <img src="https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~BMZW5X6IAQON/CERTIFICATE_LANDING_PAGE~BMZW5X6IAQON.jpeg" alt="Certificate: Laravel From Scratch" loading="lazy">
+            <span class="cert-zoom-hint">Click to Zoom</span>
+          </div>
+          <div class="cert-card-meta">
+            <div class="cert-issuer">Packt &bull; Coursera</div>
+            <div class="cert-name">Laravel From Scratch</div>
+            <div class="cert-actions-row">
+              <button class="btn-preview-sm" onclick="openLightboxImg('https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~BMZW5X6IAQON/CERTIFICATE_LANDING_PAGE~BMZW5X6IAQON.jpeg', 'Laravel From Scratch', 'Coursera', 'https://coursera.org/share/ba374213c247a8f091483a995945d1d2')">Preview</button>
+              <a href="https://coursera.org/share/ba374213c247a8f091483a995945d1d2" target="_blank" rel="noopener" class="cert-verify">Verify &nearr;</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- O6: Create the User Interface with SwiftUI -->
+        <div class="cert-grid-card" data-cert-cat="mobile">
+          <div class="cert-frame" onclick="openLightboxImg('https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~V3TJAO81MFUQ/CERTIFICATE_LANDING_PAGE~V3TJAO81MFUQ.jpeg', 'Create the User Interface with SwiftUI', 'Meta / Coursera', 'https://coursera.org/share/b9da9cae6d39784e48d10cdaacd3c4b9')">
+            <img src="https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~V3TJAO81MFUQ/CERTIFICATE_LANDING_PAGE~V3TJAO81MFUQ.jpeg" alt="Certificate: Create the User Interface with SwiftUI" loading="lazy">
+            <span class="cert-zoom-hint">Click to Zoom</span>
+          </div>
+          <div class="cert-card-meta">
+            <div class="cert-issuer">Meta &bull; Coursera</div>
+            <div class="cert-name">Create the User Interface with SwiftUI</div>
+            <div class="cert-actions-row">
+              <button class="btn-preview-sm" onclick="openLightboxImg('https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~V3TJAO81MFUQ/CERTIFICATE_LANDING_PAGE~V3TJAO81MFUQ.jpeg', 'Create the User Interface with SwiftUI', 'Meta / Coursera', 'https://coursera.org/share/b9da9cae6d39784e48d10cdaacd3c4b9')">Preview</button>
+              <a href="https://coursera.org/share/b9da9cae6d39784e48d10cdaacd3c4b9" target="_blank" rel="noopener" class="cert-verify">Verify &nearr;</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- O7: Linux Administration and Networking Essentials -->
+        <div class="cert-grid-card hidden" data-cert-cat="infra">
+          <div class="cert-frame" onclick="openLightboxImg('https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~UHN7E2064KYC/CERTIFICATE_LANDING_PAGE~UHN7E2064KYC.jpeg', 'Linux Administration and Networking Essentials', 'Packt / Coursera', 'https://coursera.org/share/4af271a2bfb3fc7192caf901c275b965')">
+            <img src="https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~UHN7E2064KYC/CERTIFICATE_LANDING_PAGE~UHN7E2064KYC.jpeg" alt="Certificate: Linux Administration and Networking Essentials" loading="lazy">
+            <span class="cert-zoom-hint">Click to Zoom</span>
+          </div>
+          <div class="cert-card-meta">
+            <div class="cert-issuer">Packt &bull; Coursera</div>
+            <div class="cert-name">Linux Administration &amp; Networking Essentials</div>
+            <div class="cert-actions-row">
+              <button class="btn-preview-sm" onclick="openLightboxImg('https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~UHN7E2064KYC/CERTIFICATE_LANDING_PAGE~UHN7E2064KYC.jpeg', 'Linux Administration and Networking Essentials', 'Packt / Coursera', 'https://coursera.org/share/4af271a2bfb3fc7192caf901c275b965')">Preview</button>
+              <a href="https://coursera.org/share/4af271a2bfb3fc7192caf901c275b965" target="_blank" rel="noopener" class="cert-verify">Verify &nearr;</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- O8: Advanced Frontend Development and Deployment -->
+        <div class="cert-grid-card hidden" data-cert-cat="web">
+          <div class="cert-frame" onclick="openLightboxImg('https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~XWAWEYVGZZPB/CERTIFICATE_LANDING_PAGE~XWAWEYVGZZPB.jpeg', 'Advanced Frontend Development and Deployment', 'Packt / Coursera', 'https://coursera.org/share/cea307872947a0855617f314fdc3db1d')">
+            <img src="https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~XWAWEYVGZZPB/CERTIFICATE_LANDING_PAGE~XWAWEYVGZZPB.jpeg" alt="Certificate: Advanced Frontend Development and Deployment" loading="lazy">
+            <span class="cert-zoom-hint">Click to Zoom</span>
+          </div>
+          <div class="cert-card-meta">
+            <div class="cert-issuer">Packt &bull; Coursera</div>
+            <div class="cert-name">Advanced Frontend Development and Deployment</div>
+            <div class="cert-actions-row">
+              <button class="btn-preview-sm" onclick="openLightboxImg('https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~XWAWEYVGZZPB/CERTIFICATE_LANDING_PAGE~XWAWEYVGZZPB.jpeg', 'Advanced Frontend Development and Deployment', 'Packt / Coursera', 'https://coursera.org/share/cea307872947a0855617f314fdc3db1d')">Preview</button>
+              <a href="https://coursera.org/share/cea307872947a0855617f314fdc3db1d" target="_blank" rel="noopener" class="cert-verify">Verify &nearr;</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- O9: Frontend Development with React -->
+        <div class="cert-grid-card hidden" data-cert-cat="web">
+          <div class="cert-frame" onclick="openLightboxImg('https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~L7GDU9MZ94WN/CERTIFICATE_LANDING_PAGE~L7GDU9MZ94WN.jpeg', 'Frontend Development with React', 'Packt / Coursera', 'https://coursera.org/share/36b67e4b64f53c0241166f956e0a38be')">
+            <img src="https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~L7GDU9MZ94WN/CERTIFICATE_LANDING_PAGE~L7GDU9MZ94WN.jpeg" alt="Certificate: Frontend Development with React" loading="lazy">
+            <span class="cert-zoom-hint">Click to Zoom</span>
+          </div>
+          <div class="cert-card-meta">
+            <div class="cert-issuer">Packt &bull; Coursera</div>
+            <div class="cert-name">Frontend Development with React</div>
+            <div class="cert-actions-row">
+              <button class="btn-preview-sm" onclick="openLightboxImg('https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~L7GDU9MZ94WN/CERTIFICATE_LANDING_PAGE~L7GDU9MZ94WN.jpeg', 'Frontend Development with React', 'Packt / Coursera', 'https://coursera.org/share/36b67e4b64f53c0241166f956e0a38be')">Preview</button>
+              <a href="https://coursera.org/share/36b67e4b64f53c0241166f956e0a38be" target="_blank" rel="noopener" class="cert-verify">Verify &nearr;</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- O10: Backend Development and API Creation -->
+        <div class="cert-grid-card hidden" data-cert-cat="web">
+          <div class="cert-frame" onclick="openLightboxImg('https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~13BPR5I0J77P/CERTIFICATE_LANDING_PAGE~13BPR5I0J77P.jpeg', 'Backend Development and API Creation', 'Packt / Coursera', 'https://coursera.org/share/043bd0dafc7d1718ece20e43475740b9')">
+            <img src="https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~13BPR5I0J77P/CERTIFICATE_LANDING_PAGE~13BPR5I0J77P.jpeg" alt="Certificate: Backend Development and API Creation" loading="lazy">
+            <span class="cert-zoom-hint">Click to Zoom</span>
+          </div>
+          <div class="cert-card-meta">
+            <div class="cert-issuer">Packt &bull; Coursera</div>
+            <div class="cert-name">Backend Development and API Creation</div>
+            <div class="cert-actions-row">
+              <button class="btn-preview-sm" onclick="openLightboxImg('https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~13BPR5I0J77P/CERTIFICATE_LANDING_PAGE~13BPR5I0J77P.jpeg', 'Backend Development and API Creation', 'Packt / Coursera', 'https://coursera.org/share/043bd0dafc7d1718ece20e43475740b9')">Preview</button>
+              <a href="https://coursera.org/share/043bd0dafc7d1718ece20e43475740b9" target="_blank" rel="noopener" class="cert-verify">Verify &nearr;</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- O11: Django Web Framework -->
+        <div class="cert-grid-card hidden" data-cert-cat="web">
+          <div class="cert-frame" onclick="openLightboxImg('https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~GV80HIMNSDRR/CERTIFICATE_LANDING_PAGE~GV80HIMNSDRR.jpeg', 'Django Web Framework', 'Meta / Coursera', 'https://coursera.org/share/3a4320b6c06dedcb0d3bceb56d72d1ef')">
+            <img src="https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~GV80HIMNSDRR/CERTIFICATE_LANDING_PAGE~GV80HIMNSDRR.jpeg" alt="Certificate: Django Web Framework" loading="lazy">
+            <span class="cert-zoom-hint">Click to Zoom</span>
+          </div>
+          <div class="cert-card-meta">
+            <div class="cert-issuer">Meta &bull; Coursera</div>
+            <div class="cert-name">Django Web Framework</div>
+            <div class="cert-actions-row">
+              <button class="btn-preview-sm" onclick="openLightboxImg('https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~GV80HIMNSDRR/CERTIFICATE_LANDING_PAGE~GV80HIMNSDRR.jpeg', 'Django Web Framework', 'Meta / Coursera', 'https://coursera.org/share/3a4320b6c06dedcb0d3bceb56d72d1ef')">Preview</button>
+              <a href="https://coursera.org/share/3a4320b6c06dedcb0d3bceb56d72d1ef" target="_blank" rel="noopener" class="cert-verify">Verify &nearr;</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- O12: Single Page Web Applications with AngularJS -->
+        <div class="cert-grid-card hidden" data-cert-cat="web">
+          <div class="cert-frame" onclick="openLightboxImg('https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~Z434HWP2AB1K/CERTIFICATE_LANDING_PAGE~Z434HWP2AB1K.jpeg', 'Single Page Web Applications with AngularJS', 'Johns Hopkins / Coursera', 'https://coursera.org/share/9796dc076eb37ad4b323e65579df4e7c')">
+            <img src="https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~Z434HWP2AB1K/CERTIFICATE_LANDING_PAGE~Z434HWP2AB1K.jpeg" alt="Certificate: Single Page Web Applications with AngularJS" loading="lazy">
+            <span class="cert-zoom-hint">Click to Zoom</span>
+          </div>
+          <div class="cert-card-meta">
+            <div class="cert-issuer">Johns Hopkins &bull; Coursera</div>
+            <div class="cert-name">Single Page Web Applications with AngularJS</div>
+            <div class="cert-actions-row">
+              <button class="btn-preview-sm" onclick="openLightboxImg('https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~Z434HWP2AB1K/CERTIFICATE_LANDING_PAGE~Z434HWP2AB1K.jpeg', 'Single Page Web Applications with AngularJS', 'Johns Hopkins / Coursera', 'https://coursera.org/share/9796dc076eb37ad4b323e65579df4e7c')">Preview</button>
+              <a href="https://coursera.org/share/9796dc076eb37ad4b323e65579df4e7c" target="_blank" rel="noopener" class="cert-verify">Verify &nearr;</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- O13: Introduction to Front-End Development -->
+        <div class="cert-grid-card hidden" data-cert-cat="web">
+          <div class="cert-frame" onclick="openLightboxImg('https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~PH3F7R5EW865/CERTIFICATE_LANDING_PAGE~PH3F7R5EW865.jpeg', 'Introduction to Front-End Development', 'Meta / Coursera', 'https://coursera.org/share/5f0de7e88a087dc8546b33221b7ec05b')">
+            <img src="https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~PH3F7R5EW865/CERTIFICATE_LANDING_PAGE~PH3F7R5EW865.jpeg" alt="Certificate: Introduction to Front-End Development" loading="lazy">
+            <span class="cert-zoom-hint">Click to Zoom</span>
+          </div>
+          <div class="cert-card-meta">
+            <div class="cert-issuer">Meta &bull; Coursera</div>
+            <div class="cert-name">Introduction to Front-End Development</div>
+            <div class="cert-actions-row">
+              <button class="btn-preview-sm" onclick="openLightboxImg('https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~PH3F7R5EW865/CERTIFICATE_LANDING_PAGE~PH3F7R5EW865.jpeg', 'Introduction to Front-End Development', 'Meta / Coursera', 'https://coursera.org/share/5f0de7e88a087dc8546b33221b7ec05b')">Preview</button>
+              <a href="https://coursera.org/share/5f0de7e88a087dc8546b33221b7ec05b" target="_blank" rel="noopener" class="cert-verify">Verify &nearr;</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- O14: Flutter and Dart: Developing iOS, Android, and Mobile Apps -->
+        <div class="cert-grid-card hidden" data-cert-cat="mobile">
+          <div class="cert-frame" onclick="openLightboxImg('https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~RU6NWZOOYURW/CERTIFICATE_LANDING_PAGE~RU6NWZOOYURW.jpeg', 'Flutter and Dart: Developing iOS, Android, and Mobile Apps', 'IBM / Coursera', 'https://coursera.org/share/e807816b113ab5c101074020e5409f30')">
+            <img src="https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~RU6NWZOOYURW/CERTIFICATE_LANDING_PAGE~RU6NWZOOYURW.jpeg" alt="Certificate: Flutter and Dart" loading="lazy">
+            <span class="cert-zoom-hint">Click to Zoom</span>
+          </div>
+          <div class="cert-card-meta">
+            <div class="cert-issuer">IBM &bull; Coursera</div>
+            <div class="cert-name">Flutter and Dart: Developing iOS, Android, and Mobile Apps</div>
+            <div class="cert-actions-row">
+              <button class="btn-preview-sm" onclick="openLightboxImg('https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~RU6NWZOOYURW/CERTIFICATE_LANDING_PAGE~RU6NWZOOYURW.jpeg', 'Flutter and Dart: Developing iOS, Android, and Mobile Apps', 'IBM / Coursera', 'https://coursera.org/share/e807816b113ab5c101074020e5409f30')">Preview</button>
+              <a href="https://coursera.org/share/e807816b113ab5c101074020e5409f30" target="_blank" rel="noopener" class="cert-verify">Verify &nearr;</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- O15: Tools of the Trade: Linux and SQL -->
+        <div class="cert-grid-card hidden" data-cert-cat="infra">
+          <div class="cert-frame" onclick="openLightboxImg('https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~SX98LHU5KD9B/CERTIFICATE_LANDING_PAGE~SX98LHU5KD9B.jpeg', 'Tools of the Trade: Linux and SQL', 'Google / Coursera', 'https://coursera.org/share/2b099ed227c58ed7bfa02924b0725634')">
+            <img src="https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~SX98LHU5KD9B/CERTIFICATE_LANDING_PAGE~SX98LHU5KD9B.jpeg" alt="Certificate: Tools of the Trade: Linux and SQL" loading="lazy">
+            <span class="cert-zoom-hint">Click to Zoom</span>
+          </div>
+          <div class="cert-card-meta">
             <div class="cert-issuer">Google &bull; Coursera</div>
-            <h3 class="cert-name">Foundations of Cybersecurity</h3>
-            <p class="cert-focus">Core security principles, data privacy ethics, threat identification, access controls, and organizational security hygiene.</p>
-            <div class="cert-date">Completed: October 8, 2025 &bull; ID: G4S3PIR857ID</div>
+            <div class="cert-name">Tools of the Trade: Linux and SQL</div>
+            <div class="cert-actions-row">
+              <button class="btn-preview-sm" onclick="openLightboxImg('https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~SX98LHU5KD9B/CERTIFICATE_LANDING_PAGE~SX98LHU5KD9B.jpeg', 'Tools of the Trade: Linux and SQL', 'Google / Coursera', 'https://coursera.org/share/2b099ed227c58ed7bfa02924b0725634')">Preview</button>
+              <a href="https://coursera.org/share/2b099ed227c58ed7bfa02924b0725634" target="_blank" rel="noopener" class="cert-verify">Verify &nearr;</a>
+            </div>
           </div>
-          <a href="https://coursera.org/verify/G4S3PIR857ID" target="_blank" rel="noopener" class="cert-verify">Verify Official Credential &nearr;</a>
         </div>
 
-        <!-- 9. IBM Flutter & Dart + Packt React / JHU Angular -->
-        <div class="project-card">
-          <div>
-            <div class="cert-issuer">IBM, Johns Hopkins &amp; Packt &bull; Coursera</div>
-            <h3 class="cert-name">Flutter &amp; Dart Mobile Apps + Frontend Web Frameworks</h3>
-            <p class="cert-focus">Cross-platform mobile UI fundamentals with Flutter/Dart (IBM) alongside single-page web application concepts in React and AngularJS.</p>
-            <div class="cert-date">Completed: May 2025 – May 2026 &bull; IDs: RU6NWZOOYURW, L7GDU9MZ94WN</div>
+        <!-- O16: Foundations of Cybersecurity -->
+        <div class="cert-grid-card hidden" data-cert-cat="infra">
+          <div class="cert-frame" onclick="openLightboxImg('https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~G4S3PIR857ID/CERTIFICATE_LANDING_PAGE~G4S3PIR857ID.jpeg', 'Foundations of Cybersecurity', 'Google / Coursera', 'https://coursera.org/share/ad8f5323ec422bf64a25ff4019a8201f')">
+            <img src="https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~G4S3PIR857ID/CERTIFICATE_LANDING_PAGE~G4S3PIR857ID.jpeg" alt="Certificate: Foundations of Cybersecurity" loading="lazy">
+            <span class="cert-zoom-hint">Click to Zoom</span>
           </div>
-          <a href="https://coursera.org/verify/RU6NWZOOYURW" target="_blank" rel="noopener" class="cert-verify">Verify IBM Flutter Credential &nearr;</a>
+          <div class="cert-card-meta">
+            <div class="cert-issuer">Google &bull; Coursera</div>
+            <div class="cert-name">Foundations of Cybersecurity</div>
+            <div class="cert-actions-row">
+              <button class="btn-preview-sm" onclick="openLightboxImg('https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~G4S3PIR857ID/CERTIFICATE_LANDING_PAGE~G4S3PIR857ID.jpeg', 'Foundations of Cybersecurity', 'Google / Coursera', 'https://coursera.org/share/ad8f5323ec422bf64a25ff4019a8201f')">Preview</button>
+              <a href="https://coursera.org/share/ad8f5323ec422bf64a25ff4019a8201f" target="_blank" rel="noopener" class="cert-verify">Verify &nearr;</a>
+            </div>
+          </div>
         </div>
+
+        <!-- O17: Database Structures and Management with MySQL -->
+        <div class="cert-grid-card hidden" data-cert-cat="infra">
+          <div class="cert-frame" onclick="openLightboxImg('https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~ASZT80EG1ATO/CERTIFICATE_LANDING_PAGE~ASZT80EG1ATO.jpeg', 'Database Structures and Management with MySQL', 'Meta / Coursera', 'https://coursera.org/share/ced75b84deb7fde8db828977103159d9')">
+            <img src="https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~ASZT80EG1ATO/CERTIFICATE_LANDING_PAGE~ASZT80EG1ATO.jpeg" alt="Certificate: Database Structures and Management with MySQL" loading="lazy">
+            <span class="cert-zoom-hint">Click to Zoom</span>
+          </div>
+          <div class="cert-card-meta">
+            <div class="cert-issuer">Meta &bull; Coursera</div>
+            <div class="cert-name">Database Structures and Management with MySQL</div>
+            <div class="cert-actions-row">
+              <button class="btn-preview-sm" onclick="openLightboxImg('https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~ASZT80EG1ATO/CERTIFICATE_LANDING_PAGE~ASZT80EG1ATO.jpeg', 'Database Structures and Management with MySQL', 'Meta / Coursera', 'https://coursera.org/share/ced75b84deb7fde8db828977103159d9')">Preview</button>
+              <a href="https://coursera.org/share/ced75b84deb7fde8db828977103159d9" target="_blank" rel="noopener" class="cert-verify">Verify &nearr;</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- O18: Advanced MySQL Topics -->
+        <div class="cert-grid-card hidden" data-cert-cat="infra">
+          <div class="cert-frame" onclick="openLightboxImg('https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~XKDZ8Z1QMUMY/CERTIFICATE_LANDING_PAGE~XKDZ8Z1QMUMY.jpeg', 'Advanced MySQL Topics', 'Meta / Coursera', 'https://coursera.org/share/1fa73bb03f2c84d0600fb887ea5f866a')">
+            <img src="https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~XKDZ8Z1QMUMY/CERTIFICATE_LANDING_PAGE~XKDZ8Z1QMUMY.jpeg" alt="Certificate: Advanced MySQL Topics" loading="lazy">
+            <span class="cert-zoom-hint">Click to Zoom</span>
+          </div>
+          <div class="cert-card-meta">
+            <div class="cert-issuer">Meta &bull; Coursera</div>
+            <div class="cert-name">Advanced MySQL Topics</div>
+            <div class="cert-actions-row">
+              <button class="btn-preview-sm" onclick="openLightboxImg('https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~XKDZ8Z1QMUMY/CERTIFICATE_LANDING_PAGE~XKDZ8Z1QMUMY.jpeg', 'Advanced MySQL Topics', 'Meta / Coursera', 'https://coursera.org/share/1fa73bb03f2c84d0600fb887ea5f866a')">Preview</button>
+              <a href="https://coursera.org/share/1fa73bb03f2c84d0600fb887ea5f866a" target="_blank" rel="noopener" class="cert-verify">Verify &nearr;</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- O19: Basics of Cisco Networking -->
+        <div class="cert-grid-card hidden" data-cert-cat="infra">
+          <div class="cert-frame" onclick="openLightboxImg('https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~MZLFOHLOX4QM/CERTIFICATE_LANDING_PAGE~MZLFOHLOX4QM.jpeg', 'Basics of Cisco Networking', 'Coursera', 'https://coursera.org/share/c575770f05ff061098aaf2d6ea1258bc')">
+            <img src="https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~MZLFOHLOX4QM/CERTIFICATE_LANDING_PAGE~MZLFOHLOX4QM.jpeg" alt="Certificate: Basics of Cisco Networking" loading="lazy">
+            <span class="cert-zoom-hint">Click to Zoom</span>
+          </div>
+          <div class="cert-card-meta">
+            <div class="cert-issuer">Coursera</div>
+            <div class="cert-name">Basics of Cisco Networking</div>
+            <div class="cert-actions-row">
+              <button class="btn-preview-sm" onclick="openLightboxImg('https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~MZLFOHLOX4QM/CERTIFICATE_LANDING_PAGE~MZLFOHLOX4QM.jpeg', 'Basics of Cisco Networking', 'Coursera', 'https://coursera.org/share/c575770f05ff061098aaf2d6ea1258bc')">Preview</button>
+              <a href="https://coursera.org/share/c575770f05ff061098aaf2d6ea1258bc" target="_blank" rel="noopener" class="cert-verify">Verify &nearr;</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- O20: Operating System Virtualization -->
+        <div class="cert-grid-card hidden" data-cert-cat="infra">
+          <div class="cert-frame" onclick="openLightboxImg('https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~3IUYK1X5KD8B/CERTIFICATE_LANDING_PAGE~3IUYK1X5KD8B.jpeg', 'Operating System Virtualization', 'Coursera', 'https://coursera.org/share/2291de56a682a2255d13c4b25c33f4df')">
+            <img src="https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~3IUYK1X5KD8B/CERTIFICATE_LANDING_PAGE~3IUYK1X5KD8B.jpeg" alt="Certificate: Operating System Virtualization" loading="lazy">
+            <span class="cert-zoom-hint">Click to Zoom</span>
+          </div>
+          <div class="cert-card-meta">
+            <div class="cert-issuer">Coursera</div>
+            <div class="cert-name">Operating System Virtualization</div>
+            <div class="cert-actions-row">
+              <button class="btn-preview-sm" onclick="openLightboxImg('https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~3IUYK1X5KD8B/CERTIFICATE_LANDING_PAGE~3IUYK1X5KD8B.jpeg', 'Operating System Virtualization', 'Coursera', 'https://coursera.org/share/2291de56a682a2255d13c4b25c33f4df')">Preview</button>
+              <a href="https://coursera.org/share/2291de56a682a2255d13c4b25c33f4df" target="_blank" rel="noopener" class="cert-verify">Verify &nearr;</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- O21: Introduction to Object-Oriented Programming with Java -->
+        <div class="cert-grid-card hidden" data-cert-cat="other">
+          <div class="cert-frame" onclick="openLightboxImg('https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~HR9975CURUKN/CERTIFICATE_LANDING_PAGE~HR9975CURUKN.jpeg', 'Introduction to Object-Oriented Programming with Java', 'Coursera', 'https://coursera.org/share/8bd1baa6dff596b042a67262c7fbe1da')">
+            <img src="https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~HR9975CURUKN/CERTIFICATE_LANDING_PAGE~HR9975CURUKN.jpeg" alt="Certificate: Introduction to Object-Oriented Programming with Java" loading="lazy">
+            <span class="cert-zoom-hint">Click to Zoom</span>
+          </div>
+          <div class="cert-card-meta">
+            <div class="cert-issuer">Coursera</div>
+            <div class="cert-name">Introduction to Object-Oriented Programming with Java</div>
+            <div class="cert-actions-row">
+              <button class="btn-preview-sm" onclick="openLightboxImg('https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~HR9975CURUKN/CERTIFICATE_LANDING_PAGE~HR9975CURUKN.jpeg', 'Introduction to Object-Oriented Programming with Java', 'Coursera', 'https://coursera.org/share/8bd1baa6dff596b042a67262c7fbe1da')">Preview</button>
+              <a href="https://coursera.org/share/8bd1baa6dff596b042a67262c7fbe1da" target="_blank" rel="noopener" class="cert-verify">Verify &nearr;</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- O22: Generative AI for Students: Ethics & Academic Integrity -->
+        <div class="cert-grid-card hidden" data-cert-cat="other">
+          <div class="cert-frame" onclick="openLightboxImg('https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~0TK79ZXOQLGX/CERTIFICATE_LANDING_PAGE~0TK79ZXOQLGX.jpeg', 'Generative AI for Students: Ethics &amp; Academic Integrity', 'Coursera', 'https://coursera.org/share/67bfe8ed3ef0994a5cd000f5217f0960')">
+            <img src="https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~0TK79ZXOQLGX/CERTIFICATE_LANDING_PAGE~0TK79ZXOQLGX.jpeg" alt="Certificate: Generative AI for Students: Ethics and Academic Integrity" loading="lazy">
+            <span class="cert-zoom-hint">Click to Zoom</span>
+          </div>
+          <div class="cert-card-meta">
+            <div class="cert-issuer">Coursera</div>
+            <div class="cert-name">Generative AI for Students: Ethics &amp; Academic Integrity</div>
+            <div class="cert-actions-row">
+              <button class="btn-preview-sm" onclick="openLightboxImg('https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~0TK79ZXOQLGX/CERTIFICATE_LANDING_PAGE~0TK79ZXOQLGX.jpeg', 'Generative AI for Students: Ethics &amp; Academic Integrity', 'Coursera', 'https://coursera.org/share/67bfe8ed3ef0994a5cd000f5217f0960')">Preview</button>
+              <a href="https://coursera.org/share/67bfe8ed3ef0994a5cd000f5217f0960" target="_blank" rel="noopener" class="cert-verify">Verify &nearr;</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- O23: Improve Your Productivity and Performance with Canva -->
+        <div class="cert-grid-card hidden" data-cert-cat="other">
+          <div class="cert-frame" onclick="openLightboxImg('https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~0PISP4GBQPKQ/CERTIFICATE_LANDING_PAGE~0PISP4GBQPKQ.jpeg', 'Improve Your Productivity and Performance with Canva', 'Coursera', 'https://coursera.org/share/2c018041915b9a2b0cc1bb081f092d48')">
+            <img src="https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~0PISP4GBQPKQ/CERTIFICATE_LANDING_PAGE~0PISP4GBQPKQ.jpeg" alt="Certificate: Improve Your Productivity and Performance with Canva" loading="lazy">
+            <span class="cert-zoom-hint">Click to Zoom</span>
+          </div>
+          <div class="cert-card-meta">
+            <div class="cert-issuer">Coursera</div>
+            <div class="cert-name">Improve Your Productivity and Performance with Canva</div>
+            <div class="cert-actions-row">
+              <button class="btn-preview-sm" onclick="openLightboxImg('https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~0PISP4GBQPKQ/CERTIFICATE_LANDING_PAGE~0PISP4GBQPKQ.jpeg', 'Improve Your Productivity and Performance with Canva', 'Coursera', 'https://coursera.org/share/2c018041915b9a2b0cc1bb081f092d48')">Preview</button>
+              <a href="https://coursera.org/share/2c018041915b9a2b0cc1bb081f092d48" target="_blank" rel="noopener" class="cert-verify">Verify &nearr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cert-toggle-wrap" id="certToggleWrap">
+        <button class="btn-secondary" id="certToggleBtn" onclick="toggleAllCerts()">Show All 23 Certificates</button>
       </div>
     </section>
 
-    <!-- Technical Skills & Tools Section (Exact Match with Current Resume) -->
-    <section id="skills">
+    <!-- Technical Skills & Tools Section -->
+    <section id="skills" class="reveal">
       <div class="section-header">
         <span class="section-eyebrow">// 03 &bull; Honest Capability Matrix</span>
         <h2 class="section-title">Technical Skills &amp; <span>Tools</span></h2>
-        <p class="section-subtitle">Aligned directly with my resume to give employers an accurate, transparent view of the tools and workflows I use daily.</p>
+        <p class="section-subtitle">Aligned directly with my resume to give employers an accurate view of my daily tools and current skill boundaries.</p>
       </div>
 
       <div class="skills-section">
@@ -1111,31 +2297,30 @@
             <span class="skill-chip">Gemini</span>
             <span class="skill-chip">Google AI Studio</span>
             <span class="skill-chip">Google Cloud Agent Platform</span>
-            <span class="skill-chip">Vertex AI (Prompt Design Labs)</span>
-            <span class="skill-chip">Prompt Engineering &amp; Evaluation</span>
+            <span class="skill-chip">Vertex AI Prompt Labs</span>
             <span class="skill-chip">Antigravity (AI-Assisted Dev)</span>
           </div>
         </div>
 
         <div class="project-card">
           <h3 class="skill-cat-title">Application Development</h3>
-          <p class="skill-cat-desc">Academic coursework fundamentals paired with AI-assisted full-stack integration.</p>
+          <p class="skill-cat-desc">Coursework fundamentals paired with AI-assisted full-stack integration.</p>
           <div class="skill-chips">
             <span class="skill-chip">Python (Basics)</span>
-            <span class="skill-chip">Django (AI-Assisted / Basic Integration)</span>
-            <span class="skill-chip">Flutter &amp; Dart (Coursework Fundamentals)</span>
+            <span class="skill-chip">Django (AI-Assisted Integration)</span>
+            <span class="skill-chip">Flutter &amp; Dart (Fundamentals)</span>
             <span class="skill-chip">HTML5 / CSS3 / JS</span>
-            <span class="skill-chip">SQL &amp; Relational Databases</span>
+            <span class="skill-chip">SQL Databases</span>
           </div>
         </div>
 
         <div class="project-card">
           <h3 class="skill-cat-title">Testing, Design &amp; Dev Tools</h3>
-          <p class="skill-cat-desc">Hands-on API verification, UI prototyping, mobile build testing, and version control.</p>
+          <p class="skill-cat-desc">API verification, UI prototyping, mobile build testing, and version control.</p>
           <div class="skill-chips">
-            <span class="skill-chip">Postman (API Verification)</span>
-            <span class="skill-chip">Android Studio (Build &amp; Device Testing)</span>
-            <span class="skill-chip">Figma (UI Design &amp; User Flows)</span>
+            <span class="skill-chip">Postman (API QA)</span>
+            <span class="skill-chip">Android Studio</span>
+            <span class="skill-chip">Figma</span>
             <span class="skill-chip">GitHub &amp; Git</span>
             <span class="skill-chip">Visual Studio Code</span>
           </div>
@@ -1143,19 +2328,19 @@
 
         <div class="project-card">
           <h3 class="skill-cat-title">Hardware &amp; Technical Support</h3>
-          <p class="skill-cat-desc">Practical hardware assembly, soldering, and hands-on device troubleshooting.</p>
+          <p class="skill-cat-desc">Hands-on electronics assembly, soldering, and device troubleshooting.</p>
           <div class="skill-chips">
             <span class="skill-chip">Electronics Soldering</span>
-            <span class="skill-chip">Basic Hardware Assembly</span>
-            <span class="skill-chip">PC &amp; Device Troubleshooting</span>
-            <span class="skill-chip">Physical Android Device QA</span>
+            <span class="skill-chip">Hardware Assembly</span>
+            <span class="skill-chip">PC Troubleshooting</span>
+            <span class="skill-chip">Physical Android QA</span>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Education Section -->
-    <section id="education">
+    <section id="education" class="reveal">
       <div class="section-header">
         <span class="section-eyebrow">// 04 &bull; Academic Background</span>
         <h2 class="section-title">Education &amp; <span>OJT Details</span></h2>
@@ -1164,22 +2349,40 @@
       <div class="project-card">
         <div style="display:flex; justify-content:space-between; align-items:baseline; flex-wrap:wrap; gap:10px;">
           <div>
-            <h3 style="font-family:var(--font-heading); font-size:1.35rem; color:#fff;">Bachelor of Science in Information Technology</h3>
-            <p style="color:var(--gold); font-weight:600;">Manuel S. Enverga University Foundation (MSEUF) &bull; Lucena City, Quezon</p>
+            <h3 style="font-family:var(--font-heading); font-size:1.28rem; color:var(--ink);">Bachelor of Science in Information Technology</h3>
+            <p style="color:var(--blue); font-weight:600;">Manuel S. Enverga University Foundation (MSEUF) &bull; Lucena City, Quezon</p>
           </div>
           <div style="display:flex; gap:8px; flex-wrap:wrap;">
-            <span class="tech-pill" style="font-weight:700; color:var(--emerald); border-color:rgba(16,185,129,0.4);">Required OJT: 540–600 Hours</span>
-            <span class="tech-pill" style="font-weight:700; color:#fff;">Expected Graduation: 2027</span>
+            <span class="tech-pill" style="background:var(--emerald-soft); color:var(--emerald); border-color:var(--emerald-border);">Required OJT: 540–600 Hours</span>
+            <span class="tech-pill">Expected Graduation: 2027</span>
           </div>
         </div>
-        <p style="color:var(--text-muted); font-size:0.95rem; margin-top:14px; line-height:1.7;">
-          <strong style="color:#fff;">Major / Specialization:</strong> Web and Mobile Application Development<br>
-          <strong style="color:#fff;">Relevant Coursework:</strong> Mobile Applications Development, Web Systems and Technologies, Database Management Systems, Systems Analysis and Design, English for Occupational Purposes.<br>
-          <strong style="color:#fff;">Direct Contact for OJT / Internship Coordination:</strong> <a href="mailto:Bolea2133@gmail.com" style="color:var(--gold);">Bolea2133@gmail.com</a> &bull; <a href="mailto:A21-32404@student.mseuf.edu.ph" style="color:var(--cyan);">A21-32404@student.mseuf.edu.ph</a> &bull; <strong>0976 253 9052</strong>
+        <p style="color:var(--ink-body); font-size:0.93rem; margin-top:12px; line-height:1.7;">
+          <strong style="color:var(--ink);">Major:</strong> Web and Mobile Application Development<br>
+          <strong style="color:var(--ink);">Relevant Coursework:</strong> Mobile Applications Development, Web Systems and Technologies, Database Management Systems, Systems Analysis and Design, English for Occupational Purposes.<br>
+          <strong style="color:var(--ink);">Direct Contact:</strong> <a href="mailto:Bolea2133@gmail.com" style="color:var(--blue); font-weight:600;">Bolea2133@gmail.com</a> &bull; <strong>0976 253 9052</strong>
         </p>
       </div>
     </section>
   </main>
+
+  <!-- Certificate Lightbox Modal -->
+  <div id="certLightbox" onclick="if(event.target.id==='certLightbox') closeLightbox()" role="dialog" aria-modal="true" aria-labelledby="lbTitle">
+    <div class="lightbox-card">
+      <div class="lightbox-top">
+        <div>
+          <div id="lbIssuer" class="cert-issuer">Coursera</div>
+          <h3 id="lbTitle" style="font-family:var(--font-heading); font-size:1.25rem; color:var(--ink);">Certificate Title</h3>
+        </div>
+        <button class="lightbox-close" onclick="closeLightbox()" aria-label="Close preview">&times;</button>
+      </div>
+      <div class="lightbox-visual" id="lbVisual"></div>
+      <div class="lightbox-footer">
+        <span style="font-size:0.82rem; color:var(--ink-muted);">Click verify to open the official credential portal.</span>
+        <a id="lbVerifyLink" href="#" target="_blank" rel="noopener" class="btn-primary" style="padding:9px 18px; font-size:0.86rem;">Verify Official Certificate &nearr;</a>
+      </div>
+    </div>
+  </div>
 
   <div id="copyToast">Copied to clipboard!</div>
 
@@ -1187,9 +2390,9 @@
     <div style="max-width: 1180px; margin: 0 auto;">
       <p>&copy; 2026 Christian Louis Bolea &bull; BS Information Technology OJT Portfolio (MSEUF)</p>
       <p style="margin-top: 10px;">
-        <a href="https://docs.google.com/document/d/1YdLI6E5Fq4_VSKi45eN3nae14dqvbs9MYOpj4qB-ZvI/edit?usp=sharing" target="_blank" rel="noopener">Current Resume (Google Docs)</a>
-        <a href="/resume.pdf" download="Christian_Louis_Bolea_Resume.pdf">Download Resume (PDF)</a>
-        <a href="https://www.credly.com/users/christian-bolea" target="_blank" rel="noopener">Credly Profile</a>
+        <a href="https://docs.google.com/document/d/1YdLI6E5Fq4_VSKi45eN3nae14dqvbs9MYOpj4qB-ZvI/edit?usp=sharing" target="_blank" rel="noopener">Resume (Google Docs)</a>
+        <a href="/resume.pdf" download="Christian_Louis_Bolea_Resume.pdf">Resume (PDF)</a>
+        <a href="https://www.credly.com/users/christian-bolea" target="_blank" rel="noopener">Credly Badges</a>
         <a href="https://github.com/Cbolea23" target="_blank" rel="noopener">GitHub</a>
         <a href="https://www.linkedin.com/in/bolea23" target="_blank" rel="noopener">LinkedIn</a>
         <a href="mailto:Bolea2133@gmail.com">Bolea2133@gmail.com</a>
@@ -1214,9 +2417,20 @@
       if (bar && height > 0) bar.style.width = ((winScroll / height) * 100) + '%';
     });
 
+    // IntersectionObserver Staggered Reveal
+    const revealObs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+
     // Filter Projects
     function filterProjects(cat, btn) {
-      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('#projects .filter-btn').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
       document.querySelectorAll('#projects .project-card').forEach(card => {
         if (cat === 'all' || (card.getAttribute('data-cat') || '').includes(cat)) {
@@ -1225,6 +2439,41 @@
           card.classList.add('hidden');
         }
       });
+    }
+
+    // Filter & Expand Additional Certificates (23)
+    let activeCertCat = 'all';
+    let certsExpanded = false;
+
+    function updateCertGridVisibility() {
+      const cards = document.querySelectorAll('#otherCertsGrid .cert-grid-card');
+      const toggleWrap = document.getElementById('certToggleWrap');
+      const toggleBtn = document.getElementById('certToggleBtn');
+
+      if (activeCertCat === 'all') {
+        cards.forEach((card, idx) => {
+          card.classList.toggle('hidden', !certsExpanded && idx >= 6);
+        });
+        if (toggleWrap) toggleWrap.style.display = 'flex';
+        if (toggleBtn) toggleBtn.textContent = certsExpanded ? 'Show Fewer Certificates' : 'Show All 23 Certificates';
+      } else {
+        cards.forEach(card => {
+          card.classList.toggle('hidden', card.getAttribute('data-cert-cat') !== activeCertCat);
+        });
+        if (toggleWrap) toggleWrap.style.display = 'none';
+      }
+    }
+
+    function filterCerts(cat, btn) {
+      activeCertCat = cat;
+      document.querySelectorAll('#certFilterBar .filter-btn').forEach(b => b.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+      updateCertGridVisibility();
+    }
+
+    function toggleAllCerts() {
+      certsExpanded = !certsExpanded;
+      updateCertGridVisibility();
     }
 
     // Copy Email
@@ -1240,54 +2489,157 @@
       });
     }
 
-    // Subtle Background Particle Canvas
-    const canvas = document.getElementById('neuralCanvas');
-    const ctx = canvas.getContext('2d');
-    let particles = [];
-    function resizeCanvas() {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    }
-    window.addEventListener('resize', resizeCanvas);
-    resizeCanvas();
+    // Auto-Sliding Certificate Carousel
+    (function initCertSlider() {
+      const wrap = document.getElementById('certSliderWrap');
+      const track = document.getElementById('certTrack');
+      const dotsWrap = document.getElementById('sliderDots');
+      const prevBtn = document.getElementById('certPrevBtn');
+      const nextBtn = document.getElementById('certNextBtn');
+      if (!track || !dotsWrap) return;
 
-    const count = window.innerWidth < 768 ? 22 : 42;
-    for (let i = 0; i < count; i++) {
-      particles.push({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        vx: (Math.random() - 0.5) * 0.3,
-        vy: (Math.random() - 0.5) * 0.3,
-        r: Math.random() * 1.6 + 0.8
-      });
-    }
-    function animateCanvas() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      for (let i = 0; i < particles.length; i++) {
-        const p = particles[i];
-        p.x += p.vx;
-        p.y += p.vy;
-        if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
-        if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        ctx.fillStyle = 'rgba(245, 179, 36, 0.42)';
-        ctx.fill();
-        for (let j = i + 1; j < particles.length; j++) {
-          const p2 = particles[j];
-          const d = Math.hypot(p.x - p2.x, p.y - p2.y);
-          if (d < 125) {
-            ctx.beginPath();
-            ctx.moveTo(p.x, p.y);
-            ctx.lineTo(p2.x, p2.y);
-            ctx.strokeStyle = `rgba(245, 179, 36, ${(1 - d / 125) * 0.11})`;
-            ctx.stroke();
-          }
+      const slides = Array.from(track.children);
+      let currentIdx = 0;
+      let autoTimer = null;
+
+      function getVisibleCount() {
+        if (window.innerWidth <= 680) return 1;
+        if (window.innerWidth <= 1024) return 2;
+        return 3;
+      }
+
+      function getMaxIndex() {
+        return Math.max(0, slides.length - getVisibleCount());
+      }
+
+      function buildDots() {
+        const maxIdx = getMaxIndex();
+        dotsWrap.innerHTML = '';
+        for (let i = 0; i <= maxIdx; i++) {
+          const dot = document.createElement('button');
+          dot.className = 'slider-dot' + (i === currentIdx ? ' active' : '');
+          dot.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+          dot.addEventListener('click', () => {
+            goToSlide(i);
+            restartAuto();
+          });
+          dotsWrap.appendChild(dot);
         }
       }
-      requestAnimationFrame(animateCanvas);
+
+      function goToSlide(idx) {
+        const maxIdx = getMaxIndex();
+        if (idx > maxIdx) currentIdx = 0;
+        else if (idx < 0) currentIdx = maxIdx;
+        else currentIdx = idx;
+
+        const slideWidth = slides[0].getBoundingClientRect().width;
+        const gap = 20;
+        track.style.transform = 'translateX(-' + (currentIdx * (slideWidth + gap)) + 'px)';
+
+        Array.from(dotsWrap.children).forEach((d, i) => {
+          d.classList.toggle('active', i === currentIdx);
+        });
+      }
+
+      function nextSlide() { goToSlide(currentIdx + 1); }
+      function prevSlide() { goToSlide(currentIdx - 1); }
+
+      function startAuto() {
+        stopAuto();
+        autoTimer = setInterval(nextSlide, 4200);
+      }
+      function stopAuto() {
+        if (autoTimer) { clearInterval(autoTimer); autoTimer = null; }
+      }
+      function restartAuto() { stopAuto(); startAuto(); }
+
+      if (prevBtn) prevBtn.addEventListener('click', () => { prevSlide(); restartAuto(); });
+      if (nextBtn) nextBtn.addEventListener('click', () => { nextSlide(); restartAuto(); });
+
+      if (wrap) {
+        wrap.addEventListener('mouseenter', stopAuto);
+        wrap.addEventListener('mouseleave', startAuto);
+      }
+
+      // Touch swipe support
+      let touchStartX = 0;
+      track.addEventListener('touchstart', e => {
+        touchStartX = e.changedTouches[0].screenX;
+        stopAuto();
+      }, { passive: true });
+      track.addEventListener('touchend', e => {
+        const dx = e.changedTouches[0].screenX - touchStartX;
+        if (dx < -40) nextSlide();
+        else if (dx > 40) prevSlide();
+        startAuto();
+      }, { passive: true });
+
+      window.addEventListener('resize', () => {
+        if (currentIdx > getMaxIndex()) currentIdx = getMaxIndex();
+        buildDots();
+        goToSlide(currentIdx);
+      });
+
+      buildDots();
+      startAuto();
+      window.CertCarouselControl = { stop: stopAuto, start: startAuto };
+    })();
+
+    // Certificate Lightbox Modal
+    function openLightboxImg(imgUrl, title, issuer, verifyUrl) {
+      const lb = document.getElementById('certLightbox');
+      document.getElementById('lbIssuer').textContent = issuer;
+      document.getElementById('lbTitle').textContent = title;
+      document.getElementById('lbVerifyLink').href = verifyUrl;
+      const visual = document.getElementById('lbVisual');
+      visual.innerHTML = '';
+      const img = document.createElement('img');
+      img.src = imgUrl;
+      img.alt = title;
+      visual.appendChild(img);
+      lb.classList.add('open');
+      if (window.CertCarouselControl) window.CertCarouselControl.stop();
     }
-    requestAnimationFrame(animateCanvas);
+
+    function openLightboxWadhwani() {
+      const lb = document.getElementById('certLightbox');
+      document.getElementById('lbIssuer').textContent = 'Wadhwani Foundation • 75 Hours';
+      document.getElementById('lbTitle').textContent = 'Employability Skills: JobReady (With AI) v1 — Advanced Level';
+      document.getElementById('lbVerifyLink').href = 'https://web.certificate.wfglobal.org/en/certificate?certificateId=6afd82d5e9122901c229675e';
+      document.getElementById('lbVisual').innerHTML = `
+        <div class="wf-diploma">
+          <div class="wf-diploma-outer">
+            <div class="wf-diploma-inner">
+              <div>
+                <div class="wf-org">Wadhwani Foundation</div>
+                <div class="wf-heading">Certificate of Completion</div>
+              </div>
+              <div>
+                <div class="wf-presented">This Certificate Is Proudly Awarded To</div>
+                <div class="wf-recipient">Christian Louis Bolea</div>
+                <div class="wf-course">Employability Skills: JobReady (With AI) v1 &mdash; Advanced Level (75 Hours)</div>
+              </div>
+              <div class="wf-meta-row">
+                <span>Certificate ID: 6afd82d5e9122901c229675e</span>
+                <span class="wf-seal">VERIFIED</span>
+                <span>Issued: Nov 2026</span>
+              </div>
+            </div>
+          </div>
+        </div>`;
+      lb.classList.add('open');
+      if (window.CertCarouselControl) window.CertCarouselControl.stop();
+    }
+
+    function closeLightbox() {
+      document.getElementById('certLightbox').classList.remove('open');
+      if (window.CertCarouselControl) window.CertCarouselControl.start();
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeLightbox();
+    });
   </script>
   <script src="/agent.js"></script>
 </body>
