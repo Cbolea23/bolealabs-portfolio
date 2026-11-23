@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Christian Louis Bolea — BSIT OJT Portfolio (540–600 Hours)</title>
   <meta name="description" content="OJT and Internship Portfolio of Christian Louis Bolea — BS Information Technology student at MSEUF seeking a 540–600 hour OJT placement in AI-assisted software workflows, QA testing, application integration, or IT operations.">
 
@@ -17,7 +17,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/agent.css?v=20261124">
+  <link rel="stylesheet" href="/agent.css?v=20261124m">
 
   <style>
     :root {
@@ -47,7 +47,8 @@
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; overflow-x: hidden; }
+    section[id] { scroll-margin-top: 76px; }
     body {
       background-color: var(--bg);
       background-image:
@@ -206,6 +207,7 @@
     .status-pulse {
       width: 8px;
       height: 8px;
+      flex-shrink: 0;
       background: var(--emerald);
       border-radius: 50%;
       box-shadow: 0 0 0 0 rgba(5, 150, 105, 0.45);
@@ -358,6 +360,8 @@
       font-size: 0.72rem;
       font-weight: 700;
       color: var(--ink);
+      text-align: center;
+      white-space: nowrap;
     }
 
     /* Verified Skill Badges Marquee (Directly Below Hero, Above OJT Banner) */
@@ -1228,24 +1232,45 @@
     }
 
     @media (max-width: 860px) {
-      .hero { grid-template-columns: 1fr; text-align: center; padding-top: 28px; gap: 28px; }
+      body { background-attachment: scroll; }
+      .hero { grid-template-columns: 1fr; text-align: center; padding-top: 28px; gap: 24px; }
+      .hero-avatar-wrapper { order: -1; }
       .hero-meta { justify-content: center; }
       .hero-actions { justify-content: center; }
-      .avatar-frame { width: 185px; height: 185px; }
+      .avatar-frame { width: 152px; height: 152px; }
       .nav-links { display: none; }
       .nav-links.open {
         display: flex;
         flex-direction: column;
+        gap: 6px;
         position: absolute;
         top: 100%;
         left: 0;
         right: 0;
         background: #ffffff;
-        padding: 20px;
+        padding: 14px 16px 18px;
         border-bottom: 1px solid var(--border);
         box-shadow: 0 14px 30px rgba(15, 23, 42, 0.1);
       }
-      .mobile-menu-btn { display: block; }
+      .nav-links.open a {
+        width: 100%;
+        padding: 10px 12px;
+        text-align: center;
+        border-radius: 8px;
+      }
+      .nav-links.open .btn-nav-resume {
+        width: 100%;
+        justify-content: center;
+        padding: 11px 16px;
+        margin-top: 4px;
+      }
+      .mobile-menu-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 44px;
+        min-height: 44px;
+      }
       .projects-grid { grid-template-columns: 1fr; }
       .logo-sub { display: none; }
     }
@@ -1254,6 +1279,109 @@
       .cert-slide { flex: 0 0 100%; }
       .certs-grid { grid-template-columns: 1fr; }
       .cert-slider-wrap { padding: 18px 16px; }
+      .slider-btn { width: 40px; height: 40px; }
+      .cert-actions-row .btn-preview-sm,
+      .cert-actions-row .cert-verify {
+        min-height: 36px;
+        display: inline-flex;
+        align-items: center;
+      }
+      .filter-bar {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        padding-bottom: 4px;
+      }
+      .filter-bar::-webkit-scrollbar { display: none; }
+      .filter-btn {
+        flex-shrink: 0;
+        white-space: nowrap;
+        min-height: 38px;
+      }
+      .cert-zoom-hint { opacity: 0.88; font-size: 0.62rem; }
+    }
+
+    @media (hover: none) {
+      .cert-zoom-hint { opacity: 0.88; font-size: 0.62rem; }
+    }
+
+    @media (max-width: 640px) {
+      .badges-bar-head { padding: 0 16px 12px; }
+      .badge-marquee-viewport {
+        -webkit-mask-image: linear-gradient(to right, transparent, #000 3%, #000 97%, transparent);
+        mask-image: linear-gradient(to right, transparent, #000 3%, #000 97%, transparent);
+      }
+      .credly-badge-item { flex: 0 0 146px; padding: 12px 10px; }
+      .credly-badge-img-wrap,
+      .credly-badge-img-wrap img { width: 68px; height: 68px; }
+      .ojt-banner { padding: 18px 16px; }
+      .ojt-banner > div { min-width: 0; }
+      .ojt-banner .btn-primary,
+      .ojt-banner .btn-secondary {
+        width: 100%;
+        justify-content: center;
+        min-height: 44px;
+      }
+      #certLightbox { padding: 14px; }
+      .lightbox-card {
+        max-height: calc(100dvh - 28px);
+        overflow-y: auto;
+        padding: 16px;
+      }
+      .lightbox-visual .wf-org { font-size: 0.72rem; }
+      .lightbox-visual .wf-heading { font-size: 1.05rem; }
+      .lightbox-visual .wf-presented { font-size: 0.62rem; }
+      .lightbox-visual .wf-recipient { font-size: 1rem; margin: 4px auto; }
+      .lightbox-visual .wf-course { font-size: 0.72rem; }
+      .lightbox-visual .wf-meta-row { font-size: 0.56rem; padding-top: 6px; }
+      .lightbox-visual .wf-seal { width: 34px; height: 34px; font-size: 0.54rem; }
+      .lightbox-footer { flex-direction: column; align-items: stretch; }
+      .lightbox-footer .btn-primary { width: 100%; justify-content: center; min-height: 44px; }
+      footer { padding: 28px 16px 88px; }
+      footer p + p {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px 16px;
+      }
+      footer a { margin: 0; }
+      #copyToast {
+        left: 16px;
+        right: 16px;
+        bottom: 80px;
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 520px) {
+      header { padding: 10px 14px; }
+      main { padding: 0 16px 92px; }
+      .avatar-frame { width: 136px; height: 136px; }
+      .avatar-caption { font-size: 0.68rem; }
+      .badge-status { font-size: 0.68rem; padding: 6px 12px; line-height: 1.35; }
+      .hero-meta { font-size: 0.74rem; gap: 4px 8px; word-break: break-word; }
+      .hero-actions {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        width: 100%;
+      }
+      .hero-actions .btn-primary {
+        grid-column: 1 / -1;
+        justify-content: center;
+        min-height: 44px;
+      }
+      .hero-actions .btn-secondary {
+        justify-content: center;
+        min-height: 44px;
+        padding: 10px 12px;
+        font-size: 0.84rem;
+      }
+      .strengths-grid,
+      .skills-section { grid-template-columns: 1fr; }
+      .project-card { padding: 18px 16px; }
+      .section-title { font-size: 1.65rem; }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -1322,7 +1450,7 @@
         <div class="avatar-frame">
           <img src="/profile.jpg" alt="Christian Louis Bolea">
         </div>
-        <span class="avatar-caption">MSEUF BSIT &bull; Class of 2027</span>
+        <span class="avatar-caption">BSIT &bull; Web &amp; Mobile App</span>
       </div>
     </section>
 
@@ -2570,8 +2698,16 @@
     const mobileMenuBtn = document.getElementById('mobileMenuBtn');
     const navLinks = document.getElementById('navLinks');
     if (mobileMenuBtn && navLinks) {
-      mobileMenuBtn.addEventListener('click', () => navLinks.classList.toggle('open'));
+      mobileMenuBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        navLinks.classList.toggle('open');
+      });
       navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+      document.addEventListener('click', (e) => {
+        if (navLinks.classList.contains('open') && !e.target.closest('header')) {
+          navLinks.classList.remove('open');
+        }
+      });
     }
 
     // Scroll Progress
@@ -2699,7 +2835,7 @@
         else currentIdx = idx;
 
         const slideWidth = slides[0].getBoundingClientRect().width;
-        const gap = 20;
+        const gap = parseFloat(getComputedStyle(track).gap) || 20;
         track.style.transform = 'translateX(-' + (currentIdx * (slideWidth + gap)) + 'px)';
 
         Array.from(dotsWrap.children).forEach((d, i) => {
@@ -2764,6 +2900,7 @@
       img.alt = title;
       visual.appendChild(img);
       lb.classList.add('open');
+      document.body.style.overflow = 'hidden';
       if (window.CertCarouselControl) window.CertCarouselControl.stop();
     }
 
@@ -2794,11 +2931,15 @@
           </div>
         </div>`;
       lb.classList.add('open');
+      document.body.style.overflow = 'hidden';
       if (window.CertCarouselControl) window.CertCarouselControl.stop();
     }
 
     function closeLightbox() {
       document.getElementById('certLightbox').classList.remove('open');
+      if (!(window.innerWidth <= 520 && document.getElementById('agentWindow')?.classList.contains('open'))) {
+        document.body.style.overflow = '';
+      }
       if (window.CertCarouselControl) window.CertCarouselControl.start();
     }
 
@@ -2806,6 +2947,6 @@
       if (e.key === 'Escape') closeLightbox();
     });
   </script>
-  <script src="/agent.js?v=20261124"></script>
+  <script src="/agent.js?v=20261124m"></script>
 </body>
 </html>

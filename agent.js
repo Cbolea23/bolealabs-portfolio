@@ -291,8 +291,16 @@ You can ask me about:
     toggle: function () {
       const win = document.getElementById('agentWindow');
       if (win) {
-        win.classList.toggle('open');
-        if (win.classList.contains('open')) {
+        const willOpen = !win.classList.contains('open');
+        win.classList.toggle('open', willOpen);
+        if (!willOpen) {
+          if (!document.getElementById('certLightbox')?.classList.contains('open')) {
+            document.body.style.overflow = '';
+          }
+        } else if (window.innerWidth <= 520) {
+          document.body.style.overflow = 'hidden';
+        }
+        if (willOpen && window.innerWidth > 640) {
           setTimeout(() => {
             const inp = document.getElementById('agentInput');
             if (inp) inp.focus();
@@ -393,6 +401,10 @@ You can ask me about:
         scrollToEducation: 'education'
       };
       if (targetMap[fnName]) {
+        if (window.innerWidth <= 640) {
+          const win = document.getElementById('agentWindow');
+          if (win && win.classList.contains('open')) this.toggle();
+        }
         const el = document.getElementById(targetMap[fnName]);
         if (el) el.scrollIntoView({ behavior: 'smooth' });
       } else if (fnName === 'copyEmail') {
