@@ -1,14 +1,14 @@
-# Bolea Labs — Studio & Portfolio Website (`bolealabs.site`)
+# Christian Louis Bolea — BSIT OJT & Internship Portfolio (`bolealabs.site`)
 
-Official repository for **[bolealabs.site](https://bolealabs.site)** — the personal developer portfolio of **Christian Louis Bolea** and official web platform for **Bolea Labs** and the **A Day Back Then** creator publishing software.
+Official OJT portfolio repository for **Christian Louis Bolea** — BS Information Technology student at **Manuel S. Enverga University Foundation (MSEUF)** (Major in Web and Mobile Application Development, Expected Graduation: 2027), seeking a **540–600 hour OJT placement** in AI-assisted software workflows, QA testing, application integration, or IT operations.
 
-## Included Pages & Assets
-- `index.html` — Main OJT developer portfolio, featured projects, verified credentials, and PIN-protected resume download.
-- `adaybackthen.html` — A Day Back Then project portal and creator publishing software documentation (OAuth integration for TikTok, YouTube, and Meta).
-- `privacy.html` & `terms.html` — Official studio privacy policy and terms of service.
-- `CNAME` — Custom domain pointer for GitHub Pages (`bolealabs.site`).
-- `resume.pdf` — Downloadable CV (protected via client-side PIN).
-- `profile.jpg` — Headshot asset.
+- **Live Portfolio:** [https://bolealabs.site](https://bolealabs.site)
+- **Current Resume (Google Docs):** [Open Resume](https://docs.google.com/document/d/1YdLI6E5Fq4_VSKi45eN3nae14dqvbs9MYOpj4qB-ZvI/edit?usp=sharing)
+- **Credly Verified Badges:** [credly.com/users/christian-bolea](https://www.credly.com/users/christian-bolea)
+- **Email:** `Bolea2133@gmail.com` | **Phone:** `0976 253 9052`
 
-## License & Copyright
-&copy; 2026 Bolea Labs &bull; Christian Louis Bolea. All rights reserved.
+## Repository Structure
+- `index.html` & `portfolio/index.html` — Pure OJT portfolio featuring capstone integration details, honest technical skills matrix, and verified certifications.
+- `agent.js` & `agent.css` — Interactive OJT Portfolio Q&A assistant.
+- `resume.pdf` — Direct PDF export of current OJT resume.
+- `archive/` — Archived studio landing page and creator pages stored for future post-OJT use.

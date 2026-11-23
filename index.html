@@ -3,37 +3,37 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bolea Labs — Independent Software, Edge AI &amp; Media Automation Studio</title>
-  <meta name="description" content="Bolea Labs is an independent software engineering and media automation studio founded by Christian Louis Bolea. Builders of NiyoSense Edge AI, the A Day Back Then Creator Publishing Suite, and full-stack cloud systems.">
+  <title>Christian Louis Bolea — BSIT OJT Portfolio (540–600 Hours) | AI-Assisted App Development &amp; IT</title>
+  <meta name="description" content="OJT and Internship Portfolio of Christian Louis Bolea — BS Information Technology student at MSEUF seeking a 540–600 hour OJT placement in AI-assisted software workflows, QA testing, application integration, or IT operations.">
 
-  <!-- Clean URL Redirection (Removes /index.html) -->
+  <!-- Clean URL Redirection -->
   <script>
-    if (window.location.pathname.endsWith('/index.html') || window.location.pathname === '/index.html') {
-      window.history.replaceState(null, '', '/' + window.location.search + window.location.hash);
+    if (window.location.pathname.endsWith('/index.html')) {
+      window.history.replaceState(null, '', window.location.pathname.replace(/index\.html$/, '') + window.location.search + window.location.hash);
     }
   </script>
 
-  <!-- Modern Typography -->
+  <!-- Typography -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/agent.css">
 
   <style>
     :root {
       --bg: #07080c;
-      --bg-elevated: #0d0f17;
-      --bg-card: rgba(16, 19, 28, 0.72);
-      --bg-card-solid: #11141f;
+      --bg-elevated: #0d1017;
+      --bg-card: rgba(16, 19, 28, 0.82);
+      --bg-card-hover: rgba(22, 26, 38, 0.96);
       --border: rgba(255, 255, 255, 0.08);
-      --border-gold: rgba(245, 179, 36, 0.4);
+      --border-focus: rgba(245, 179, 36, 0.45);
       --gold: #f5b324;
       --gold-light: #fde047;
-      --gold-glow: rgba(245, 179, 36, 0.16);
+      --gold-glow: rgba(245, 179, 36, 0.14);
+      --emerald: #10b981;
+      --emerald-glow: rgba(16, 185, 129, 0.15);
       --cyan: #38bdf8;
       --cyan-glow: rgba(56, 189, 248, 0.15);
-      --emerald: #10b981;
-      --emerald-glow: rgba(16, 185, 129, 0.16);
       --text: #f3f4f6;
       --text-muted: #94a3b8;
       --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -64,7 +64,7 @@
       box-shadow: 0 0 12px var(--gold);
     }
 
-    /* Interactive Neural Canvas Background */
+    /* Subtle Background Canvas */
     #neuralCanvas {
       position: fixed;
       top: 0;
@@ -73,21 +73,7 @@
       height: 100vh;
       pointer-events: none;
       z-index: 0;
-      opacity: 0.65;
-    }
-
-    /* Subtle Grid Overlay */
-    .cyber-grid {
-      position: fixed;
-      inset: 0;
-      background-image: 
-        linear-gradient(to right, rgba(255,255,255,0.02) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(255,255,255,0.02) 1px, transparent 1px);
-      background-size: 56px 56px;
-      mask-image: radial-gradient(ellipse 80% 70% at 50% 25%, #000 40%, transparent 100%);
-      -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 25%, #000 40%, transparent 100%);
-      pointer-events: none;
-      z-index: 0;
+      opacity: 0.45;
     }
 
     /* Header & Navigation */
@@ -95,14 +81,14 @@
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: rgba(7, 8, 12, 0.82);
+      background: rgba(7, 8, 12, 0.88);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
       border-bottom: 1px solid var(--border);
       padding: 14px 24px;
     }
     .nav-container {
-      max-width: 1240px;
+      max-width: 1180px;
       margin: 0 auto;
       display: flex;
       align-items: center;
@@ -110,11 +96,11 @@
     }
     .logo {
       font-family: var(--font-heading);
-      font-size: 1.35rem;
+      font-size: 1.15rem;
       font-weight: 700;
       color: #fff;
       text-decoration: none;
-      letter-spacing: 0.5px;
+      letter-spacing: 0.3px;
       display: flex;
       align-items: center;
       gap: 10px;
@@ -124,12 +110,19 @@
       height: 32px;
       border-radius: 8px;
       object-fit: contain;
-      box-shadow: 0 0 16px rgba(245, 179, 36, 0.45);
+      box-shadow: 0 0 14px rgba(245, 179, 36, 0.35);
       display: inline-block;
       vertical-align: middle;
     }
     .logo span { color: var(--gold); }
-
+    .logo-sub {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      font-weight: 500;
+      padding-left: 8px;
+      border-left: 1px solid var(--border);
+    }
     .nav-links {
       display: flex;
       align-items: center;
@@ -138,42 +131,11 @@
     .nav-links a {
       color: var(--text-muted);
       text-decoration: none;
-      font-size: 0.9rem;
+      font-size: 0.88rem;
       font-weight: 500;
       transition: color 0.2s;
-      position: relative;
     }
-    .nav-links a:hover, .nav-links a.active {
-      color: #fff;
-    }
-    .nav-links a.active::after {
-      content: '';
-      position: absolute;
-      bottom: -6px;
-      left: 0;
-      right: 0;
-      height: 2px;
-      background: var(--gold);
-      border-radius: 2px;
-    }
-    .nav-pill-portfolio {
-      background: rgba(245, 179, 36, 0.14);
-      border: 1px solid rgba(245, 179, 36, 0.4);
-      color: var(--gold) !important;
-      padding: 6px 14px;
-      border-radius: 999px;
-      font-weight: 700 !important;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      transition: all 0.25s !important;
-    }
-    .nav-pill-portfolio:hover {
-      background: var(--gold);
-      color: #07080c !important;
-      box-shadow: 0 0 20px rgba(245, 179, 36, 0.4);
-      transform: translateY(-1px);
-    }
+    .nav-links a:hover, .nav-links a.active { color: var(--gold); }
     .btn-nav-resume {
       background: var(--gold);
       color: #07080c !important;
@@ -182,8 +144,9 @@
       border-radius: 8px;
       cursor: pointer;
       border: none;
-      font-size: 0.88rem;
+      font-size: 0.86rem;
       font-family: var(--font-body);
+      text-decoration: none;
       transition: transform 0.2s, box-shadow 0.2s;
     }
     .btn-nav-resume:hover {
@@ -195,626 +158,551 @@
       background: transparent;
       border: 1px solid var(--border);
       color: var(--text);
-      font-size: 1.25rem;
-      padding: 6px 12px;
+      padding: 6px 10px;
       border-radius: 8px;
       cursor: pointer;
     }
 
-    /* Main Container */
     main {
       position: relative;
       z-index: 1;
-      max-width: 1240px;
+      max-width: 1180px;
       margin: 0 auto;
       padding: 0 24px 90px;
     }
 
-    /* Studio Hero Section */
+    /* Portfolio Hero */
     .hero {
-      padding: 72px 0 56px;
+      padding: 56px 0 36px;
       display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
+      grid-template-columns: 1fr auto;
       gap: 44px;
       align-items: center;
     }
-    .studio-badge {
+    .badge-status {
       display: inline-flex;
       align-items: center;
-      gap: 10px;
-      background: rgba(56, 189, 248, 0.1);
-      border: 1px solid rgba(56, 189, 248, 0.3);
-      color: var(--cyan);
-      padding: 6px 16px;
-      border-radius: 999px;
+      gap: 8px;
+      background: var(--emerald-glow);
+      border: 1px solid rgba(16, 185, 129, 0.38);
+      color: var(--emerald);
+      padding: 6px 14px;
+      border-radius: 9999px;
       font-family: var(--font-mono);
-      font-size: 0.76rem;
-      font-weight: 600;
+      font-size: 0.78rem;
+      font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 22px;
+      letter-spacing: 0.5px;
+      margin-bottom: 16px;
     }
-    .studio-dot {
+    .status-pulse {
       width: 8px;
       height: 8px;
+      background: var(--emerald);
       border-radius: 50%;
-      background: var(--cyan);
-      box-shadow: 0 0 10px var(--cyan);
-      animation: pulseGlow 2s infinite;
+      box-shadow: 0 0 10px var(--emerald);
+      animation: pulse 2s infinite;
     }
-    @keyframes pulseGlow {
+    @keyframes pulse {
       0%, 100% { opacity: 1; transform: scale(1); }
       50% { opacity: 0.45; transform: scale(1.25); }
     }
-
-    .hero-title {
+    h1.hero-title {
       font-family: var(--font-heading);
-      font-size: clamp(2.5rem, 5vw, 4.1rem);
+      font-size: clamp(2.3rem, 4.6vw, 3.5rem);
       font-weight: 700;
-      line-height: 1.08;
-      letter-spacing: -1.2px;
+      line-height: 1.12;
       color: #fff;
-      margin-bottom: 20px;
+      margin-bottom: 10px;
+      letter-spacing: -0.8px;
     }
-    .hero-title .gradient-gold {
-      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 55%, var(--cyan) 100%);
+    h1.hero-title span {
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
-    .hero-lead {
-      color: var(--text-muted);
+    .hero-subtitle {
       font-size: 1.12rem;
-      line-height: 1.75;
-      margin-bottom: 32px;
-      max-width: 640px;
+      font-weight: 600;
+      color: var(--gold);
+      margin-bottom: 12px;
     }
-    .hero-lead strong { color: #fff; }
-
-    .hero-cta-group {
+    .hero-meta {
+      font-family: var(--font-mono);
+      font-size: 0.82rem;
+      color: #cbd5e1;
+      margin-bottom: 18px;
       display: flex;
       flex-wrap: wrap;
       gap: 14px;
       align-items: center;
     }
-    .btn-gold {
+    .hero-meta a {
+      color: var(--cyan);
+      text-decoration: none;
+    }
+    .hero-meta a:hover { text-decoration: underline; }
+    .hero-desc {
+      color: var(--text-muted);
+      font-size: 1.01rem;
+      line-height: 1.72;
+      margin-bottom: 24px;
+      max-width: 730px;
+    }
+    .hero-desc strong { color: #fff; }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+    }
+    .btn-primary {
       background: linear-gradient(135deg, var(--gold), #e5980b);
       color: #07080c;
       font-weight: 800;
-      padding: 14px 26px;
-      border-radius: 12px;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 0.96rem;
-      border: none;
-      cursor: pointer;
-      box-shadow: 0 8px 25px rgba(245, 179, 36, 0.28);
-      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    .btn-gold:hover {
-      transform: translateY(-3px) scale(1.01);
-      box-shadow: 0 14px 32px rgba(245, 179, 36, 0.45);
-    }
-    .btn-glass {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.14);
-      color: #fff;
-      font-weight: 600;
-      padding: 14px 22px;
-      border-radius: 12px;
+      padding: 12px 22px;
+      border-radius: 10px;
       text-decoration: none;
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      font-size: 0.95rem;
       cursor: pointer;
+      border: none;
+      font-size: 0.92rem;
+      font-family: var(--font-body);
       transition: all 0.25s;
     }
-    .btn-glass:hover {
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 22px rgba(245, 179, 36, 0.4);
+    }
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border);
+      color: #fff;
+      font-weight: 600;
+      padding: 12px 18px;
+      border-radius: 10px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.9rem;
+      font-family: var(--font-body);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .btn-secondary:hover {
       background: rgba(255, 255, 255, 0.1);
       border-color: var(--gold);
       color: var(--gold);
       transform: translateY(-2px);
     }
 
-    /* Interactive Telemetry Console (Hero Right) */
-    .telemetry-console {
-      background: rgba(13, 16, 25, 0.85);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      border-radius: 20px;
-      padding: 24px;
-      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.65), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    /* Avatar */
+    .hero-avatar-wrapper {
       position: relative;
-      overflow: hidden;
-      transform-style: preserve-3d;
-      transition: transform 0.15s ease-out;
-    }
-    .console-topbar {
       display: flex;
-      align-items: center;
-      justify-content: space-between;
-      border-bottom: 1px solid var(--border);
-      padding-bottom: 14px;
-      margin-bottom: 18px;
-    }
-    .console-dots {
-      display: flex;
-      gap: 7px;
-    }
-    .console-dots span {
-      width: 11px;
-      height: 11px;
-      border-radius: 50%;
-    }
-    .dot-r { background: #ef4444; }
-    .dot-y { background: #f59e0b; }
-    .dot-g { background: #10b981; }
-    .console-title {
-      font-family: var(--font-mono);
-      font-size: 0.78rem;
-      color: var(--text-muted);
-    }
-    .console-fps {
-      font-family: var(--font-mono);
-      font-size: 0.75rem;
-      color: var(--emerald);
-      background: var(--emerald-glow);
-      padding: 2px 8px;
-      border-radius: 6px;
-      border: 1px solid rgba(16, 185, 129, 0.3);
-    }
-    .pipeline-node {
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 13px 16px;
-      margin-bottom: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      transition: all 0.25s;
-      cursor: pointer;
-    }
-    .pipeline-node:hover, .pipeline-node.active-node {
-      border-color: var(--gold);
-      background: rgba(245, 179, 36, 0.08);
-      transform: translateX(4px);
-    }
-    .node-left {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-    .node-icon {
-      width: 34px;
-      height: 34px;
-      border-radius: 8px;
-      background: rgba(245, 179, 36, 0.14);
-      color: var(--gold);
-      display: flex;
-      align-items: center;
       justify-content: center;
-      font-family: var(--font-mono);
-      font-weight: 700;
-      font-size: 0.85rem;
     }
-    .node-name {
-      font-weight: 700;
-      font-size: 0.92rem;
-      color: #fff;
-    }
-    .node-sub {
-      font-size: 0.76rem;
-      color: var(--text-muted);
-      font-family: var(--font-mono);
-    }
-    .node-status {
-      font-family: var(--font-mono);
-      font-size: 0.72rem;
-      color: var(--emerald);
-      display: flex;
-      align-items: center;
-      gap: 5px;
-    }
-    .node-status::before {
-      content: '';
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--emerald);
-      box-shadow: 0 0 8px var(--emerald);
-    }
-    .console-log {
-      margin-top: 14px;
-      background: rgba(0, 0, 0, 0.45);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 12px 14px;
-      font-family: var(--font-mono);
-      font-size: 0.76rem;
-      color: #cbd5e1;
-      line-height: 1.55;
-      min-height: 66px;
-    }
-    .console-log .prompt { color: var(--gold); font-weight: 700; }
-
-    /* Live Metrics Bar */
-    .metrics-bar {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 18px;
-      margin: 20px 0 70px;
-    }
-    .metric-box {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 24px 20px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-    .metric-number {
-      font-family: var(--font-heading);
-      font-size: 2.3rem;
-      font-weight: 700;
-      color: var(--gold);
-      line-height: 1.1;
-      margin-bottom: 6px;
-    }
-    .metric-caption {
-      font-size: 0.84rem;
-      color: var(--text-muted);
-      font-weight: 500;
-    }
-
-    /* Section Headers */
-    .section-head {
-      margin: 76px 0 32px;
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      flex-wrap: wrap;
-      gap: 16px;
-    }
-    .section-eyebrow {
-      font-family: var(--font-mono);
-      font-size: 0.78rem;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      color: var(--gold);
-      margin-bottom: 8px;
-      display: block;
-    }
-    .section-title {
-      font-family: var(--font-heading);
-      font-size: clamp(1.85rem, 3.5vw, 2.5rem);
-      color: #fff;
-      line-height: 1.15;
-    }
-    .section-title span { color: var(--gold); }
-    .section-desc {
-      color: var(--text-muted);
-      max-width: 600px;
-      font-size: 1rem;
-      margin-top: 8px;
-    }
-
-    /* 3D Spotlight Tilt Cards */
-    .spotlight-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 22px;
-    }
-    .tilt-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      padding: 30px 26px;
-      position: relative;
-      overflow: hidden;
-      transform-style: preserve-3d;
-      will-change: transform;
-      transition: transform 0.18s ease-out, border-color 0.25s;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-    /* Dynamic mouse-tracked radial glow */
-    .tilt-card::before {
-      content: '';
+    .avatar-glow {
       position: absolute;
-      inset: 0;
-      background: radial-gradient(
-        520px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
-        rgba(245, 179, 36, 0.13),
-        transparent 45%
-      );
-      opacity: 0;
-      transition: opacity 0.3s;
-      pointer-events: none;
-      z-index: 0;
+      inset: -12px;
+      border-radius: 28px;
+      background: linear-gradient(135deg, var(--gold), var(--cyan));
+      opacity: 0.25;
+      filter: blur(16px);
+      z-index: 1;
     }
-    .tilt-card:hover::before { opacity: 1; }
-    .tilt-card:hover {
-      border-color: rgba(245, 179, 36, 0.42);
-      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.5);
-    }
-    .tilt-card > * { position: relative; z-index: 1; }
-
-    .service-icon {
-      width: 48px;
-      height: 48px;
-      border-radius: 12px;
-      background: rgba(245, 179, 36, 0.12);
-      border: 1px solid rgba(245, 179, 36, 0.3);
-      color: var(--gold);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.35rem;
-      margin-bottom: 18px;
-    }
-    .tilt-card h3 {
-      font-family: var(--font-heading);
-      font-size: 1.3rem;
-      color: #fff;
-      margin-bottom: 10px;
-    }
-    .tilt-card p {
-      color: #cbd5e1;
-      font-size: 0.94rem;
-      line-height: 1.65;
-      margin-bottom: 18px;
-    }
-    .tag-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 7px;
-      margin-top: auto;
-    }
-    .mono-tag {
-      font-family: var(--font-mono);
-      font-size: 0.73rem;
-      background: rgba(255, 255, 255, 0.04);
-      border: 1px solid var(--border);
-      color: #e2e8f0;
-      padding: 4px 9px;
-      border-radius: 6px;
-    }
-
-    /* Flagship Bento Grid */
-    .bento-grid {
-      display: grid;
-      grid-template-columns: repeat(12, 1fr);
-      gap: 22px;
-    }
-    .bento-span-7 { grid-column: span 7; }
-    .bento-span-5 { grid-column: span 5; }
-    .bento-span-6 { grid-column: span 6; }
-    .bento-span-12 { grid-column: span 12; }
-
-    .bento-badge {
-      display: inline-block;
-      font-family: var(--font-mono);
-      font-size: 0.72rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.8px;
-      padding: 4px 10px;
-      border-radius: 6px;
-      background: var(--gold);
-      color: #07080c;
-      margin-bottom: 14px;
-    }
-    .bento-badge.cyan {
-      background: rgba(56, 189, 248, 0.15);
-      color: var(--cyan);
-      border: 1px solid rgba(56, 189, 248, 0.35);
-    }
-    .bento-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 20px;
-    }
-    .bento-link {
-      font-size: 0.86rem;
-      font-weight: 600;
-      color: var(--gold);
-      text-decoration: none;
-      background: rgba(245, 179, 36, 0.1);
-      border: 1px solid rgba(245, 179, 36, 0.25);
-      padding: 7px 14px;
-      border-radius: 8px;
-      transition: all 0.2s;
-    }
-    .bento-link:hover {
-      background: var(--gold);
-      color: #07080c;
-    }
-
-    /* Website Self-Inspection Section ("How This Site Was Engineered") */
-    .engine-showcase {
-      background: linear-gradient(145deg, rgba(17, 20, 31, 0.92), rgba(10, 12, 18, 0.95));
-      border: 1px solid rgba(56, 189, 248, 0.32);
-      border-radius: 22px;
-      padding: 38px;
-      box-shadow: 0 20px 55px rgba(0, 0, 0, 0.55);
-    }
-    .engine-specs {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 18px;
-      margin-top: 26px;
-    }
-    .spec-box {
-      background: rgba(0, 0, 0, 0.38);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 20px;
-    }
-    .spec-label {
-      font-family: var(--font-mono);
-      font-size: 0.74rem;
-      color: var(--cyan);
-      text-transform: uppercase;
-      letter-spacing: 0.8px;
-      margin-bottom: 6px;
-    }
-    .spec-title {
-      font-family: var(--font-heading);
-      font-size: 1.08rem;
-      color: #fff;
-      margin-bottom: 6px;
-    }
-    .spec-desc {
-      font-size: 0.86rem;
-      color: var(--text-muted);
-      line-height: 1.55;
-    }
-
-    /* Founder Spotlight Callout */
-    .founder-card {
-      background: linear-gradient(135deg, rgba(24, 27, 38, 0.95), rgba(14, 16, 24, 0.95));
-      border: 1px solid var(--border-gold);
-      border-radius: 22px;
-      padding: 40px;
-      margin-top: 72px;
-      display: grid;
-      grid-template-columns: auto 1fr auto;
-      gap: 32px;
-      align-items: center;
-      box-shadow: 0 20px 50px rgba(245, 179, 36, 0.08);
-    }
-    .founder-avatar {
-      width: 116px;
-      height: 116px;
-      border-radius: 22px;
+    .avatar-frame {
+      position: relative;
+      z-index: 2;
+      width: 225px;
+      height: 225px;
+      border-radius: 24px;
+      border: 2px solid var(--border-focus);
       overflow: hidden;
-      border: 2px solid var(--gold);
-      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.5);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.65);
+      background: #111;
     }
-    .founder-avatar img {
+    .avatar-frame img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       object-position: center top;
     }
 
-    /* Scroll Reveal Animations */
-    .reveal {
-      opacity: 0;
-      transform: translateY(28px);
-      transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    /* OJT Objective & Key Strengths Grid */
+    .ojt-banner {
+      background: linear-gradient(135deg, rgba(245, 179, 36, 0.11), rgba(16, 185, 129, 0.07));
+      border: 1px solid rgba(245, 179, 36, 0.35);
+      border-radius: 16px;
+      padding: 24px 28px;
+      margin: 8px 0 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 18px;
     }
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
+    .ojt-banner-title {
+      font-family: var(--font-heading);
+      font-size: 1.18rem;
+      color: #fff;
+      font-weight: 700;
+    }
+    .ojt-banner-text {
+      font-size: 0.94rem;
+      color: #d1d5db;
+      margin-top: 6px;
+      max-width: 820px;
+      line-height: 1.65;
     }
 
-    /* Footer */
+    .strengths-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 18px;
+      margin-bottom: 48px;
+    }
+    .strength-card {
+      background: rgba(16, 19, 28, 0.68);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--gold);
+      border-radius: 12px;
+      padding: 20px 22px;
+    }
+    .strength-card h3 {
+      font-family: var(--font-heading);
+      font-size: 1.04rem;
+      color: #fff;
+      margin-bottom: 6px;
+    }
+    .strength-card p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* Section Headers */
+    .section-header {
+      margin: 60px 0 24px;
+    }
+    .section-eyebrow {
+      font-family: var(--font-mono);
+      font-size: 0.76rem;
+      text-transform: uppercase;
+      letter-spacing: 1.4px;
+      color: var(--gold);
+      margin-bottom: 6px;
+      display: block;
+    }
+    .section-title {
+      font-family: var(--font-heading);
+      font-size: 2.05rem;
+      color: #fff;
+    }
+    .section-title span { color: var(--gold); }
+    .section-subtitle {
+      color: var(--text-muted);
+      font-size: 0.98rem;
+      margin-top: 6px;
+      max-width: 780px;
+    }
+
+    /* Filter Bar */
+    .filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+    .filter-btn {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      padding: 8px 18px;
+      border-radius: 30px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: var(--font-body);
+      transition: all 0.2s;
+    }
+    .filter-btn:hover { background: rgba(255, 255, 255, 0.08); color: #fff; }
+    .filter-btn.active {
+      background: var(--gold);
+      color: #07080c;
+      border-color: var(--gold);
+      font-weight: 700;
+    }
+
+    /* Project & Certification Cards */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 24px;
+    }
+    .project-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.2s ease, border-color 0.25s, box-shadow 0.25s;
+    }
+    .project-card:hover {
+      border-color: rgba(245, 179, 36, 0.42);
+      transform: translateY(-3px);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+    }
+    .project-card.featured {
+      grid-column: 1 / -1;
+      background: linear-gradient(145deg, rgba(22, 26, 38, 0.95), rgba(14, 16, 24, 0.95));
+      border: 1px solid rgba(245, 179, 36, 0.42);
+    }
+    .project-card.hidden { display: none !important; }
+
+    .project-tag {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.7px;
+      padding: 4px 10px;
+      border-radius: 6px;
+      background: var(--gold);
+      color: #07080c;
+      margin-bottom: 14px;
+    }
+    .project-tag.cyan {
+      background: rgba(56, 189, 248, 0.14);
+      color: var(--cyan);
+      border: 1px solid rgba(56, 189, 248, 0.35);
+    }
+    .project-tag.green {
+      background: rgba(34, 197, 94, 0.14);
+      color: #4ade80;
+      border: 1px solid rgba(34, 197, 94, 0.35);
+    }
+    .project-banner-preview {
+      margin-bottom: 16px;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      max-height: 175px;
+      background: rgba(0, 0, 0, 0.4);
+    }
+    .project-banner-preview img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .project-title {
+      font-family: var(--font-heading);
+      font-size: 1.35rem;
+      color: #fff;
+      margin-bottom: 6px;
+    }
+    .project-subtitle {
+      font-size: 0.88rem;
+      color: var(--gold);
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+    .project-desc {
+      color: #d1d5db;
+      font-size: 0.93rem;
+      line-height: 1.65;
+      margin-bottom: 14px;
+    }
+    .project-bullets {
+      list-style: none;
+      margin: 0 0 18px 0;
+      padding: 0;
+    }
+    .project-bullets li {
+      position: relative;
+      padding-left: 18px;
+      font-size: 0.9rem;
+      color: #cbd5e1;
+      margin-bottom: 8px;
+      line-height: 1.58;
+    }
+    .project-bullets li::before {
+      content: '•';
+      position: absolute;
+      left: 2px;
+      color: var(--gold);
+      font-weight: 700;
+    }
+    .project-bullets li strong {
+      color: #fff;
+    }
+    .architecture-box {
+      background: rgba(0, 0, 0, 0.32);
+      border-left: 3px solid var(--gold);
+      padding: 11px 15px;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 16px;
+      font-size: 0.83rem;
+      color: #cbd5e1;
+      font-family: var(--font-mono);
+    }
+    .tech-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-bottom: 20px;
+    }
+    .tech-pill {
+      font-family: var(--font-mono);
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 4px 10px;
+      font-size: 0.74rem;
+      color: #e5e7eb;
+    }
+    .project-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: auto;
+    }
+    .btn-link {
+      color: var(--gold);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 6px 12px;
+      background: rgba(245, 179, 36, 0.09);
+      border-radius: 6px;
+      border: 1px solid rgba(245, 179, 36, 0.25);
+      transition: all 0.2s;
+    }
+    .btn-link:hover {
+      background: var(--gold);
+      color: #07080c;
+    }
+
+    /* Certifications Grid */
+    .certs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 20px;
+    }
+    .cert-issuer {
+      font-family: var(--font-mono);
+      font-size: 0.74rem;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: var(--gold);
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+    .cert-name {
+      font-family: var(--font-heading);
+      font-size: 1.14rem;
+      color: #fff;
+      margin-bottom: 6px;
+    }
+    .cert-focus {
+      font-size: 0.86rem;
+      color: #cbd5e1;
+      margin-bottom: 10px;
+      line-height: 1.55;
+    }
+    .cert-date {
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-bottom: 14px;
+    }
+    .cert-verify {
+      color: var(--cyan);
+      text-decoration: none;
+      font-size: 0.84rem;
+      font-weight: 600;
+      margin-top: auto;
+      display: inline-block;
+    }
+    .cert-verify:hover { text-decoration: underline; }
+
+    /* Skills Grid */
+    .skills-section {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(265px, 1fr));
+      gap: 20px;
+    }
+    .skill-cat-title {
+      font-family: var(--font-heading);
+      font-size: 1.08rem;
+      color: var(--gold);
+      margin-bottom: 10px;
+    }
+    .skill-cat-desc {
+      font-size: 0.84rem;
+      color: var(--text-muted);
+      margin-bottom: 14px;
+      line-height: 1.5;
+    }
+    .skill-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .skill-chip {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 6px 13px;
+      font-size: 0.83rem;
+      color: #e5e7eb;
+    }
+
+    /* Toast */
+    #copyToast {
+      position: fixed;
+      bottom: 24px;
+      left: 24px;
+      background: var(--emerald);
+      color: #07080c;
+      font-weight: 700;
+      padding: 12px 20px;
+      border-radius: 10px;
+      z-index: 3000;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.3s ease;
+      pointer-events: none;
+    }
+    #copyToast.show { opacity: 1; transform: translateY(0); }
+
     footer {
       border-top: 1px solid var(--border);
-      padding: 40px 24px;
+      padding: 36px 24px;
       text-align: center;
       color: var(--text-muted);
-      font-size: 0.9rem;
+      font-size: 0.88rem;
       background: #050609;
       position: relative;
       z-index: 10;
     }
-    footer a { color: var(--text-muted); margin: 0 12px; text-decoration: none; transition: color 0.2s; }
+    footer a { color: var(--text-muted); margin: 0 10px; text-decoration: none; }
     footer a:hover { color: var(--gold); }
 
-    /* PIN Modal */
-    .modal-overlay {
-      position: fixed;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.78);
-      backdrop-filter: blur(10px);
-      z-index: 2500;
-      display: none;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-    }
-    .modal-overlay.active { display: flex; }
-    .modal-box {
-      background: #121520;
-      border: 1px solid var(--border-gold);
-      border-radius: 22px;
-      max-width: 420px;
-      width: 100%;
-      padding: 32px 28px;
-      text-align: center;
-      position: relative;
-      box-shadow: 0 25px 60px rgba(0,0,0,0.8);
-    }
-    .modal-close {
-      position: absolute;
-      top: 16px;
-      right: 18px;
-      background: transparent;
-      border: none;
-      color: var(--text-muted);
-      font-size: 1.5rem;
-      cursor: pointer;
-    }
-    .pin-input {
-      width: 100%;
-      max-width: 240px;
-      padding: 12px 16px;
-      font-size: 1.5rem;
-      letter-spacing: 8px;
-      text-align: center;
-      background: rgba(0, 0, 0, 0.45);
-      border: 2px solid var(--border);
-      border-radius: 12px;
-      color: #fff;
-      margin: 14px 0 8px;
-      outline: none;
-    }
-    .pin-input.error { border-color: #ef4444; }
-    .pin-error-msg { color: #f87171; font-size: 0.84rem; display: none; margin-bottom: 8px; }
-    .keypad-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 8px;
-      max-width: 240px;
-      margin: 10px auto 16px;
-    }
-    .keypad-btn {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      color: #fff;
-      padding: 10px;
-      font-size: 1.1rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.15s;
-    }
-    .keypad-btn:hover { background: rgba(245, 179, 36, 0.2); border-color: var(--gold); color: var(--gold); }
-    .btn-quick-pin {
-      background: rgba(245, 179, 36, 0.14);
-      border: 1px solid rgba(245, 179, 36, 0.35);
-      color: var(--gold);
-      border-radius: 6px;
-      padding: 5px 12px;
-      font-size: 0.78rem;
-      font-weight: 700;
-      cursor: pointer;
-      margin-top: 8px;
-    }
-
-    /* Responsive Breakpoints */
-    @media (max-width: 960px) {
-      .hero { grid-template-columns: 1fr; padding-top: 40px; }
-      .bento-span-7, .bento-span-5, .bento-span-6 { grid-column: span 12; }
-      .metrics-bar { grid-template-columns: repeat(2, 1fr); }
-      .founder-card { grid-template-columns: 1fr; text-align: center; justify-items: center; padding: 28px 22px; }
+    @media (max-width: 860px) {
+      .hero { grid-template-columns: 1fr; text-align: center; padding-top: 28px; }
+      .hero-meta { justify-content: center; }
+      .hero-actions { justify-content: center; }
+      .avatar-frame { width: 185px; height: 185px; }
       .nav-links { display: none; }
       .nav-links.open {
         display: flex;
@@ -824,452 +712,493 @@
         left: 0;
         right: 0;
         background: #0b0d14;
-        padding: 22px;
+        padding: 20px;
         border-bottom: 1px solid var(--border);
       }
       .mobile-menu-btn { display: block; }
-    }
-    @media (max-width: 520px) {
-      .metrics-bar { grid-template-columns: 1fr; }
-      .engine-showcase { padding: 24px 18px; }
+      .projects-grid { grid-template-columns: 1fr; }
+      .logo-sub { display: none; }
     }
   </style>
 </head>
 <body>
   <div id="scrollProgress"></div>
   <canvas id="neuralCanvas"></canvas>
-  <div class="cyber-grid"></div>
 
-  <!-- Navigation Header -->
+  <!-- Header -->
   <header>
     <div class="nav-container">
       <a href="/" class="logo">
-        <img src="/logo-mark.webp" alt="Bolea Labs" class="logo-mark">
-        BOLEA <span>LABS</span>
+        <img src="/logo-mark.webp" alt="Christian Louis Bolea" class="logo-mark">
+        CHRISTIAN <span>BOLEA</span>
+        <span class="logo-sub">BSIT OJT PORTFOLIO</span>
       </a>
       <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle Menu">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/></svg>
       </button>
       <nav class="nav-links" id="navLinks">
-        <a href="/" class="active">Studio Home</a>
-        <a href="#services">What We Offer</a>
-        <a href="#flagship">Flagship Works</a>
-        <a href="#site-tech">Site Architecture</a>
-        <a href="/creator-tools.html">Creator Tools</a>
-        <a href="/portfolio/" class="nav-pill-portfolio">Founder Portfolio (OJT) &rarr;</a>
-        <button class="btn-nav-resume" onclick="openPinModal()">CV Vault</button>
+        <a href="#objective" class="active">OJT Objective</a>
+        <a href="#projects">Projects (5)</a>
+        <a href="#certifications">Certifications &amp; Badges</a>
+        <a href="#skills">Skills &amp; Tools</a>
+        <a href="#education">Education</a>
+        <a href="https://docs.google.com/document/d/1YdLI6E5Fq4_VSKi45eN3nae14dqvbs9MYOpj4qB-ZvI/edit?usp=sharing" target="_blank" rel="noopener" class="btn-nav-resume">View Resume &nearr;</a>
       </nav>
     </div>
   </header>
 
   <main>
-    <!-- Studio Hero -->
-    <section class="hero">
+    <!-- Hero -->
+    <section class="hero" id="objective">
       <div>
-        <div class="studio-badge">
-          <span class="studio-dot"></span>
-          Independent Software &amp; Media Engineering Studio
+        <div class="badge-status">
+          <span class="status-pulse"></span>
+          Seeking 540–600 Hour IT / Software OJT Placement
         </div>
-        <h1 class="hero-title">
-          Building <span class="gradient-gold" data-cipher="Intelligent Systems">Intelligent Systems</span> &amp; Automated Media.
-        </h1>
-        <p class="hero-lead">
-          <strong>Bolea Labs</strong> is an independent engineering studio founded by <strong>Christian Louis Bolea</strong>. We architect offline-first <strong>Edge AI mobile applications</strong>, programmatic <strong>Remotion video factories</strong>, multi-platform <strong>OAuth creator tools</strong>, and full-stack cloud portals.
+        <h1 class="hero-title">Christian Louis <span>Bolea</span></h1>
+        <p class="hero-subtitle">BS Information Technology Student &bull; AI-Assisted Application Development &amp; IT OJT Applicant</p>
+        <div class="hero-meta">
+          <span>Lucena City, Quezon, PH</span>
+          <span>&bull;</span>
+          <span>0976 253 9052</span>
+          <span>&bull;</span>
+          <a href="mailto:Bolea2133@gmail.com">Bolea2133@gmail.com</a>
+          <span>&bull;</span>
+          <a href="https://www.credly.com/users/christian-bolea" target="_blank" rel="noopener">credly.com/users/christian-bolea &nearr;</a>
+        </div>
+        <p class="hero-desc">
+          Detail-oriented BS Information Technology student at <strong>Manuel S. Enverga University Foundation (MSEUF)</strong> (Major in Web and Mobile Application Development, Expected Graduation: 2027) seeking a <strong>540–600 hour OJT placement</strong> in <strong>AI-assisted software workflows, QA testing, application integration, or IT operations</strong>. Certified in the <strong>Google AI Professional Certificate</strong> and <strong>Wadhwani JobReady (With AI — Advanced Level)</strong>, with hands-on experience leading the end-to-end integration of a mobile and web capstone system, API verification, and hardware troubleshooting. Committed to honest, reliable teamwork and continuous technical learning.
         </p>
-        <div class="hero-cta-group">
-          <a href="#flagship" class="btn-gold">Explore Studio Systems &darr;</a>
-          <a href="/portfolio/" class="btn-glass">
-            <span>View Founder &amp; OJT Portfolio</span>
-            <span>&rarr;</span>
-          </a>
-          <a href="/creator-tools.html#tool" class="btn-glass">Creator Publishing Tool &nearr;</a>
+        <div class="hero-actions">
+          <a href="https://docs.google.com/document/d/1YdLI6E5Fq4_VSKi45eN3nae14dqvbs9MYOpj4qB-ZvI/edit?usp=sharing" target="_blank" rel="noopener" class="btn-primary">View Current Resume (Google Docs) &nearr;</a>
+          <a href="/resume.pdf" download="Christian_Louis_Bolea_Resume.pdf" class="btn-secondary">Download PDF Resume</a>
+          <a href="https://www.credly.com/users/christian-bolea" target="_blank" rel="noopener" class="btn-secondary">Credly Badges (9) &nearr;</a>
+          <a href="https://github.com/Cbolea23" target="_blank" rel="noopener" class="btn-secondary">GitHub &nearr;</a>
+          <a href="https://www.linkedin.com/in/bolea23" target="_blank" rel="noopener" class="btn-secondary">LinkedIn &nearr;</a>
         </div>
       </div>
 
-      <!-- Interactive Live Studio Telemetry Console -->
-      <div class="telemetry-console" id="heroConsole">
-        <div class="console-topbar">
-          <div class="console-dots">
-            <span class="dot-r"></span>
-            <span class="dot-y"></span>
-            <span class="dot-g"></span>
-          </div>
-          <span class="console-title">bolea-labs://studio-engine-v2.6</span>
-          <span class="console-fps" id="fpsCounter">60 FPS &bull; ACTIVE</span>
-        </div>
-
-        <div class="pipeline-node active-node" onmouseenter="setConsoleInfo('niyosense')">
-          <div class="node-left">
-            <div class="node-icon">AI</div>
-            <div>
-              <div class="node-name">NiyoSense Dual-Model Edge AI</div>
-              <div class="node-sub">Flutter 3.x &bull; TFLite YOLOv8 &bull; Mel DSP</div>
-            </div>
-          </div>
-          <div class="node-status">92.8% ACC</div>
-        </div>
-
-        <div class="pipeline-node" onmouseenter="setConsoleInfo('adbt')">
-          <div class="node-left">
-            <div class="node-icon">VID</div>
-            <div>
-              <div class="node-name">A Day Back Then Media Factory</div>
-              <div class="node-sub">Remotion &bull; Node.js &bull; OAuth Publishing</div>
-            </div>
-          </div>
-          <div class="node-status">58+ LIVE</div>
-        </div>
-
-        <div class="pipeline-node" onmouseenter="setConsoleInfo('stream')">
-          <div class="node-left">
-            <div class="node-icon">RTMP</div>
-            <div>
-              <div class="node-name">24/7 RTMP Broadcast Relay</div>
-              <div class="node-sub">FFmpeg Loop &bull; Self-Healing Watchdog</div>
-            </div>
-          </div>
-          <div class="node-status">ONLINE</div>
-        </div>
-
-        <div class="pipeline-node" onmouseenter="setConsoleInfo('web')">
-          <div class="node-left">
-            <div class="node-icon">SYS</div>
-            <div>
-              <div class="node-name">Bolea Labs Web Engine (This Site)</div>
-              <div class="node-sub">Canvas 2D Physics &bull; Web Crypto SHA-256</div>
-            </div>
-          </div>
-          <div class="node-status">TLS 1.3</div>
-        </div>
-
-        <div class="console-log" id="consoleOutput">
-          <span class="prompt">&gt; system.inspect("niyosense"):</span> Dual TFLite CNNs + 128-band Slaney Mel-spectrogram acoustic knock fusion (70/30 rule). Deployed at niyosense.me.
+      <div class="hero-avatar-wrapper">
+        <div class="avatar-glow"></div>
+        <div class="avatar-frame">
+          <img src="/profile.jpg" alt="Christian Louis Bolea">
         </div>
       </div>
     </section>
 
-    <!-- Studio Metrics Bar -->
-    <section class="metrics-bar reveal">
-      <div class="metric-box">
-        <div class="metric-number" data-count="92.8" data-suffix="%">92.8%</div>
-        <div class="metric-caption">Edge AI Fused Grading Accuracy</div>
-      </div>
-      <div class="metric-box">
-        <div class="metric-number" data-count="58" data-suffix="+">58+</div>
-        <div class="metric-caption">Automated Episodes Published</div>
-      </div>
-      <div class="metric-box">
-        <div class="metric-number" data-count="4.84" data-suffix=" / 5">4.84 / 5</div>
-        <div class="metric-caption">ISO/IEC 25010 Software Quality</div>
-      </div>
-      <div class="metric-box">
-        <div class="metric-number" data-count="8" data-suffix="">8</div>
-        <div class="metric-caption">Production Systems &amp; Products</div>
-      </div>
-    </section>
-
-    <!-- What Bolea Labs Offers -->
-    <section id="services" class="reveal">
-      <div class="section-head">
-        <div>
-          <span class="section-eyebrow">// 01 &bull; Capabilities &amp; Solutions</span>
-          <h2 class="section-title">What <span>Bolea Labs</span> Offers</h2>
-          <p class="section-desc">End-to-end software engineering across mobile edge intelligence, programmatic media pipelines, and cloud operations.</p>
-        </div>
-      </div>
-
-      <div class="spotlight-grid">
-        <div class="tilt-card">
-          <div>
-            <div class="service-icon">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
-            </div>
-            <h3>Edge AI &amp; Mobile Engineering</h3>
-            <p>Offline-first Android and cross-platform applications built with Flutter and Kotlin. We integrate on-device TensorFlow Lite neural networks, custom digital signal processing (DSP), and local SQLite caching for zero-connectivity environments.</p>
-          </div>
-          <div class="tag-row">
-            <span class="mono-tag">Flutter 3.x</span>
-            <span class="mono-tag">Kotlin / Compose</span>
-            <span class="mono-tag">TFLite Edge AI</span>
-            <span class="mono-tag">Offline-First SQLite</span>
-          </div>
-        </div>
-
-        <div class="tilt-card">
-          <div>
-            <div class="service-icon">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"/><line x1="7" y1="2" x2="7" y2="22"/><line x1="17" y1="2" x2="17" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/><line x1="2" y1="7" x2="7" y2="7"/><line x1="2" y1="17" x2="7" y2="17"/><line x1="17" y1="17" x2="22" y2="17"/><line x1="17" y1="7" x2="22" y2="7"/></svg>
-            </div>
-            <h3>Programmatic Video &amp; Creator Tools</h3>
-            <p>Automated video production pipelines and public creator publishing software. From AI script generation and lip-synced character animation in Remotion to OAuth-verified publishing across TikTok, YouTube, and Meta.</p>
-          </div>
-          <div class="tag-row">
-            <span class="mono-tag">Remotion</span>
-            <span class="mono-tag">Node.js / TS</span>
-            <span class="mono-tag">FFmpeg / RTMP</span>
-            <span class="mono-tag">TikTok &amp; Meta OAuth</span>
-          </div>
-        </div>
-
-        <div class="tilt-card">
-          <div>
-            <div class="service-icon">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
-            </div>
-            <h3>Full-Stack Portals &amp; REST APIs</h3>
-            <p>Scalable backend architectures, analytics dashboards, and mobile PWAs. Engineered with Django 6.1, Django REST Framework, Next.js, and PostgreSQL with SimpleJWT security and Cloudflare Edge routing.</p>
-          </div>
-          <div class="tag-row">
-            <span class="mono-tag">Django 6.1</span>
-            <span class="mono-tag">Next.js PWA</span>
-            <span class="mono-tag">PostgreSQL</span>
-            <span class="mono-tag">JWT Security</span>
-          </div>
-        </div>
-
-        <div class="tilt-card">
-          <div>
-            <div class="service-icon">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4"/><path d="M12 18v4"/><path d="M4.93 4.93l2.83 2.83"/><path d="M16.24 16.24l2.83 2.83"/><path d="M2 12h4"/><path d="M18 12h4"/><path d="M4.93 19.07l2.83-2.83"/><path d="M16.24 7.76l2.83-2.83"/><circle cx="12" cy="12" r="3"/></svg>
-            </div>
-            <h3>AI Agent Workflows &amp; Skills</h3>
-            <p>Modular multi-agent production pipelines and commercialized AI workflow skills on the Agensi marketplace—automating retention engineering, voice direction, and human-in-the-loop operations.</p>
-          </div>
-          <div class="tag-row">
-            <span class="mono-tag">Gemini API</span>
-            <span class="mono-tag">Agensi SDK</span>
-            <span class="mono-tag">Discord Bridges</span>
-            <span class="mono-tag">Prompt Architecture</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Studio Flagship Works -->
-    <section id="flagship" class="reveal">
-      <div class="section-head">
-        <div>
-          <span class="section-eyebrow">// 02 &bull; Production Systems</span>
-          <h2 class="section-title">Studio <span>Flagship Works</span></h2>
-          <p class="section-desc">Live, deployed systems operating in production across agricultural AI and digital media.</p>
-        </div>
-        <a href="/portfolio/#projects" class="btn-glass">View All 8 Projects in Portfolio &rarr;</a>
-      </div>
-
-      <div class="bento-grid">
-        <!-- NiyoSense -->
-        <div class="tilt-card bento-span-7">
-          <div>
-            <span class="bento-badge">Flagship AgTech AI &bull; Live Production</span>
-            <h3>NiyoSense: Dual-Model Coconut Maturity Profiling System</h3>
-            <p>A dual-model audio-visual machine learning system replacing subjective manual coconut grading. Combines a 100% offline-first Flutter field app running dual YOLOv8-cls TFLite models + pure-Dart 128-band Mel-spectrogram DSP with a centralized Django 6.1 &amp; PostgreSQL cloud valuation portal.</p>
-            <div class="tag-row">
-              <span class="mono-tag">Flutter &amp; Dart</span>
-              <span class="mono-tag">Django 6.1</span>
-              <span class="mono-tag">TFLite (70/30 Fusion)</span>
-              <span class="mono-tag">PostgreSQL</span>
-              <span class="mono-tag">Cloudflare &amp; Render</span>
-            </div>
-          </div>
-          <div class="bento-links">
-            <a href="https://niyosense.me" target="_blank" rel="noopener" class="bento-link">Launch Portal (niyosense.me) &nearr;</a>
-            <a href="https://github.com/Cbolea23/niyosense-capstone/releases/tag/v1.5.2" target="_blank" rel="noopener" class="bento-link">Android APK v1.5.2 &nearr;</a>
-            <a href="https://github.com/Cbolea23/niyosense-capstone" target="_blank" rel="noopener" class="bento-link">Source Code &nearr;</a>
-          </div>
-        </div>
-
-        <!-- A Day Back Then & Creator Tool -->
-        <div class="tilt-card bento-span-5">
-          <div>
-            <span class="bento-badge cyan">Media Automation &amp; OAuth Platform</span>
-            <h3>A Day Back Then &amp; Creator Publishing Suite</h3>
-            <p>Programmatic storytelling channel &amp; public creator publishing software. Generates illustrated, lip-synced history and Philippine folklore episodes via Remotion and dispatches to TikTok, YouTube, and Meta via official OAuth APIs with 1-click human review gates.</p>
-            <div class="tag-row">
-              <span class="mono-tag">Remotion</span>
-              <span class="mono-tag">TypeScript</span>
-              <span class="mono-tag">TikTok Content API</span>
-              <span class="mono-tag">FFmpeg</span>
-            </div>
-          </div>
-          <div class="bento-links">
-            <a href="/creator-tools.html#tool" class="bento-link">Open Creator Tool &amp; Shows &rarr;</a>
-            <a href="https://www.tiktok.com/@adaybackthenofficial" target="_blank" rel="noopener" class="bento-link">TikTok Channel &nearr;</a>
-            <a href="https://github.com/Cbolea23/content-automation-engine" target="_blank" rel="noopener" class="bento-link">GitHub &nearr;</a>
-          </div>
-        </div>
-
-        <!-- Next.js Content Ops PWA -->
-        <div class="tilt-card bento-span-6">
-          <div>
-            <span class="bento-badge">Full-Stack Operations</span>
-            <h3>Content Operations Dashboard (PWA)</h3>
-            <p>Installable Next.js mobile Progressive Web App that controls the entire Bolea Labs production floor from a smartphone: video vault with ffprobe metadata inspection, script queues, persistent render jobs, and review-gated social publishing.</p>
-          </div>
-          <div class="tag-row">
-            <span class="mono-tag">Next.js</span>
-            <span class="mono-tag">React</span>
-            <span class="mono-tag">Mobile PWA</span>
-            <span class="mono-tag">REST APIs</span>
-          </div>
-        </div>
-
-        <!-- 24/7 Broadcast + Agensi -->
-        <div class="tilt-card bento-span-6">
-          <div>
-            <span class="bento-badge cyan">Infrastructure &amp; AI Products</span>
-            <h3>24/7 Livestream Engine &amp; Agensi AI Suite</h3>
-            <p>Continuous FFmpeg + RTMP broadcast loop with a self-healing supervisor daemon that recovers stream drops in seconds, paired with 6 commercialized AI workflow skills published on the Agensi marketplace.</p>
-          </div>
-          <div class="tag-row">
-            <span class="mono-tag">FFmpeg RTMP</span>
-            <span class="mono-tag">Watchdog Daemon</span>
-            <span class="mono-tag">6 Agensi Skills</span>
-          </div>
-        </div>
-
-        <!-- BrainRot Galaxy -->
-        <div class="tilt-card bento-span-12">
-          <div style="max-height:180px; overflow:hidden; border-radius:12px; margin-bottom:18px; border:1px solid rgba(255,255,255,0.08);">
-            <img src="/brainrot-banner.webp" alt="BrainRot Galaxy Google Play Banner" style="width:100%; height:100%; object-fit:cover; display:block;" loading="lazy">
-          </div>
-          <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:24px; flex-wrap:wrap;">
-            <div style="flex:1; min-width:320px;">
-              <span class="bento-badge" style="background:rgba(34, 197, 94, 0.15); border-color:rgba(34, 197, 94, 0.35); color:#4ade80;">Google Play Store &bull; Live Mobile Game</span>
-              <h3>BrainRot Galaxy: Mobile Gacha TCG &amp; 3D Battle Engine</h3>
-              <p>Commercial mobile game published to Google Play Store (<code>com.coconut.brainrot_galaxy</code>). Features 45 collectible cards across Common to Legendary tiers. Upgraded to Godot 4.5+ with a Pokémon-style 3D arena, physical 3D coin toss, holographic foil card shaders, tear-off pack physics, and mid-battle consumables.</p>
-              <div class="tag-row">
-                <span class="mono-tag">Google Play Console</span>
-                <span class="mono-tag">Flutter &amp; Dart</span>
-                <span class="mono-tag">Godot 4.5+ (GDScript)</span>
-                <span class="mono-tag">3D Pokémon Combat</span>
-                <span class="mono-tag">Vulkan Mobile</span>
-                <span class="mono-tag">Firebase Auth</span>
-              </div>
-            </div>
-            <div class="bento-links" style="align-self:center; display:flex; flex-wrap:wrap; gap:12px;">
-              <a href="https://play.google.com/store/apps/details?id=com.coconut.brainrot_galaxy" target="_blank" rel="noopener" class="bento-link">Google Play Store &nearr;</a>
-              <a href="https://github.com/Cbolea23/brainrot-galaxy-Personal" target="_blank" rel="noopener" class="bento-link">Source Code &nearr;</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Inside the Engine: Website Tech Stack (Featured Project in Portfolio) -->
-    <section id="site-tech" class="reveal">
-      <div class="section-head">
-        <div>
-          <span class="section-eyebrow">// 03 &bull; Meta-Engineering</span>
-          <h2 class="section-title">How <span>bolealabs.site</span> Is Engineered</h2>
-          <p class="section-desc">Built from scratch with zero bloated frameworks—designed as both our studio platform and a featured creative-engineering project in the portfolio.</p>
-        </div>
-      </div>
-
-      <div class="engine-showcase">
-        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:14px;">
-          <div>
-            <span class="bento-badge cyan">Zero-Dependency Architecture &bull; 60 FPS</span>
-            <h3 style="font-family:var(--font-heading); font-size:1.5rem; color:#fff;">Bolea Labs Interactive Web Engine v2.6</h3>
-          </div>
-          <a href="https://github.com/Cbolea23/bolealabs-portfolio" target="_blank" rel="noopener" class="bento-link">Inspect Repository on GitHub &nearr;</a>
-        </div>
-
-        <div class="engine-specs">
-          <div class="spec-box">
-            <div class="spec-label">01 / Visual Physics</div>
-            <div class="spec-title">HTML5 Canvas 2D Neural Field</div>
-            <p class="spec-desc">Custom hardware-accelerated particle constellation engine calculating Euclidean node proximity and cursor repulsion vectors at 60 FPS.</p>
-          </div>
-          <div class="spec-box">
-            <div class="spec-label">02 / Spatial Shaders</div>
-            <div class="spec-title">3D Matrix Tilt &amp; Radial Lighting</div>
-            <p class="spec-desc">Real-time DOM bounding-rect coordinate mapping driving CSS <code>perspective(1000px)</code> rotation matrices and dynamic radial specular borders.</p>
-          </div>
-          <div class="spec-box">
-            <div class="spec-label">03 / Client Cryptography</div>
-            <div class="spec-title">Web Crypto API SHA-256 Vault</div>
-            <p class="spec-desc">Asynchronous <code>crypto.subtle.digest('SHA-256')</code> PIN verification protecting the downloadable CV without exposing plaintext credentials in source.</p>
-          </div>
-          <div class="spec-box">
-            <div class="spec-label">04 / Edge Deployment</div>
-            <div class="spec-title">GitHub Pages CDN &amp; Custom DNS</div>
-            <p class="spec-desc">Sub-50ms static delivery over Fastly/GitHub Edge CDN, Namecheap apex A-record load balancing, TLS 1.3 HTTPS, and OAuth policy compliance.</p>
-          </div>
-          <div class="spec-box">
-            <div class="spec-label">05 / Autonomous AI Agent</div>
-            <div class="spec-title">FreeLLMAPI Smart Gateway &amp; Tool Router</div>
-            <p class="spec-desc">Embedded concierge (Bolea AI // LABS-01) backed by <a href="https://github.com/tashfeenahmed/freellmapi" target="_blank" rel="noopener" style="color:var(--gold); text-decoration:underline;">FreeLLMAPI</a> multi-model proxy (Gemini, Llama-3.3, Cerebras, Mistral) with zero-downtime knowledge failover and live DOM tool execution.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Founder & OJT Portfolio Callout -->
-    <section class="founder-card reveal">
-      <div class="founder-avatar">
-        <img src="/profile.jpg" alt="Christian Louis Bolea">
-      </div>
+    <!-- OJT Placement Banner -->
+    <div class="ojt-banner">
       <div>
-        <span class="section-eyebrow" style="margin-bottom:4px;">// Founder &amp; Lead Developer</span>
-        <h2 style="font-family:var(--font-heading); font-size:1.85rem; color:#fff; margin-bottom:6px;">Christian Louis Bolea</h2>
-        <p style="color:#cbd5e1; font-size:0.98rem; max-width:650px;">
-          BS Information Technology student at <strong>Manuel S. Enverga University Foundation (MSEUF)</strong>, specializing in Web &amp; Mobile Application Development. Currently seeking a <strong>486–500 hour On-the-Job Training (OJT) / Software Engineering Internship</strong>. Explore all 8 engineering projects, 8 verified Coursera certifications (Google, Meta, IBM, Johns Hopkins, Packt), and full technical credentials in the dedicated portfolio tab.
+        <div class="ojt-banner-title">Practicum / On-the-Job Training (OJT) Requirement: 540–600 Hours</div>
+        <p class="ojt-banner-text">
+          Open to roles in <strong>AI-Assisted Application Prototyping &amp; Integration</strong>, <strong>Software QA &amp; API/Mobile Testing (Postman / Android Hardware)</strong>, <strong>IT Operations &amp; Technical Support</strong>, or <strong>Junior Web/Mobile Support</strong>. Ready to follow company standard operating procedures (SOPs) and contribute reliably in Remote, Hybrid, Lucena City, or Metro Manila setups.
         </p>
       </div>
-      <div style="display:flex; flex-direction:column; gap:10px; min-width:220px;">
-        <a href="/portfolio/" class="btn-gold" style="justify-content:center;">Open Full Portfolio &rarr;</a>
-        <button class="btn-glass" style="justify-content:center;" onclick="openPinModal()">Download Resume (PIN)</button>
+      <button class="btn-primary" onclick="copyEmail('Bolea2133@gmail.com')" style="font-size: 0.86rem; padding: 10px 18px;">
+        Copy Bolea2133@gmail.com
+      </button>
+    </div>
+
+    <!-- Key Strengths (Directly Aligned with Resume) -->
+    <div class="strengths-grid">
+      <div class="strength-card">
+        <h3>Modern AI-Assisted App Workflow</h3>
+        <p>Trained in structured prompting, output verification, and leveraging AI tools (Gemini, Google AI Studio, Antigravity) responsibly to prototype, integrate, and deploy working applications.</p>
+      </div>
+      <div class="strength-card">
+        <h3>Practical Testing &amp; Debugging</h3>
+        <p>Hands-on experience designing UI flows in Figma, verifying backend REST API responses in Postman, testing mobile APK builds on physical Android hardware, and resolving integration issues.</p>
+      </div>
+      <div class="strength-card">
+        <h3>Transparent &amp; Adaptable Learner</h3>
+        <p>Honest about current technical boundaries (foundational Python/Django/Flutter plus AI-assisted workflows) while quick to follow technical documentation, SOPs, and senior developer feedback.</p>
+      </div>
+    </div>
+
+    <!-- Projects Section -->
+    <section id="projects">
+      <div class="section-header">
+        <span class="section-eyebrow">// 01 &bull; Capstone &amp; Applied Projects</span>
+        <h2 class="section-title">Hands-On <span>Projects (5)</span></h2>
+        <p class="section-subtitle">An honest breakdown of my academic capstone and personal projects—highlighting what I integrated, how I used AI-assisted development tools responsibly, and how I tested and deployed each build.</p>
+      </div>
+
+      <div class="filter-bar">
+        <button class="filter-btn active" onclick="filterProjects('all', this)">All Projects (5)</button>
+        <button class="filter-btn" onclick="filterProjects('capstone', this)">Capstone &amp; Integration</button>
+        <button class="filter-btn" onclick="filterProjects('mobile', this)">Mobile &amp; Android Builds</button>
+        <button class="filter-btn" onclick="filterProjects('ai-workflow', this)">AI-Assisted Workflows</button>
+      </div>
+
+      <div class="projects-grid">
+        <!-- 1. NiyoSense Capstone -->
+        <div class="project-card featured" data-cat="capstone mobile ai-workflow">
+          <div>
+            <span class="project-tag">Academic Capstone Project &bull; 2024 – Present</span>
+            <h3 class="project-title">NiyoSense — Lead Developer &amp; System Integrator (AI-Assisted Development)</h3>
+            <p class="project-subtitle">Manuel S. Enverga University Foundation (MSEUF) &bull; Flutter Mobile App + Django Web Backend</p>
+            <p class="project-desc">
+              Our BSIT capstone project designed to assist coconut maturity grading and field data recording through a Flutter mobile application connected to a centralized Django web dashboard.
+            </p>
+            <ul class="project-bullets">
+              <li><strong>AI-Assisted Full-Stack Integration:</strong> Led the end-to-end development, system integration, and cloud deployment of the NiyoSense Flutter mobile app and Django web backend utilizing structured AI-assisted coding and prototyping workflows.</li>
+              <li><strong>UI/UX Design &amp; Physical Device Testing:</strong> Designed mobile user interfaces and user flows in <strong>Figma</strong>, and conducted hands-on build compilation and field testing using <strong>Android Studio</strong> and physical Android smartphones.</li>
+              <li><strong>API Verification &amp; Debugging:</strong> Verified and debugged backend REST API endpoints using <strong>Postman</strong> to ensure reliable client-server synchronization between the mobile app, local SQLite storage, and the PostgreSQL database.</li>
+              <li><strong>Repository &amp; Version Control:</strong> Managed source code versioning, issue tracking, and release builds (APK v1.5.2) using <strong>GitHub</strong> and <strong>Visual Studio Code</strong>.</li>
+            </ul>
+            <div class="tech-stack">
+              <span class="tech-pill">AI-Assisted Development</span>
+              <span class="tech-pill">Flutter &amp; Dart</span>
+              <span class="tech-pill">Django (Python)</span>
+              <span class="tech-pill">Postman (API Testing)</span>
+              <span class="tech-pill">Figma (UI Design)</span>
+              <span class="tech-pill">Android Studio</span>
+              <span class="tech-pill">GitHub &amp; VS Code</span>
+            </div>
+          </div>
+          <div class="project-links">
+            <a href="https://niyosense.me" target="_blank" rel="noopener" class="btn-link">Live Web Portal (niyosense.me) &nearr;</a>
+            <a href="https://github.com/Cbolea23/niyosense-capstone/releases/tag/v1.5.2" target="_blank" rel="noopener" class="btn-link">Android APK Build v1.5.2 &nearr;</a>
+            <a href="https://github.com/Cbolea23/niyosense-capstone" target="_blank" rel="noopener" class="btn-link">GitHub Repository &nearr;</a>
+          </div>
+        </div>
+
+        <!-- 2. BrainRot Galaxy -->
+        <div class="project-card" data-cat="mobile ai-workflow">
+          <div>
+            <div class="project-banner-preview">
+              <img src="/brainrot-banner.webp" alt="BrainRot Galaxy Google Play Banner" loading="lazy">
+            </div>
+            <div style="display:flex; align-items:center; gap:10px; margin-bottom:12px;">
+              <img src="/brainrot-icon.webp" alt="BrainRot Galaxy App Icon" style="width:36px; height:36px; border-radius:8px; border:1px solid rgba(255,255,255,0.15);" loading="lazy">
+              <span class="project-tag green" style="margin-bottom:0;">Google Play Store Release &bull; Mobile Prototype</span>
+            </div>
+            <h3 class="project-title">BrainRot Galaxy — Mobile Card Game &amp; Play Store Deployment</h3>
+            <p class="project-subtitle">Published on Google Play (<code>com.coconut.brainrot_galaxy</code>) &bull; AI-Assisted Flutter &amp; Godot Build</p>
+            <p class="project-desc">
+              A personal mobile card-collection and turn-based battler built using AI-assisted prototyping to learn the complete mobile game lifecycle—from UI layout and state management in Flutter/Godot to publishing a live app on the Google Play Store.
+            </p>
+            <ul class="project-bullets">
+              <li>Configured Android app signing, `.aab` bundle compilation, store graphics, privacy compliance, and production release tracks in the <strong>Google Play Console</strong>.</li>
+              <li>Tested builds across Android emulators and physical hardware to fix layout scaling and touch interaction bugs.</li>
+            </ul>
+            <div class="tech-stack">
+              <span class="tech-pill">Google Play Console</span>
+              <span class="tech-pill">AI-Assisted Prototyping</span>
+              <span class="tech-pill">Flutter &amp; Dart</span>
+              <span class="tech-pill">Godot 4.5+</span>
+              <span class="tech-pill">Android App Bundle (.aab)</span>
+              <span class="tech-pill">Firebase</span>
+            </div>
+          </div>
+          <div class="project-links">
+            <a href="https://play.google.com/store/apps/details?id=com.coconut.brainrot_galaxy&hl=en" target="_blank" rel="noopener" class="btn-link">Google Play Store &nearr;</a>
+            <a href="https://github.com/Cbolea23/brainrot-galaxy-Personal" target="_blank" rel="noopener" class="btn-link">GitHub Repository &nearr;</a>
+          </div>
+        </div>
+
+        <!-- 3. Angelica Photobooth -->
+        <div class="project-card" data-cat="mobile ai-workflow">
+          <div>
+            <div style="display:flex; align-items:center; gap:10px; margin-bottom:12px;">
+              <img src="/photobooth-icon.webp" alt="Angelica Photobooth Icon" style="width:36px; height:36px; border-radius:8px; border:1px solid rgba(255,255,255,0.15);" loading="lazy">
+              <span class="project-tag green" style="margin-bottom:0;">Live Web App &bull; Capacitor Android APK</span>
+            </div>
+            <h3 class="project-title">Angelica Photobooth — Web &amp; Hybrid Android Camera App</h3>
+            <p class="project-subtitle">AI-Assisted Web Application &amp; Capacitor Mobile Packaging</p>
+            <p class="project-desc">
+              An interactive browser and Android photobooth application built with AI-assisted HTML/CSS/JavaScript workflows. Allows users to capture timed camera shots, apply custom strip layouts (Vertical, Grid, Quad, Filmstrip), merge dual frames, and save downloadable photo strips.
+            </p>
+            <ul class="project-bullets">
+              <li>Integrated browser webcam/mobile camera access (`MediaDevices.getUserMedia`) and HTML5 Canvas image compositing.</li>
+              <li>Packaged the web project into an installable Android `.apk` using <strong>Capacitor</strong> and hosted the web version on <strong>GitHub Pages</strong>.</li>
+            </ul>
+            <div class="tech-stack">
+              <span class="tech-pill">HTML / CSS / JS</span>
+              <span class="tech-pill">AI-Assisted Workflow</span>
+              <span class="tech-pill">HTML5 Canvas &amp; Camera API</span>
+              <span class="tech-pill">Capacitor (Android APK)</span>
+              <span class="tech-pill">GitHub Pages</span>
+            </div>
+          </div>
+          <div class="project-links">
+            <a href="https://cbolea23.github.io/online-photobooth/" target="_blank" rel="noopener" class="btn-link">Launch Live Web App &nearr;</a>
+            <a href="https://github.com/Cbolea23/online-photobooth" target="_blank" rel="noopener" class="btn-link">GitHub Repository &nearr;</a>
+          </div>
+        </div>
+
+        <!-- 4. A Day Back Then Media Workflow -->
+        <div class="project-card" data-cat="ai-workflow">
+          <div>
+            <span class="project-tag cyan">Prompt Engineering &bull; Media Automation</span>
+            <h3 class="project-title">A Day Back Then — AI-Assisted Video &amp; Content Pipeline</h3>
+            <p class="project-subtitle">Structured Prompting, Script Generation &amp; Video Assembly Workflow</p>
+            <p class="project-desc">
+              A personal media automation project exploring how structured prompt engineering (Gemini / Google AI Studio), TTS voiceovers, and Remotion/FFmpeg scripts can streamline short-form historical and Philippine folklore video production.
+            </p>
+            <ul class="project-bullets">
+              <li>Designed repeatable prompt templates and evaluation checks for script generation, captions, and visual storyboarding.</li>
+              <li>Managed multi-platform content publishing and API integration experiments across TikTok, YouTube, and Facebook.</li>
+            </ul>
+            <div class="tech-stack">
+              <span class="tech-pill">Gemini &amp; Google AI Studio</span>
+              <span class="tech-pill">Prompt Engineering</span>
+              <span class="tech-pill">Node.js &amp; Remotion</span>
+              <span class="tech-pill">FFmpeg</span>
+              <span class="tech-pill">Agensi Workflows</span>
+            </div>
+          </div>
+          <div class="project-links">
+            <a href="https://www.tiktok.com/@adaybackthenofficial" target="_blank" rel="noopener" class="btn-link">TikTok Channel &nearr;</a>
+            <a href="https://www.youtube.com/@adaybackthenofficial" target="_blank" rel="noopener" class="btn-link">YouTube Channel &nearr;</a>
+            <a href="https://github.com/Cbolea23/a-day-back-then-automation" target="_blank" rel="noopener" class="btn-link">GitHub Repository &nearr;</a>
+          </div>
+        </div>
+
+        <!-- 5. Personal OJT Portfolio Website -->
+        <div class="project-card" data-cat="ai-workflow">
+          <div>
+            <div class="project-banner-preview">
+              <img src="/logo-full.webp" alt="Portfolio Website Banner" loading="lazy">
+            </div>
+            <span class="project-tag cyan">AI-Assisted Web Deployment &bull; Custom DNS</span>
+            <h3 class="project-title">Personal OJT Portfolio Website (bolealabs.site)</h3>
+            <p class="project-subtitle">Static Web Hosting, Custom Domain DNS &amp; AI Assistant Integration</p>
+            <p class="project-desc">
+              Built and deployed this portfolio website using AI-assisted development tools (Antigravity &amp; Gemini) to present my OJT credentials, verified certificates, and project documentation in a clean, accessible format.
+            </p>
+            <ul class="project-bullets">
+              <li>Configured custom domain DNS routing (Namecheap A records &amp; CNAME), TLS/HTTPS certificates, and automated deployment on <strong>GitHub Pages</strong>.</li>
+              <li>Embedded an interactive portfolio Q&amp;A assistant to help recruiters quickly inspect my OJT hours, skills, and resume.</li>
+            </ul>
+            <div class="tech-stack">
+              <span class="tech-pill">Antigravity (AI-Assisted Dev)</span>
+              <span class="tech-pill">HTML5 / CSS3 / JS</span>
+              <span class="tech-pill">GitHub Pages</span>
+              <span class="tech-pill">Custom DNS &amp; HTTPS</span>
+            </div>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/Cbolea23/bolealabs-portfolio" target="_blank" rel="noopener" class="btn-link">GitHub Repository &nearr;</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Verified Certifications Section -->
+    <section id="certifications">
+      <div class="section-header">
+        <span class="section-eyebrow">// 02 &bull; Verified Credentials &amp; Training</span>
+        <h2 class="section-title">Certifications &amp; <span>Skill Badges</span></h2>
+        <p class="section-subtitle">All certificates and digital skill badges below are verifiable via Credly, Coursera, Google Cloud Skills, and Wadhwani Foundation.</p>
+      </div>
+
+      <div class="certs-grid">
+        <!-- 1. Google AI Professional Certificate -->
+        <div class="project-card" style="border-color: rgba(245, 179, 36, 0.4);">
+          <div>
+            <div class="cert-issuer">Google &bull; Coursera &amp; Credly (8-Course Specialization)</div>
+            <h3 class="cert-name">Google AI Professional Certificate</h3>
+            <p class="cert-focus">Includes 8 verified badges: <em>Google AI for App Building</em>, <em>AI for App Deployment</em>, <em>AI for Data Analysis</em>, <em>AI for Research &amp; Insights</em>, <em>AI for Brainstorming &amp; Planning</em>, <em>AI for Content Creation</em>, <em>AI for Writing &amp; Communicating</em>, and <em>Google AI Fundamentals</em>.</p>
+            <div class="cert-date">Completed: November 2026 &bull; 8 Credly Badges Issued</div>
+          </div>
+          <a href="https://www.credly.com/users/christian-bolea" target="_blank" rel="noopener" class="cert-verify">Verify All 8 Badges on Credly &nearr;</a>
+        </div>
+
+        <!-- 2. Prompt Design in Vertex AI -->
+        <div class="project-card" style="border-color: rgba(56, 189, 248, 0.35);">
+          <div>
+            <div class="cert-issuer">Google Cloud &bull; Credly Skill Badge</div>
+            <h3 class="cert-name">Prompt Design in Vertex AI Skill Badge</h3>
+            <p class="cert-focus">Hands-on challenge lab validation in prompt engineering, multimodal image analysis, and generative AI parameter tuning within Google Cloud Vertex AI.</p>
+            <div class="cert-date">Completed: November 22, 2026 &bull; Validated Lab Assessment</div>
+          </div>
+          <a href="https://www.credly.com/badges/42e64133-9626-4c32-a586-3132d1b3eb92/public_url" target="_blank" rel="noopener" class="cert-verify">Verify Official Google Cloud Badge &nearr;</a>
+        </div>
+
+        <!-- 3. Google Generative AI Accelerator Program -->
+        <div class="project-card">
+          <div>
+            <div class="cert-issuer">Google Cloud Skills &bull; SkillWallet</div>
+            <h3 class="cert-name">Google Generative AI Accelerator Program</h3>
+            <p class="cert-focus">Focus: Generative AI, Large Language Models, and Prompt Design in Google Cloud Agent Platform (100% coursework &amp; labs completed).</p>
+            <div class="cert-date">Completed: November 2026 &bull; 100% Completed (Certificate Pending Issuance)</div>
+          </div>
+          <a href="https://www.credly.com/users/christian-bolea" target="_blank" rel="noopener" class="cert-verify">View Completed Lab Badges &nearr;</a>
+        </div>
+
+        <!-- 4. Wadhwani JobReady -->
+        <div class="project-card">
+          <div>
+            <div class="cert-issuer">Wadhwani Foundation</div>
+            <h3 class="cert-name">Employability Skills: JobReady (With AI) v1 — Advanced Level</h3>
+            <p class="cert-focus">75-hour intensive training covering workplace professionalism, business communication, collaborative problem-solving, and AI-assisted workplace productivity.</p>
+            <div class="cert-date">Completed: November 2026 &bull; 75 Hours (Advanced Level)</div>
+          </div>
+          <a href="https://docs.google.com/document/d/1YdLI6E5Fq4_VSKi45eN3nae14dqvbs9MYOpj4qB-ZvI/edit?usp=sharing" target="_blank" rel="noopener" class="cert-verify">Listed on Official Resume &nearr;</a>
+        </div>
+
+        <!-- 5. Packt Backend Development -->
+        <div class="project-card">
+          <div>
+            <div class="cert-issuer">Packt &bull; Coursera</div>
+            <h3 class="cert-name">Backend Development and API Creation</h3>
+            <p class="cert-focus">Foundational backend architecture, RESTful endpoint structure, HTTP methods, and API request/response verification.</p>
+            <div class="cert-date">Completed: April 7, 2026 &bull; ID: 13BPR5I0J77P</div>
+          </div>
+          <a href="https://coursera.org/verify/13BPR5I0J77P" target="_blank" rel="noopener" class="cert-verify">Verify Official Credential &nearr;</a>
+        </div>
+
+        <!-- 6. Meta Front-End Development -->
+        <div class="project-card">
+          <div>
+            <div class="cert-issuer">Meta &bull; Coursera</div>
+            <h3 class="cert-name">Introduction to Front-End Development</h3>
+            <p class="cert-focus">Core web structure with HTML5, responsive CSS3 styling, DOM fundamentals, and modern UI component layout concepts.</p>
+            <div class="cert-date">Completed: October 17, 2025 &bull; ID: PH3F7R5EW865</div>
+          </div>
+          <a href="https://coursera.org/verify/PH3F7R5EW865" target="_blank" rel="noopener" class="cert-verify">Verify Official Credential &nearr;</a>
+        </div>
+
+        <!-- 7. Meta MySQL & Advanced MySQL -->
+        <div class="project-card">
+          <div>
+            <div class="cert-issuer">Meta &bull; Coursera (2 Certificates)</div>
+            <h3 class="cert-name">Database Structures, Management &amp; Advanced MySQL Topics</h3>
+            <p class="cert-focus">Relational database schemas, SQL queries, joins, indexing, stored procedures, and data integrity principles.</p>
+            <div class="cert-date">Completed: October 2025 &bull; IDs: ASZT80EG1ATO &amp; XKDZ8Z1QMUMY</div>
+          </div>
+          <a href="https://coursera.org/verify/ASZT80EG1ATO" target="_blank" rel="noopener" class="cert-verify">Verify MySQL Management &nearr;</a>
+        </div>
+
+        <!-- 8. Google Cybersecurity -->
+        <div class="project-card">
+          <div>
+            <div class="cert-issuer">Google &bull; Coursera</div>
+            <h3 class="cert-name">Foundations of Cybersecurity</h3>
+            <p class="cert-focus">Core security principles, data privacy ethics, threat identification, access controls, and organizational security hygiene.</p>
+            <div class="cert-date">Completed: October 8, 2025 &bull; ID: G4S3PIR857ID</div>
+          </div>
+          <a href="https://coursera.org/verify/G4S3PIR857ID" target="_blank" rel="noopener" class="cert-verify">Verify Official Credential &nearr;</a>
+        </div>
+
+        <!-- 9. IBM Flutter & Dart + Packt React / JHU Angular -->
+        <div class="project-card">
+          <div>
+            <div class="cert-issuer">IBM, Johns Hopkins &amp; Packt &bull; Coursera</div>
+            <h3 class="cert-name">Flutter &amp; Dart Mobile Apps + Frontend Web Frameworks</h3>
+            <p class="cert-focus">Cross-platform mobile UI fundamentals with Flutter/Dart (IBM) alongside single-page web application concepts in React and AngularJS.</p>
+            <div class="cert-date">Completed: May 2025 – May 2026 &bull; IDs: RU6NWZOOYURW, L7GDU9MZ94WN</div>
+          </div>
+          <a href="https://coursera.org/verify/RU6NWZOOYURW" target="_blank" rel="noopener" class="cert-verify">Verify IBM Flutter Credential &nearr;</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Technical Skills & Tools Section (Exact Match with Current Resume) -->
+    <section id="skills">
+      <div class="section-header">
+        <span class="section-eyebrow">// 03 &bull; Honest Capability Matrix</span>
+        <h2 class="section-title">Technical Skills &amp; <span>Tools</span></h2>
+        <p class="section-subtitle">Aligned directly with my resume to give employers an accurate, transparent view of the tools and workflows I use daily.</p>
+      </div>
+
+      <div class="skills-section">
+        <div class="project-card">
+          <h3 class="skill-cat-title">AI &amp; Cloud Platforms</h3>
+          <p class="skill-cat-desc">Structured prompting, AI-assisted coding workflows, and output verification.</p>
+          <div class="skill-chips">
+            <span class="skill-chip">Gemini</span>
+            <span class="skill-chip">Google AI Studio</span>
+            <span class="skill-chip">Google Cloud Agent Platform</span>
+            <span class="skill-chip">Vertex AI (Prompt Design Labs)</span>
+            <span class="skill-chip">Prompt Engineering &amp; Evaluation</span>
+            <span class="skill-chip">Antigravity (AI-Assisted Dev)</span>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <h3 class="skill-cat-title">Application Development</h3>
+          <p class="skill-cat-desc">Academic coursework fundamentals paired with AI-assisted full-stack integration.</p>
+          <div class="skill-chips">
+            <span class="skill-chip">Python (Basics)</span>
+            <span class="skill-chip">Django (AI-Assisted / Basic Integration)</span>
+            <span class="skill-chip">Flutter &amp; Dart (Coursework Fundamentals)</span>
+            <span class="skill-chip">HTML5 / CSS3 / JS</span>
+            <span class="skill-chip">SQL &amp; Relational Databases</span>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <h3 class="skill-cat-title">Testing, Design &amp; Dev Tools</h3>
+          <p class="skill-cat-desc">Hands-on API verification, UI prototyping, mobile build testing, and version control.</p>
+          <div class="skill-chips">
+            <span class="skill-chip">Postman (API Verification)</span>
+            <span class="skill-chip">Android Studio (Build &amp; Device Testing)</span>
+            <span class="skill-chip">Figma (UI Design &amp; User Flows)</span>
+            <span class="skill-chip">GitHub &amp; Git</span>
+            <span class="skill-chip">Visual Studio Code</span>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <h3 class="skill-cat-title">Hardware &amp; Technical Support</h3>
+          <p class="skill-cat-desc">Practical hardware assembly, soldering, and hands-on device troubleshooting.</p>
+          <div class="skill-chips">
+            <span class="skill-chip">Electronics Soldering</span>
+            <span class="skill-chip">Basic Hardware Assembly</span>
+            <span class="skill-chip">PC &amp; Device Troubleshooting</span>
+            <span class="skill-chip">Physical Android Device QA</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education">
+      <div class="section-header">
+        <span class="section-eyebrow">// 04 &bull; Academic Background</span>
+        <h2 class="section-title">Education &amp; <span>OJT Details</span></h2>
+      </div>
+
+      <div class="project-card">
+        <div style="display:flex; justify-content:space-between; align-items:baseline; flex-wrap:wrap; gap:10px;">
+          <div>
+            <h3 style="font-family:var(--font-heading); font-size:1.35rem; color:#fff;">Bachelor of Science in Information Technology</h3>
+            <p style="color:var(--gold); font-weight:600;">Manuel S. Enverga University Foundation (MSEUF) &bull; Lucena City, Quezon</p>
+          </div>
+          <div style="display:flex; gap:8px; flex-wrap:wrap;">
+            <span class="tech-pill" style="font-weight:700; color:var(--emerald); border-color:rgba(16,185,129,0.4);">Required OJT: 540–600 Hours</span>
+            <span class="tech-pill" style="font-weight:700; color:#fff;">Expected Graduation: 2027</span>
+          </div>
+        </div>
+        <p style="color:var(--text-muted); font-size:0.95rem; margin-top:14px; line-height:1.7;">
+          <strong style="color:#fff;">Major / Specialization:</strong> Web and Mobile Application Development<br>
+          <strong style="color:#fff;">Relevant Coursework:</strong> Mobile Applications Development, Web Systems and Technologies, Database Management Systems, Systems Analysis and Design, English for Occupational Purposes.<br>
+          <strong style="color:#fff;">Direct Contact for OJT / Internship Coordination:</strong> <a href="mailto:Bolea2133@gmail.com" style="color:var(--gold);">Bolea2133@gmail.com</a> &bull; <a href="mailto:A21-32404@student.mseuf.edu.ph" style="color:var(--cyan);">A21-32404@student.mseuf.edu.ph</a> &bull; <strong>0976 253 9052</strong>
+        </p>
       </div>
     </section>
   </main>
 
-  <!-- Footer -->
+  <div id="copyToast">Copied to clipboard!</div>
+
   <footer>
-    <div style="max-width: 1240px; margin: 0 auto;">
-      <p>&copy; 2026 Bolea Labs &bull; Founded by Christian Louis Bolea. All rights reserved.</p>
+    <div style="max-width: 1180px; margin: 0 auto;">
+      <p>&copy; 2026 Christian Louis Bolea &bull; BS Information Technology OJT Portfolio (MSEUF)</p>
       <p style="margin-top: 10px;">
-        <a href="/">Studio Home</a>
-        <a href="/portfolio/">Founder Portfolio (OJT)</a>
-        <a href="/creator-tools.html">Creator Tools</a>
-        <a href="/privacy.html">Privacy Policy</a>
-        <a href="/terms.html">Terms of Service</a>
-        <a href="mailto:contact@bolealabs.site">contact@bolealabs.site</a>
+        <a href="https://docs.google.com/document/d/1YdLI6E5Fq4_VSKi45eN3nae14dqvbs9MYOpj4qB-ZvI/edit?usp=sharing" target="_blank" rel="noopener">Current Resume (Google Docs)</a>
+        <a href="/resume.pdf" download="Christian_Louis_Bolea_Resume.pdf">Download Resume (PDF)</a>
+        <a href="https://www.credly.com/users/christian-bolea" target="_blank" rel="noopener">Credly Profile</a>
+        <a href="https://github.com/Cbolea23" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/bolea23" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="mailto:Bolea2133@gmail.com">Bolea2133@gmail.com</a>
       </p>
     </div>
   </footer>
 
-  <!-- PIN-Protected Resume Modal -->
-  <div class="modal-overlay" id="pinModal" onclick="if(event.target.id==='pinModal') closePinModal()">
-    <div class="modal-box">
-      <button class="modal-close" onclick="closePinModal()" aria-label="Close modal">&times;</button>
-      <h3 style="font-family:var(--font-heading); font-size:1.35rem; color:#fff;">CV Vault &bull; PIN Required</h3>
-      <p style="color:var(--text-muted); font-size:0.9rem; margin-top:6px;">Enter the 4-digit access PIN to download Christian's PDF Resume.</p>
-      <input type="password" id="pinInput" class="pin-input" maxlength="4" placeholder="••••" readonly>
-      <div id="pinError" class="pin-error-msg">Incorrect PIN. Try again.</div>
-      <div class="keypad-grid">
-        <button class="keypad-btn" onclick="pressPinKey('1')">1</button>
-        <button class="keypad-btn" onclick="pressPinKey('2')">2</button>
-        <button class="keypad-btn" onclick="pressPinKey('3')">3</button>
-        <button class="keypad-btn" onclick="pressPinKey('4')">4</button>
-        <button class="keypad-btn" onclick="pressPinKey('5')">5</button>
-        <button class="keypad-btn" onclick="pressPinKey('6')">6</button>
-        <button class="keypad-btn" onclick="pressPinKey('7')">7</button>
-        <button class="keypad-btn" onclick="pressPinKey('8')">8</button>
-        <button class="keypad-btn" onclick="pressPinKey('9')">9</button>
-        <button class="keypad-btn" onclick="clearPinInput()" style="color:#f87171;">C</button>
-        <button class="keypad-btn" onclick="pressPinKey('0')">0</button>
-        <button class="keypad-btn" onclick="backspacePinInput()">⌫</button>
-      </div>
-      <button class="btn-gold" style="width:100%; justify-content:center;" onclick="verifyAndDownload()">Unlock &amp; Download PDF</button>
-      <div style="font-size:0.8rem; color:var(--text-muted); margin-top:12px;">
-        Recruiter Access? <strong style="color:var(--gold);">PIN: 2026</strong><br>
-        <button class="btn-quick-pin" onclick="autoFillPin()">Auto-Fill Recruiter PIN (2026)</button>
-      </div>
-    </div>
-  </div>
-
   <script>
-    // 1. Mobile Navigation
+    // Mobile Menu
     const mobileMenuBtn = document.getElementById('mobileMenuBtn');
     const navLinks = document.getElementById('navLinks');
     if (mobileMenuBtn && navLinks) {
@@ -1277,7 +1206,7 @@
       navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
     }
 
-    // 2. Scroll Progress Bar & Reveal Animations
+    // Scroll Progress
     window.addEventListener('scroll', () => {
       const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
       const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
@@ -1285,68 +1214,36 @@
       if (bar && height > 0) bar.style.width = ((winScroll / height) * 100) + '%';
     });
 
-    const revealObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
+    // Filter Projects
+    function filterProjects(cat, btn) {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      document.querySelectorAll('#projects .project-card').forEach(card => {
+        if (cat === 'all' || (card.getAttribute('data-cat') || '').includes(cat)) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
         }
       });
-    }, { threshold: 0.12 });
-    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
-
-    // 3. Cipher Text Decode Animation on Hero Title
-    const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%&*";
-    document.querySelectorAll('[data-cipher]').forEach(el => {
-      const original = el.getAttribute('data-cipher');
-      let iteration = 0;
-      const interval = setInterval(() => {
-        el.innerText = original.split('').map((char, idx) => {
-          if (char === ' ') return ' ';
-          if (idx < iteration) return original[idx];
-          return letters[Math.floor(Math.random() * letters.length)];
-        }).join('');
-        if (iteration >= original.length) clearInterval(interval);
-        iteration += 1 / 2;
-      }, 28);
-    });
-
-    // 4. 3D Perspective Tilt & Radial Spotlight Shader on Cards
-    document.querySelectorAll('.tilt-card').forEach(card => {
-      card.addEventListener('mousemove', (e) => {
-        const rect = card.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        card.style.setProperty('--mouse-x', `${x}px`);
-        card.style.setProperty('--mouse-y', `${y}px`);
-        const rotateX = ((y - rect.height / 2) / (rect.height / 2)) * -4.5;
-        const rotateY = ((x - rect.width / 2) / (rect.width / 2)) * 4.5;
-        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
-      });
-      card.addEventListener('mouseleave', () => {
-        card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0px)';
-      });
-    });
-
-    // 5. Interactive Hero Telemetry Console Switcher
-    const consoleLogs = {
-      niyosense: '<span class="prompt">&gt; system.inspect("niyosense"):</span> Dual TFLite CNNs + 128-band Slaney Mel-spectrogram acoustic knock fusion (70/30 rule). Deployed at niyosense.me.',
-      adbt: '<span class="prompt">&gt; system.inspect("adaybackthen"):</span> Remotion + Node.js pipeline with automated lip-sync &amp; OAuth dispatch to TikTok, YouTube &amp; Meta.',
-      stream: '<span class="prompt">&gt; system.inspect("livestream-relay"):</span> 24/7 continuous FFmpeg RTMP broadcast loop with self-healing watchdog supervisor.',
-      web: '<span class="prompt">&gt; system.inspect("bolealabs-site"):</span> Custom HTML5 Canvas 2D particle physics, 3D matrix shaders &amp; Web Crypto SHA-256 vault.'
-    };
-    function setConsoleInfo(key) {
-      const box = document.getElementById('consoleOutput');
-      if (box && consoleLogs[key]) box.innerHTML = consoleLogs[key];
-      document.querySelectorAll('.pipeline-node').forEach(n => n.classList.remove('active-node'));
-      if (event && event.currentTarget) event.currentTarget.classList.add('active-node');
     }
 
-    // 6. Interactive 60FPS HTML5 Canvas Neural Particle Constellation
+    // Copy Email
+    function copyEmail(addr) {
+      const email = addr || 'Bolea2133@gmail.com';
+      navigator.clipboard.writeText(email).then(() => {
+        const t = document.getElementById('copyToast');
+        if (t) {
+          t.textContent = 'Copied ' + email + ' to clipboard!';
+          t.classList.add('show');
+          setTimeout(() => t.classList.remove('show'), 2200);
+        }
+      });
+    }
+
+    // Subtle Background Particle Canvas
     const canvas = document.getElementById('neuralCanvas');
     const ctx = canvas.getContext('2d');
     let particles = [];
-    let mouse = { x: -1000, y: -1000 };
-
     function resizeCanvas() {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
@@ -1354,34 +1251,17 @@
     window.addEventListener('resize', resizeCanvas);
     resizeCanvas();
 
-    window.addEventListener('mousemove', (e) => {
-      mouse.x = e.clientX;
-      mouse.y = e.clientY;
-    });
-
-    const count = window.innerWidth < 768 ? 32 : 64;
+    const count = window.innerWidth < 768 ? 22 : 42;
     for (let i = 0; i < count; i++) {
       particles.push({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
-        vx: (Math.random() - 0.5) * 0.45,
-        vy: (Math.random() - 0.5) * 0.45,
-        r: Math.random() * 1.8 + 1
+        vx: (Math.random() - 0.5) * 0.3,
+        vy: (Math.random() - 0.5) * 0.3,
+        r: Math.random() * 1.6 + 0.8
       });
     }
-
-    let lastTime = performance.now();
-    let frameCount = 0;
-    const fpsEl = document.getElementById('fpsCounter');
-
-    function animateCanvas(now) {
-      frameCount++;
-      if (now - lastTime >= 1000) {
-        if (fpsEl) fpsEl.textContent = `${Math.min(60, frameCount)} FPS • ACTIVE`;
-        frameCount = 0;
-        lastTime = now;
-      }
-
+    function animateCanvas() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       for (let i = 0; i < particles.length; i++) {
         const p = particles[i];
@@ -1389,108 +1269,25 @@
         p.y += p.vy;
         if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
         if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
-
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        ctx.fillStyle = 'rgba(245, 179, 36, 0.55)';
+        ctx.fillStyle = 'rgba(245, 179, 36, 0.42)';
         ctx.fill();
-
-        // Connect nearby nodes
         for (let j = i + 1; j < particles.length; j++) {
           const p2 = particles[j];
-          const dx = p.x - p2.x;
-          const dy = p.y - p2.y;
-          const dist = Math.sqrt(dx * dx + dy * dy);
-          if (dist < 135) {
+          const d = Math.hypot(p.x - p2.x, p.y - p2.y);
+          if (d < 125) {
             ctx.beginPath();
             ctx.moveTo(p.x, p.y);
             ctx.lineTo(p2.x, p2.y);
-            ctx.strokeStyle = `rgba(245, 179, 36, ${(1 - dist / 135) * 0.16})`;
-            ctx.lineWidth = 1;
+            ctx.strokeStyle = `rgba(245, 179, 36, ${(1 - d / 125) * 0.11})`;
             ctx.stroke();
           }
-        }
-
-        // Connect to cursor
-        const mdx = p.x - mouse.x;
-        const mdy = p.y - mouse.y;
-        const mdist = Math.sqrt(mdx * mdx + mdy * mdy);
-        if (mdist < 170) {
-          ctx.beginPath();
-          ctx.moveTo(p.x, p.y);
-          ctx.lineTo(mouse.x, mouse.y);
-          ctx.strokeStyle = `rgba(56, 189, 248, ${(1 - mdist / 170) * 0.32})`;
-          ctx.lineWidth = 1.2;
-          ctx.stroke();
         }
       }
       requestAnimationFrame(animateCanvas);
     }
     requestAnimationFrame(animateCanvas);
-
-    // 7. PIN-Protected CV Vault (SHA-256 of "2026")
-    const PIN_HASH = "158a323a7ba44870f23d96f1516dd70aa48e9a72db4ebb026b0a89e212a208ab";
-    function openPinModal() {
-      const m = document.getElementById('pinModal');
-      const inp = document.getElementById('pinInput');
-      const err = document.getElementById('pinError');
-      if (m && inp) {
-        m.classList.add('active');
-        inp.value = '';
-        inp.classList.remove('error');
-        if (err) err.style.display = 'none';
-      }
-    }
-    function closePinModal() {
-      const m = document.getElementById('pinModal');
-      if (m) m.classList.remove('active');
-    }
-    function pressPinKey(num) {
-      const inp = document.getElementById('pinInput');
-      if (!inp || inp.value.length >= 4) return;
-      inp.value += num;
-      if (inp.value.length === 4) setTimeout(verifyAndDownload, 180);
-    }
-    function clearPinInput() { document.getElementById('pinInput').value = ''; }
-    function backspacePinInput() {
-      const inp = document.getElementById('pinInput');
-      inp.value = inp.value.slice(0, -1);
-    }
-    function autoFillPin() {
-      const inp = document.getElementById('pinInput');
-      inp.value = '2026';
-      setTimeout(verifyAndDownload, 200);
-    }
-    async function sha256(msg) {
-      const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(msg));
-      return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2, '0')).join('');
-    }
-    async function verifyAndDownload() {
-      const inp = document.getElementById('pinInput');
-      const err = document.getElementById('pinError');
-      const hash = await sha256(inp.value.trim());
-      if (hash === PIN_HASH) {
-        const a = document.createElement('a');
-        a.href = '/resume.pdf';
-        a.download = 'Christian_Louis_Bolea_Resume.pdf';
-        document.body.appendChild(a);
-        a.click();
-        document.body.removeChild(a);
-        if (err) {
-          err.style.display = 'block';
-          err.style.color = '#10b981';
-          err.textContent = '✓ Verified! Downloading Resume...';
-        }
-        setTimeout(closePinModal, 1100);
-      } else {
-        inp.classList.add('error');
-        if (err) {
-          err.style.display = 'block';
-          err.style.color = '#f87171';
-          err.textContent = 'Incorrect PIN. Please try again.';
-        }
-      }
-    }
   </script>
   <script src="/agent.js"></script>
 </body>
