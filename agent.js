@@ -152,11 +152,11 @@
     },
     {
       name: 'certs',
-      keywords: ['cert', 'badge', 'credly', 'wadhwani', 'jobready', 'google', 'coursera', 'mern', 'swift', 'laravel', 'linux', 'cybersecurity', 'mysql', 'accelerator'],
+      keywords: ['cert', 'badge', 'credly', 'wadhwani', 'jobready', 'google', 'coursera', 'mern', 'swift', 'laravel', 'linux', 'cybersecurity', 'mysql', 'accelerator', 'skill wallet', 'smartbridge'],
       reply: () => ({
         text: `**Verified Credentials Overview:**
 • **9 Credly Digital Badges:** Prompt Design in Vertex AI (Google Cloud) + 8 Google AI specialization badges.
-• **10 Highlighted Certificates:** Google AI Professional Certificate (8-Course Specialization) & **Wadhwani JobReady (With AI) — Advanced Level (75 hrs)**.
+• **11 Highlighted Certificates:** Google AI Professional Certificate (8-Course Specialization), **Wadhwani JobReady (With AI) — Advanced Level (75 hrs)**, and **Google Generative AI Accelerator Program - Philippines (SmartBridge / Skill Wallet)**.
 • **34 Additional Certificates:** 11 Wadhwani Foundation employability modules + 23 Coursera certificates across Web, Mobile, Linux, SQL & Security.`,
         actions: [
           { label: "View Certifications", fn: "scrollToCerts" },
@@ -279,7 +279,7 @@ You can ask me about:
 • **OJT availability & target roles** (QA/API testing, AI-assisted workflows, IT ops)
 • **NiyoSense capstone integration** (3-person team, Postman QA, Figma, Android Studio)
 • **Honest technical skills** & hardware support experience
-• **9 Credly badges & 44 total verified certificates** (Google AI, Wadhwani, Coursera)`,
+• **9 Credly badges & 45 total verified certificates** (Google AI, Wadhwani, Skill Wallet, Coursera)`,
       actions: [
         { label: "View Resume (PDF)", link: RESUME_PDF_URL },
         { label: "View Certifications", fn: "scrollToCerts" }
