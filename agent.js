@@ -156,8 +156,8 @@
       reply: () => ({
         text: `**Verified Credentials Overview:**
 • **9 Credly Digital Badges:** Prompt Design in Vertex AI (Google Cloud) + 8 Google AI specialization badges.
-• **12 Highlighted Certificates:** Google AI Professional Certificate (8-Course Specialization), **Wadhwani JobReady (With AI) — Advanced Level (75 hrs)**, **Google Generative AI Accelerator Program - Philippines (SmartBridge / Skill Wallet)**, and **AISG AI for Good Workshop (AI Singapore, Supported by Meta)**.
-• **34 Additional Certificates:** 11 Wadhwani Foundation employability modules + 23 Coursera certificates across Web, Mobile, Linux, SQL & Security.`,
+• **4 Highlighted Certificates:** Google AI Professional Certificate (Specialization), **Wadhwani JobReady (With AI) — Advanced Level (75 hrs)**, **Google Generative AI Accelerator Program - Philippines (SmartBridge / Skill Wallet)**, and **AISG AI for Good Workshop (AI Singapore, Supported by Meta)**.
+• **42 Additional Certificates:** 8 individual Google AI specialization courses, 11 Wadhwani Foundation employability modules, and 23 Coursera certificates across Web, Mobile, Linux, SQL & Security.`,
         actions: [
           { label: "View Certifications", fn: "scrollToCerts" },
           { label: "Verify on Credly", link: CREDLY_URL }
